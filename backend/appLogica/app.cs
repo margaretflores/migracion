@@ -2571,7 +2571,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }
+        }//d
 
         public RESOPE guardaPreparacionBolsa2se(appWcfService.DTO_PEBODP paramOperacion)
         {
@@ -2953,7 +2953,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }
+        }//d
 
         public RESOPE remueveBolsaPedidose(decimal idbolsapedido, string usuario)
         {
@@ -3136,7 +3136,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }
+        }//d
 
         //DMA 17_10_2018
         public RESOPE remueveBolsaPedidose2(string idbolsapedido, string usuario)
@@ -3331,7 +3331,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }
+        }//d
 
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETALLESE_Result> obtieneDetallePreparacionPedidosse(decimal iddetallepedido)
         {
@@ -3353,7 +3353,7 @@ namespace appLogica
             {
             }
             return lista;
-        }
+        }//cambiar proc
 
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE_Result> obtieneDetallePreparacionPedIntse(decimal iddetallepedint)
         {
@@ -3375,7 +3375,7 @@ namespace appLogica
             {
             }
             return lista;
-        }
+        }//cambiar proc
 
         //DMA 17/10/2018
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE_Result> obtieneDetallePreparacionPedIntse2(string iddetallepedint)
@@ -3407,7 +3407,7 @@ namespace appLogica
             {
             }
             return lista;
-        }
+        }//cambiar proc
 
         #endregion
 

@@ -1,0 +1,50 @@
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll.config
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.csprojResolveAssemblyReference.cache
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Release\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\obj\Release\EFModelo.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Release\EFModelo.dll.config
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Release\EFModelo.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Release\EFModelo.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Release\EntityFramework.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Release\EntityFramework.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\obj\Release\EFModelo.csprojResolveAssemblyReference.cache
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\obj\Release\EFModelo.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\obj\Release\EFModelo.pdb

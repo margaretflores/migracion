@@ -1,0 +1,132 @@
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll.config
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\bin\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLogica\obj\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appLogica.dll.config
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\obj\Debug\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appLogica\obj\Debug\appLogica.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appLogica.dll.config
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appLogica.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appLogica.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\AccesoDatos.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appConstantes.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appDataContracts.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appDTO.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\EFModelo.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appConstantes.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appDTO.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\EFModelo.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\AccesoDatos.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\appDataContracts.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\obj\Debug\appLogica.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appLogica\obj\Debug\appLogica.pdb

@@ -1,0 +1,118 @@
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll.config
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLogica.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLogica.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.csprojResolveAssemblyReference.cache
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appWcfService\obj\Release\appWcfService.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appWcfService.dll.config
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appWcfService.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appWcfService.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appConstantes.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appDataContracts.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appLogica.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\EntityFramework.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\EFModelo.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\AccesoDatos.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appConstantes.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appDataContracts.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\appLogica.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\EntityFramework.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\EFModelo.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\AccesoDatos.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\obj\Release\appWcfService.csprojResolveAssemblyReference.cache
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\obj\Release\appWcfService.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appWcfService\obj\Release\appWcfService.pdb

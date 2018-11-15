@@ -1,0 +1,88 @@
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll.config
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.csprojResolveAssemblyReference.cache
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appLanzador\obj\Release\appLanzador.pdb

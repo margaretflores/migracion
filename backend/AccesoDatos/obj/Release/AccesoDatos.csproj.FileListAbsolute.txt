@@ -1,0 +1,21 @@
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\AccesoDatos\bin\Release\AccesoDatos.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\AccesoDatos\bin\Release\AccesoDatos.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\AccesoDatos\obj\Release\AccesoDatos.csprojResolveAssemblyReference.cache
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\AccesoDatos\obj\Release\AccesoDatos.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\AccesoDatos\obj\Release\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\AccesoDatos\bin\Release\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\AccesoDatos\bin\Release\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\AccesoDatos\obj\Release\AccesoDatos.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\AccesoDatos\obj\Release\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\AccesoDatos\obj\Release\AccesoDatos.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\AccesoDatos\bin\Release\AccesoDatos.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\AccesoDatos\bin\Release\AccesoDatos.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\AccesoDatos\obj\Release\AccesoDatos.csprojResolveAssemblyReference.cache
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\AccesoDatos\obj\Release\AccesoDatos.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\AccesoDatos\obj\Release\AccesoDatos.pdb

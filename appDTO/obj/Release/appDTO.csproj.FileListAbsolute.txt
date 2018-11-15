@@ -1,0 +1,17 @@
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\bin\Release\appDTO.dll.config
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\bin\Release\appDTO.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\bin\Release\appDTO.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\obj\Release\appDTO.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\obj\Release\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\bin\Release\appDTO.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\bin\Release\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\bin\Release\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\obj\Release\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\obj\Release\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\appDTO\obj\Release\appDTO.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\appDTO\bin\Release\appDTO.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\appDTO\bin\Release\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\appDTO\bin\Release\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\appDTO\obj\Release\appDTO.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\appDTO\obj\Release\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\appDTO\obj\Release\appDTO.pdb

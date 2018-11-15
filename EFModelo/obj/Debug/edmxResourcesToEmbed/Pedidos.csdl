@@ -1,0 +1,1547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PEDIDOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AMCLI">
+    <Key>
+      <PropertyRef Name="MCCIA" />
+      <PropertyRef Name="MCCOCL" />
+    </Key>
+    <Property Name="MCCIA" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="MCCOCL" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="MCNOCL" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MCSICL" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MCRUC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MCCNVT" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MCCOAG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MCFIL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MCSTAT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PEDPDG">
+    <Key>
+      <PropertyRef Name="DPDGIDDD" />
+    </Key>
+    <Property Name="DPDGIDDD" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="DPDGIDDP" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="DPDGIDDG" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="DPDGUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DPDGFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DPDGUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="DEPDGFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEDEPE" Relationship="PEDIDOSModel.FK_PEDPDG_PEDEPE" FromRole="PEDPDG" ToRole="PEDEPE" />
+  </EntityType>
+  <EntityType Name="PEESTA">
+    <Key>
+      <PropertyRef Name="ESTAIDES" />
+    </Key>
+    <Property Name="ESTAIDES" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="ESTADESC" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ESTAUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ESTAFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ESTAUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ESTAFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECAPE" Relationship="PEDIDOSModel.FK_PECAPE_PEESTA" FromRole="PEESTA" ToRole="PECAPE" />
+    <NavigationProperty Name="PECAOS" Relationship="PEDIDOSModel.FK_PECAOS_PEESTA" FromRole="PEESTA" ToRole="PECAOS" />
+  </EntityType>
+  <EntityType Name="PEHIBO">
+    <Key>
+      <PropertyRef Name="HIBOIDHU" />
+    </Key>
+    <Property Name="HIBOIDHU" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="HIBOCOCA" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HIBOIDBO" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="HIBOFECH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HIBOUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HIBOFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HIBOUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="HIBOFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECASI" Relationship="PEDIDOSModel.FK_PEHIBO_PECASI" FromRole="PEHIBO" ToRole="PECASI" />
+    <NavigationProperty Name="PEBOLS" Relationship="PEDIDOSModel.FK_PEHIBO_PEBOLS" FromRole="PEHIBO" ToRole="PEBOLS" />
+  </EntityType>
+  <EntityType Name="PEHIMO">
+    <Key>
+      <PropertyRef Name="HIMOIDIM" />
+    </Key>
+    <Property Name="HIMOIDIM" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="HIMOCOAR" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HIMOIDDO" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="HIMOIDDP" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="HIMOIDBO" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="HIMOFECH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HIMOCANT" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="HIMOPESO" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="HIMOUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HIMOFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HIMOUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="HIMOFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEDEPE" Relationship="PEDIDOSModel.FK_PEHIMO_PEDEPE" FromRole="PEHIMO" ToRole="PEDEPE" />
+    <NavigationProperty Name="PEDEOS" Relationship="PEDIDOSModel.FK_PEHIMO_PEDEOS" FromRole="PEHIMO" ToRole="PEDEOS" />
+    <NavigationProperty Name="PEBOLS" Relationship="PEDIDOSModel.FK_PEHIMO_PEBOLS" FromRole="PEHIMO" ToRole="PEBOLS" />
+  </EntityType>
+  <EntityType Name="PEPEPG">
+    <Key>
+      <PropertyRef Name="PEPGIDPP" />
+    </Key>
+    <Property Name="PEPGIDPP" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="PEPGIDCP" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="PEPGIDPG" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="PEPGUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PEPGFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PEPGUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PEPGFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECAPE" Relationship="PEDIDOSModel.FK_PEPEPG_PECAPE" FromRole="PEPEPG" ToRole="PECAPE" />
+  </EntityType>
+  <EntityType Name="PETIFO">
+    <Key>
+      <PropertyRef Name="TIFOIDTF" />
+    </Key>
+    <Property Name="TIFOIDTF" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="TIFOCOFO" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TIFODESC" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TIFOUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TIFOFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TIFOUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="TIFOFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEUSTF" Relationship="Self.FK_PEUSTF_PETIFO" FromRole="PETIFO" ToRole="PEUSTF" />
+  </EntityType>
+  <EntityType Name="PETMKB">
+    <Key>
+      <PropertyRef Name="TMKBIDTM" />
+    </Key>
+    <Property Name="TMKBIDTM" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="TMKBDESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TMKBUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TMKBFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TMKBUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="TMKBFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEKABO" Relationship="PEDIDOSModel.FK_PEKABO_PETMKB" FromRole="PETMKB" ToRole="PEKABO" />
+    <Property Name="TMKBSIGN" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PEUSTF">
+    <Key>
+      <PropertyRef Name="USTFIDUF" />
+    </Key>
+    <Property Name="USTFIDUF" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="USTFUSUA" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="USTFIDTF" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="USTFUSCR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="USTFFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="USTFUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="USTFFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PETIFO" Relationship="Self.FK_PEUSTF_PETIFO" FromRole="PEUSTF" ToRole="PETIFO" />
+    <Property Name="USTFSUUS" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROSAS">
+    <Key>
+      <PropertyRef Name="OSASCIA" />
+      <PropertyRef Name="OSASFOLI" />
+      <PropertyRef Name="OSASSECU" />
+    </Key>
+    <Property Name="OSASCIA" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="OSASFOLI" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASSECU" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="OSASARTI" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASPAOR" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASALMA" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="OSASCASO" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="OSASPADE" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASFEEM" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OSASRESP" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASCAEN" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="OSASFEAT" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OSASREEN" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASCCOS" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="OSASDUEÑ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASSTOS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASUNID" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="OSASFILL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASFORZ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OSASSTAT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TCLIE">
+    <Key>
+      <PropertyRef Name="CLICVE" />
+    </Key>
+    <Property Name="CLICVE" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLINOM" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIABR" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIDIR" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLICPO" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIDIS" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIPRO" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIDPT" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIPAI" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLITE1" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLITE2" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLITE3" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLITE4" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIRUC" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIRF1" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIRF2" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIRF3" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIVEN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLICOB" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIZON" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLISIT" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLILCR" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="CLISAL" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="CLISCR" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CPACVE" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLDSCT" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="CLPREC" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLCNOM" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLCPUE" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLMAIL" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLTIDE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLNIDE" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PECAPE" Relationship="PEDIDOSModel.FK_PECAPE_TCLIE" FromRole="TCLIE" ToRole="PECAPE" />
+  </EntityType>
+  <Association Name="FK_PEUSTF_PETIFO">
+    <End Role="PETIFO" Type="Self.PETIFO" Multiplicity="1" />
+    <End Role="PEUSTF" Type="Self.PEUSTF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PETIFO">
+        <PropertyRef Name="TIFOIDTF" />
+      </Principal>
+      <Dependent Role="PEUSTF">
+        <PropertyRef Name="USTFIDTF" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PEDIDOSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AMCLI" EntityType="Self.AMCLI" />
+    <EntitySet Name="PEDPDG" EntityType="Self.PEDPDG" />
+    <EntitySet Name="PEESTA" EntityType="Self.PEESTA" />
+    <EntitySet Name="PEHIBO" EntityType="Self.PEHIBO" />
+    <EntitySet Name="PEHIMO" EntityType="Self.PEHIMO" />
+    <EntitySet Name="PEPEPG" EntityType="Self.PEPEPG" />
+    <EntitySet Name="PETIFO" EntityType="Self.PETIFO" />
+    <EntitySet Name="PETMKB" EntityType="Self.PETMKB" />
+    <EntitySet Name="PEUSTF" EntityType="Self.PEUSTF" />
+    <EntitySet Name="PROSAS" EntityType="Self.PROSAS" />
+    <EntitySet Name="TCLIE" EntityType="Self.TCLIE" />
+    <AssociationSet Name="FK_PEUSTF_PETIFO" Association="Self.FK_PEUSTF_PETIFO">
+      <End Role="PETIFO" EntitySet="PETIFO" />
+      <End Role="PEUSTF" EntitySet="PEUSTF" />
+    </AssociationSet>
+    <EntitySet Name="PECAPE" EntityType="PEDIDOSModel.PECAPE" />
+    <AssociationSet Name="FK_PECAPE_PEESTA" Association="PEDIDOSModel.FK_PECAPE_PEESTA">
+      <End Role="PEESTA" EntitySet="PEESTA" />
+      <End Role="PECAPE" EntitySet="PECAPE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PECAPE_TCLIE" Association="PEDIDOSModel.FK_PECAPE_TCLIE">
+      <End Role="TCLIE" EntitySet="TCLIE" />
+      <End Role="PECAPE" EntitySet="PECAPE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEPEPG_PECAPE" Association="PEDIDOSModel.FK_PEPEPG_PECAPE">
+      <End Role="PECAPE" EntitySet="PECAPE" />
+      <End Role="PEPEPG" EntitySet="PEPEPG" />
+    </AssociationSet>
+    <EntitySet Name="I1DD20A" EntityType="PEDIDOSModel.I1DD20A" />
+    <EntitySet Name="VSED00A" EntityType="PEDIDOSModel.VSED00A" />
+    <EntitySet Name="VSED02A" EntityType="PEDIDOSModel.VSED02A" />
+    <EntitySet Name="FCTIEM" EntityType="PEDIDOSModel.FCTIEM" />
+    <EntitySet Name="GMCAEM" EntityType="PEDIDOSModel.GMCAEM" />
+    <AssociationSet Name="FK_GMCAEM_FCTIEM1" Association="PEDIDOSModel.FK_GMCAEM_FCTIEM1">
+      <End Role="FCTIEM" EntitySet="FCTIEM" />
+      <End Role="GMCAEM" EntitySet="GMCAEM" />
+    </AssociationSet>
+    <EntitySet Name="PECASI" EntityType="PEDIDOSModel.PECASI" />
+    <AssociationSet Name="FK_PEHIBO_PECASI" Association="PEDIDOSModel.FK_PEHIBO_PECASI">
+      <End Role="PECASI" EntitySet="PECASI" />
+      <End Role="PEHIBO" EntitySet="PEHIBO" />
+    </AssociationSet>
+    <EntitySet Name="PECOLU" EntityType="PEDIDOSModel.PECOLU" />
+    <EntitySet Name="PENIVE" EntityType="PEDIDOSModel.PENIVE" />
+    <EntitySet Name="PEPASI" EntityType="PEDIDOSModel.PEPASI" />
+    <AssociationSet Name="FK_PECASI_PECOLU1" Association="PEDIDOSModel.FK_PECASI_PECOLU1">
+      <End Role="PECOLU" EntitySet="PECOLU" />
+      <End Role="PECASI" EntitySet="PECASI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PECASI_PENIVE1" Association="PEDIDOSModel.FK_PECASI_PENIVE1">
+      <End Role="PENIVE" EntitySet="PENIVE" />
+      <End Role="PECASI" EntitySet="PECASI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PECOLU_PEPASI" Association="PEDIDOSModel.FK_PECOLU_PEPASI">
+      <End Role="PEPASI" EntitySet="PEPASI" />
+      <End Role="PECOLU" EntitySet="PECOLU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PENIVE_PEPASI" Association="PEDIDOSModel.FK_PENIVE_PEPASI">
+      <End Role="PEPASI" EntitySet="PEPASI" />
+      <End Role="PENIVE" EntitySet="PENIVE" />
+    </AssociationSet>
+    <EntitySet Name="PETICO" EntityType="PEDIDOSModel.PETICO" />
+    <FunctionImport Name="USP_OBTIENE_UBICACIONES" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_UBICACIONES_Result)">
+      <Parameter Name="PARTI" Mode="In" Type="String" />
+      <Parameter Name="PPART" Mode="In" Type="String" />
+      <Parameter Name="PALMA" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <EntitySet Name="PECAOS" EntityType="PEDIDOSModel.PECAOS" />
+    <AssociationSet Name="FK_PECAOS_PEESTA" Association="PEDIDOSModel.FK_PECAOS_PEESTA">
+      <End Role="PEESTA" EntitySet="PEESTA" />
+      <End Role="PECAOS" EntitySet="PECAOS" />
+    </AssociationSet>
+    <EntitySet Name="PEDEPE" EntityType="PEDIDOSModel.PEDEPE" />
+    <AssociationSet Name="FK_PEDEPE_I1DD20A" Association="PEDIDOSModel.FK_PEDEPE_I1DD20A">
+      <End Role="I1DD20A" EntitySet="I1DD20A" />
+      <End Role="PEDEPE" EntitySet="PEDEPE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDEPE_PECAPE" Association="PEDIDOSModel.FK_PEDEPE_PECAPE">
+      <End Role="PECAPE" EntitySet="PECAPE" />
+      <End Role="PEDEPE" EntitySet="PEDEPE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDPDG_PEDEPE" Association="PEDIDOSModel.FK_PEDPDG_PEDEPE">
+      <End Role="PEDEPE" EntitySet="PEDEPE" />
+      <End Role="PEDPDG" EntitySet="PEDPDG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEHIMO_PEDEPE" Association="PEDIDOSModel.FK_PEHIMO_PEDEPE">
+      <End Role="PEDEPE" EntitySet="PEDEPE" />
+      <End Role="PEHIMO" EntitySet="PEHIMO" />
+    </AssociationSet>
+    <FunctionImport Name="USP_OBTIENE_BOLSA_UBICACION" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_BOLSA_UBICACION_Result)">
+      <Parameter Name="PCOEM" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_DETALLE_BOLSA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETALLE_BOLSA_Result)">
+      <Parameter Name="PCOEM" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="PEKABO" EntityType="PEDIDOSModel.PEKABO" />
+    <AssociationSet Name="FK_PEKABO_PETMKB" Association="PEDIDOSModel.FK_PEKABO_PETMKB">
+      <End Role="PETMKB" EntitySet="PETMKB" />
+      <End Role="PEKABO" EntitySet="PEKABO" />
+    </AssociationSet>
+    <EntitySet Name="PEDEOS" EntityType="PEDIDOSModel.PEDEOS" />
+    <AssociationSet Name="FK_PEDEOS_PECAOS" Association="PEDIDOSModel.FK_PEDEOS_PECAOS">
+      <End Role="PECAOS" EntitySet="PECAOS" />
+      <End Role="PEDEOS" EntitySet="PEDEOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEHIMO_PEDEOS" Association="PEDIDOSModel.FK_PEHIMO_PEDEOS">
+      <End Role="PEDEOS" EntitySet="PEDEOS" />
+      <End Role="PEHIMO" EntitySet="PEHIMO" />
+    </AssociationSet>
+    <EntitySet Name="PEBODP" EntityType="PEDIDOSModel.PEBODP" />
+    <AssociationSet Name="FK_PEBODP_PEDEOS" Association="PEDIDOSModel.FK_PEBODP_PEDEOS">
+      <End Role="PEDEOS" EntitySet="PEDEOS" />
+      <End Role="PEBODP" EntitySet="PEBODP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEBODP_PEDEPE" Association="PEDIDOSModel.FK_PEBODP_PEDEPE">
+      <End Role="PEDEPE" EntitySet="PEDEPE" />
+      <End Role="PEBODP" EntitySet="PEBODP" />
+    </AssociationSet>
+    <EntitySet Name="GMDEEM" EntityType="PEDIDOSModel.GMDEEM" />
+    <FunctionImport Name="USP_OBTIENE_PEDIDO_CONSULTA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_PEDIDO_CONSULTA_Result)">
+      <Parameter Name="ID_PED" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_DETALLE_OSA_PLANTA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETALLE_OSA_PLANTA_Result)">
+      <Parameter Name="PFOLIO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_DETALLE_PEDIDOS" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETALLE_PEDIDOS_Result)">
+      <Parameter Name="ID_PED" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_OSAS_PENDIENTES" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_OSAS_PENDIENTES_Result)">
+      <Parameter Name="PTIPFOL" Mode="In" Type="String" />
+      <Parameter Name="PPARTID" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="PEPARM" EntityType="PEDIDOSModel.PEPARM" />
+    <FunctionImport Name="USP_OBTIENE_DETALLE_OSA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETALLE_OSA_Result)">
+      <Parameter Name="PFOLIO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_FOLIO_USUARIO" ReturnType="Collection(PEDIDOSModel.USP_FOLIO_USUARIO_Result)">
+      <Parameter Name="USUARIO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_BOLSA_OSA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_BOLSA_OSA_Result)">
+      <Parameter Name="PIDDO" Mode="In" Type="Decimal" />
+      <Parameter Name="PCOEM" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_BOLSA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_BOLSA_Result)">
+      <Parameter Name="PIDDP" Mode="In" Type="Decimal" />
+      <Parameter Name="PCOEM" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="PEBOLS" EntityType="PEDIDOSModel.PEBOLS" />
+    <AssociationSet Name="FK_PEBOLS_PECASI" Association="PEDIDOSModel.FK_PEBOLS_PECASI">
+      <End Role="PECASI" EntitySet="PECASI" />
+      <End Role="PEBOLS" EntitySet="PEBOLS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEHIBO_PEBOLS" Association="PEDIDOSModel.FK_PEHIBO_PEBOLS">
+      <End Role="PEBOLS" EntitySet="PEBOLS" />
+      <End Role="PEHIBO" EntitySet="PEHIBO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEHIMO_PEBOLS" Association="PEDIDOSModel.FK_PEHIMO_PEBOLS">
+      <End Role="PEBOLS" EntitySet="PEBOLS" />
+      <End Role="PEHIMO" EntitySet="PEHIMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEKABO_PEBOLS" Association="PEDIDOSModel.FK_PEKABO_PEBOLS">
+      <End Role="PEBOLS" EntitySet="PEBOLS" />
+      <End Role="PEKABO" EntitySet="PEKABO" />
+    </AssociationSet>
+    <FunctionImport Name="USP_OBTIENE_DETPREPARACION_POR_IDDETOSA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result)">
+      <Parameter Name="PIDDO" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_DETPREPARACION_POR_IDDETALLE" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETPREPARACION_POR_IDDETALLE_Result)">
+      <Parameter Name="PIDDP" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_OSAS_PENDIENTES_PLANTA" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_OSAS_PENDIENTES_PLANTA_Result)">
+      <Parameter Name="PTIPFOL" Mode="In" Type="String" />
+      <Parameter Name="VALBUS" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_CONSULTA_EMPAQUES_PARTIDA" ReturnType="Collection(PEDIDOSModel.USP_CONSULTA_EMPAQUES_PARTIDA_Result)">
+      <Parameter Name="PPART" Mode="In" Type="String" />
+      <Parameter Name="PITEM" Mode="In" Type="String" />
+      <Parameter Name="PCOEM" Mode="In" Type="String" />
+    </FunctionImport>
+    <AssociationSet Name="FK_PEBODP_PEBOLS" Association="PEDIDOSModel.FK_PEBODP_PEBOLS">
+      <End Role="PEBOLS" EntitySet="PEBOLS" />
+      <End Role="PEBODP" EntitySet="PEBODP" />
+    </AssociationSet>
+    <FunctionImport Name="USP_OBTIENE_DETPREPARACION_POR_IDDETALLESE" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETPREPARACION_POR_IDDETALLESE_Result)">
+      <Parameter Name="PIDDP" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE" ReturnType="Collection(PEDIDOSModel.USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE_Result)">
+      <Parameter Name="PIDDO" Mode="In" Type="Decimal" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="PECAPE">
+    <Key>
+      <PropertyRef Name="CAPEIDCP" />
+    </Key>
+    <Property Name="CAPEIDCP" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="CAPESERI" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="CAPENUME" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="CAPEIDCL" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CAPEFECH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CAPEIDES" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CAPEPRIO" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="CAPEFEPR" Type="DateTime" Precision="3" />
+    <Property Name="CAPEUSPR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAPENOTI" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CAPENOTG" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CAPEUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAPEFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CAPEUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAPEFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEESTA" Relationship="PEDIDOSModel.FK_PECAPE_PEESTA" FromRole="PECAPE" ToRole="PEESTA" />
+    <NavigationProperty Name="TCLIE" Relationship="PEDIDOSModel.FK_PECAPE_TCLIE" FromRole="PECAPE" ToRole="TCLIE" />
+    <NavigationProperty Name="PEPEPG" Relationship="PEDIDOSModel.FK_PEPEPG_PECAPE" FromRole="PECAPE" ToRole="PEPEPG" />
+    <Property Name="CAPEDIRE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PEDEPE" Relationship="PEDIDOSModel.FK_PEDEPE_PECAPE" FromRole="PECAPE" ToRole="PEDEPE" />
+    <Property Name="CAPEUSEM" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAPEFHEM" Type="DateTime" Precision="3" />
+    <Property Name="CAPEUSFP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAPEFHFP" Type="DateTime" Precision="3" />
+    <Property Name="CAPEUSIP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAPEFHIP" Type="DateTime" Precision="3" />
+    <Property Name="CAPEEPRI" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="CAPEEMAI" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CAPENUBU" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="CAPEUSAP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAPEFEAP" Type="DateTime" Precision="3" />
+    <Property Name="CAPETIPO" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CAPEDOCO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CAPETADE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="CAPEIDTD" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="CAPEDEST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_PECAPE_PEESTA">
+    <End Type="PEDIDOSModel.PEESTA" Role="PEESTA" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PECAPE" Role="PECAPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEESTA">
+        <PropertyRef Name="ESTAIDES" />
+      </Principal>
+      <Dependent Role="PECAPE">
+        <PropertyRef Name="CAPEIDES" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PECAPE_TCLIE">
+    <End Type="PEDIDOSModel.TCLIE" Role="TCLIE" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PECAPE" Role="PECAPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TCLIE">
+        <PropertyRef Name="CLICVE" />
+      </Principal>
+      <Dependent Role="PECAPE">
+        <PropertyRef Name="CAPEIDCL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEPEPG_PECAPE">
+    <End Type="PEDIDOSModel.PECAPE" Role="PECAPE" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEPEPG" Role="PEPEPG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PECAPE">
+        <PropertyRef Name="CAPEIDCP" />
+      </Principal>
+      <Dependent Role="PEPEPG">
+        <PropertyRef Name="PEPGIDCP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="I1DD20A">
+    <Key>
+      <PropertyRef Name="ARTCITEM" />
+    </Key>
+    <Property Name="ARTX0" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCIA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="ARTCITEM" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="ARTDES" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="ARTMED" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ARTGRINV" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="ARTGIRO" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="ARTGRCOM" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCCOMP" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCCONS" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTCANA1" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="ARTCANA2" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="ARTCLINV" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCIMP1" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCIMP2" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCIMP3" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCPLTR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTUPLTR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTSTSEG" Type="Decimal" Nullable="false" Precision="7" Scale="1" />
+    <Property Name="ARTPREOR" Type="Decimal" Nullable="false" Precision="7" Scale="1" />
+    <Property Name="ARTTLOTE" Type="Decimal" Nullable="false" Precision="7" Scale="1" />
+    <Property Name="ARTSTMAX" Type="Decimal" Nullable="false" Precision="7" Scale="1" />
+    <Property Name="ARTLDREV" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="ARTFUREV" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTTREXT" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="ARTTHIST" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTTPROM" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTPMVL1" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="ARTPMVL2" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="ARTLDCNT" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="ARTFUCNT" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTSTOCK" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="ARTSTANT" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="ARTCANOR" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="ARTCANRE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="ARTPSALM" Type="Decimal" Nullable="false" Precision="7" Scale="1" />
+    <Property Name="ARTAASAN" Type="Decimal" Nullable="false" Precision="7" Scale="1" />
+    <Property Name="ARTSTVA1" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+    <Property Name="ARTCOSU1" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+    <Property Name="ARTCOSU2" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+    <Property Name="ARTTCOSR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCOUM1" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="ARTCOUM2" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="ARTTMAT" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTPREU1" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+    <Property Name="ARTPREU2" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+    <Property Name="ARTCDSRC" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTSTVA2" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+    <Property Name="ARTX1" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTFUSAL" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTFUENT" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTFUREQ" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTFUOC" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTFALTA" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTFBAJA" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTUPTRN" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTCACT" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTAASAE" Type="Decimal" Nullable="false" Precision="7" Scale="1" />
+    <Property Name="ARTUPROV" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTCMON" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTMEDA" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ARTEQMED" Type="Decimal" Nullable="false" Precision="9" Scale="4" />
+    <Property Name="ARTUBI" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ARTSTOCM" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="ARTCANOM" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="ARTCANRM" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="ARTACTEM" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTACTOM" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTACTRM" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ARTCRSG" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="ARTNRELM" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="ARTNRELD" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="ARTNRELH" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="ARTFCTL" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="PEDEPE" Relationship="PEDIDOSModel.FK_PEDEPE_I1DD20A" FromRole="I1DD20A" ToRole="PEDEPE" />
+  </EntityType>
+  <EntityType Name="VSED00A">
+    <Key>
+      <PropertyRef Name="CVTCCIA" />
+      <PropertyRef Name="CVTCNUCO" />
+      <PropertyRef Name="CVTCEMBA" />
+      <PropertyRef Name="CVTCTCON" />
+    </Key>
+    <Property Name="CVTCCIA" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CVTCNUCO" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCEMBA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCTCON" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCSECU" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CVTCCDCL" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCIFOB" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="CVTCIFLE" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="CVTCISEG" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="CVTCITOT" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="CVTCREFE" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCMTRA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCCLFA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCCDIR" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="CVTCFEMO" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="CVTCFEMM" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="CVTCFERL" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="CVTCMPAG" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCCONF" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCFING" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="CVTCOPFI" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="CVTCEMPA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCFACT" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="CVTCCTOT" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="CVTC1" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCTPCO" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCPECO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCPUDE" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCCCOM" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCPCOM" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="CVTCIDIO" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="CVTC2" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCLIPR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCIARA" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="CVTCTPMO" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCBANC" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCVACC" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="CVTCPCON" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="CVTCTPCA" Type="Decimal" Nullable="false" Precision="9" Scale="4" />
+    <Property Name="CVTCAGVE" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCNDET" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CVTCTPEM" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CVTCSTAT" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VSED02A">
+    <Key>
+      <PropertyRef Name="CVTDCIA" />
+      <PropertyRef Name="CVTDNUCO" />
+      <PropertyRef Name="CVTDEMBA" />
+      <PropertyRef Name="CVTDTCON" />
+      <PropertyRef Name="CVTDSECU" />
+    </Key>
+    <Property Name="CVTDCIA" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CVTDNUCO" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDEMBA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDTCON" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDSECU" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CVTDCOCL" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDARTI" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDPRUN" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="CVTDCALV" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDCANT" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="CVTDIMDE" Type="Decimal" Nullable="false" Precision="11" Scale="2" />
+    <Property Name="CVTDSAPE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="CVTDVIA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDCDAD" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDTEÑI" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDMEZC" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDTPFE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDSTPR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDFANT" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDFECO" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="CVTDFEMO" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="CVTDFERL" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+    <Property Name="CVTDTTZ1" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDTOR1" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="CVTDTTZ2" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDTOR2" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="CVTDVAPO" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDPESO" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="CVTDLONG" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="CVTDTPOE" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CVTDETIQ" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDACAB" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CVTDSTAT" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FCTIEM">
+    <Key>
+      <PropertyRef Name="TIEMCOTE" />
+    </Key>
+    <Property Name="TIEMCIA" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="TIEMCOTE" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TIEMDETE" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="TIEMTIPO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TIEMLARG" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="TIEMANCH" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="TIEMALTU" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="TIEMTIES" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="TIEMTARA" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="TIEMACON" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="TIEMARTI" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="GMCAEM" Relationship="PEDIDOSModel.FK_GMCAEM_FCTIEM1" FromRole="FCTIEM" ToRole="GMCAEM" />
+  </EntityType>
+  <EntityType Name="GMCAEM">
+    <Key>
+      <PropertyRef Name="CAEMCOEM" />
+    </Key>
+    <Property Name="CAEMCIA" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CAEMCOEM" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMFECH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CAEMTURN" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="CAEMPNTO" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="CAEMDTTO" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="CAEMDEEM" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="CAEMACTO" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="CAEMPBTO" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="CAEMCAIT" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="CAEMTIEM" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMNPED" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMDESP" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMNNDC" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMALMA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="CAEMPART" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMMSPA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMESEM" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMESRE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMUSER" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMRESP" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CAEMUBIC" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="FCTIEM" Relationship="PEDIDOSModel.FK_GMCAEM_FCTIEM1" FromRole="GMCAEM" ToRole="FCTIEM" />
+  </EntityType>
+  <Association Name="FK_GMCAEM_FCTIEM1">
+    <End Type="PEDIDOSModel.FCTIEM" Role="FCTIEM" Multiplicity="1" />
+    <End Type="PEDIDOSModel.GMCAEM" Role="GMCAEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FCTIEM">
+        <PropertyRef Name="TIEMCOTE" />
+      </Principal>
+      <Dependent Role="GMCAEM">
+        <PropertyRef Name="CAEMTIEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PECASI">
+    <Key>
+      <PropertyRef Name="CASICOCA" />
+    </Key>
+    <Property Name="CASICOCA" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="CASIIDPA" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="CASIIDNI" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CASIIDCO" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="CASICAPA" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="CASIESTA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="CASIALTU" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="CASILARG" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="CASIANCH" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="CASIUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CASIFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CASIUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CASIFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEHIBO" Relationship="PEDIDOSModel.FK_PEHIBO_PECASI" FromRole="PECASI" ToRole="PEHIBO" />
+    <NavigationProperty Name="PECOLU" Relationship="PEDIDOSModel.FK_PECASI_PECOLU1" FromRole="PECASI" ToRole="PECOLU" />
+    <NavigationProperty Name="PENIVE" Relationship="PEDIDOSModel.FK_PECASI_PENIVE1" FromRole="PECASI" ToRole="PENIVE" />
+    <NavigationProperty Name="PEBOLS" Relationship="PEDIDOSModel.FK_PEBOLS_PECASI" FromRole="PECASI" ToRole="PEBOLS" />
+  </EntityType>
+  <Association Name="FK_PEHIBO_PECASI">
+    <End Type="PEDIDOSModel.PECASI" Role="PECASI" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEHIBO" Role="PEHIBO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PECASI">
+        <PropertyRef Name="CASICOCA" />
+      </Principal>
+      <Dependent Role="PEHIBO">
+        <PropertyRef Name="HIBOCOCA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PECOLU">
+    <Key>
+      <PropertyRef Name="COLUIDCO" />
+      <PropertyRef Name="COLUIDPA" />
+    </Key>
+    <Property Name="COLUIDCO" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="COLUIDPA" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="COLUESTA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="COLUUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="COLUFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="COLUUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="COLUFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECASI" Relationship="PEDIDOSModel.FK_PECASI_PECOLU1" FromRole="PECOLU" ToRole="PECASI" />
+    <NavigationProperty Name="PEPASI" Relationship="PEDIDOSModel.FK_PECOLU_PEPASI" FromRole="PECOLU" ToRole="PEPASI" />
+  </EntityType>
+  <EntityType Name="PENIVE">
+    <Key>
+      <PropertyRef Name="NIVEIDNI" />
+      <PropertyRef Name="NIVEIDPA" />
+    </Key>
+    <Property Name="NIVEIDNI" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NIVEIDPA" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="NIVEESTA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="NIVEUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NIVEFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NIVEUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NIVEFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECASI" Relationship="PEDIDOSModel.FK_PECASI_PENIVE1" FromRole="PENIVE" ToRole="PECASI" />
+    <NavigationProperty Name="PEPASI" Relationship="PEDIDOSModel.FK_PENIVE_PEPASI" FromRole="PENIVE" ToRole="PEPASI" />
+  </EntityType>
+  <EntityType Name="PEPASI">
+    <Key>
+      <PropertyRef Name="PASIIDPA" />
+    </Key>
+    <Property Name="PASIIDPA" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="PASIESTA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="PASIUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PASIFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PASIUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PASIFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECOLU" Relationship="PEDIDOSModel.FK_PECOLU_PEPASI" FromRole="PEPASI" ToRole="PECOLU" />
+    <NavigationProperty Name="PENIVE" Relationship="PEDIDOSModel.FK_PENIVE_PEPASI" FromRole="PEPASI" ToRole="PENIVE" />
+  </EntityType>
+  <Association Name="FK_PECASI_PECOLU1">
+    <End Type="PEDIDOSModel.PECOLU" Role="PECOLU" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PECASI" Role="PECASI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PECOLU">
+        <PropertyRef Name="COLUIDCO" />
+        <PropertyRef Name="COLUIDPA" />
+      </Principal>
+      <Dependent Role="PECASI">
+        <PropertyRef Name="CASIIDCO" />
+        <PropertyRef Name="CASIIDPA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PECASI_PENIVE1">
+    <End Type="PEDIDOSModel.PENIVE" Role="PENIVE" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PECASI" Role="PECASI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PENIVE">
+        <PropertyRef Name="NIVEIDNI" />
+        <PropertyRef Name="NIVEIDPA" />
+      </Principal>
+      <Dependent Role="PECASI">
+        <PropertyRef Name="CASIIDNI" />
+        <PropertyRef Name="CASIIDPA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PECOLU_PEPASI">
+    <End Type="PEDIDOSModel.PEPASI" Role="PEPASI" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PECOLU" Role="PECOLU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEPASI">
+        <PropertyRef Name="PASIIDPA" />
+      </Principal>
+      <Dependent Role="PECOLU">
+        <PropertyRef Name="COLUIDPA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PENIVE_PEPASI">
+    <End Type="PEDIDOSModel.PEPASI" Role="PEPASI" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PENIVE" Role="PENIVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEPASI">
+        <PropertyRef Name="PASIIDPA" />
+      </Principal>
+      <Dependent Role="PENIVE">
+        <PropertyRef Name="NIVEIDPA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PETICO">
+    <Key>
+      <PropertyRef Name="TICOIDTC" />
+    </Key>
+    <Property Name="TICOIDTC" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="TICODESC" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="TICOPESO" Type="Decimal" Nullable="false" Precision="9" Scale="4" />
+    <Property Name="TICOALTU" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="TICOLARG" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="TICOANCH" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="TICOUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="TICOFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TICOUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="TICOFEMO" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="USP_OBTIENE_UBICACIONES_Result">
+    <Property Type="String" Name="UBICCOCA" Nullable="false" MaxLength="9" />
+    <Property Type="Int32" Name="UBICCANT" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="PECAOS">
+    <Key>
+      <PropertyRef Name="CAOSIDCO" />
+    </Key>
+    <Property Name="CAOSIDCO" Type="Decimal" Nullable="false" Precision="9" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAOSFOLI" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="CAOSIDES" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="CAOSPRIO" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="CAOSUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAOSFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CAOSUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAOSFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEESTA" Relationship="PEDIDOSModel.FK_PECAOS_PEESTA" FromRole="PECAOS" ToRole="PEESTA" />
+    <NavigationProperty Name="PEDEOS" Relationship="PEDIDOSModel.FK_PEDEOS_PECAOS" FromRole="PECAOS" ToRole="PEDEOS" />
+    <Property Name="CAOSEPRI" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="CAOSFEPR" Type="DateTime" Precision="3" />
+    <Property Name="CAOSUSPR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAOSNUBU" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="CAOSUSIP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAOSFHIP" Type="DateTime" Precision="3" />
+    <Property Name="CAOSUSFP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAOSFHFP" Type="DateTime" Precision="3" />
+    <Property Name="CAOSUSAP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="CAOSFEAP" Type="DateTime" Precision="3" />
+    <Property Name="CAOSEXTO" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="CAOSNOTA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_PECAOS_PEESTA">
+    <End Type="PEDIDOSModel.PEESTA" Role="PEESTA" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PECAOS" Role="PECAOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEESTA">
+        <PropertyRef Name="ESTAIDES" />
+      </Principal>
+      <Dependent Role="PECAOS">
+        <PropertyRef Name="CAOSIDES" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PEDEPE">
+    <Key>
+      <PropertyRef Name="DEPEIDDP" />
+    </Key>
+    <Property Name="DEPEIDDP" Type="Decimal" Nullable="false" Precision="9" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEPEIDCP" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="DEPECOAR" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="DEPEPART" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="DEPECONT" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="DEPEALMA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="DEPECASO" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEPEPESO" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEPECAAT" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEPEPEAT" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEPEPERE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEPETADE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEPEPEBR" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEPESTOC" Type="Decimal" Precision="1" Scale="0" />
+    <Property Name="DEPEESTA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="DEPEUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="DEPEFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEPEUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="DEPEFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="I1DD20A" Relationship="PEDIDOSModel.FK_PEDEPE_I1DD20A" FromRole="PEDEPE" ToRole="I1DD20A" />
+    <NavigationProperty Name="PECAPE" Relationship="PEDIDOSModel.FK_PEDEPE_PECAPE" FromRole="PEDEPE" ToRole="PECAPE" />
+    <NavigationProperty Name="PEDPDG" Relationship="PEDIDOSModel.FK_PEDPDG_PEDEPE" FromRole="PEDEPE" ToRole="PEDPDG" />
+    <NavigationProperty Name="PEHIMO" Relationship="PEDIDOSModel.FK_PEHIMO_PEDEPE" FromRole="PEDEPE" ToRole="PEHIMO" />
+    <NavigationProperty Name="PEBODP" Relationship="PEDIDOSModel.FK_PEBODP_PEDEPE" FromRole="PEDEPE" ToRole="PEBODP" />
+    <Property Name="DEPEDISP" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="DEPEDSAR" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DEPENUBU" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="DEPESERS" Type="Int32" Nullable="false" />
+    <Property Name="DEPESECR" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="DEPESECU" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+  </EntityType>
+  <Association Name="FK_PEDEPE_I1DD20A">
+    <End Type="PEDIDOSModel.I1DD20A" Role="I1DD20A" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEDEPE" Role="PEDEPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="I1DD20A">
+        <PropertyRef Name="ARTCITEM" />
+      </Principal>
+      <Dependent Role="PEDEPE">
+        <PropertyRef Name="DEPECOAR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDEPE_PECAPE">
+    <End Type="PEDIDOSModel.PECAPE" Role="PECAPE" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEDEPE" Role="PEDEPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PECAPE">
+        <PropertyRef Name="CAPEIDCP" />
+      </Principal>
+      <Dependent Role="PEDEPE">
+        <PropertyRef Name="DEPEIDCP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDPDG_PEDEPE">
+    <End Type="PEDIDOSModel.PEDEPE" Role="PEDEPE" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEDPDG" Role="PEDPDG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDEPE">
+        <PropertyRef Name="DEPEIDDP" />
+      </Principal>
+      <Dependent Role="PEDPDG">
+        <PropertyRef Name="DPDGIDDP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEHIMO_PEDEPE">
+    <End Type="PEDIDOSModel.PEDEPE" Role="PEDEPE" Multiplicity="0..1" />
+    <End Type="PEDIDOSModel.PEHIMO" Role="PEHIMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDEPE">
+        <PropertyRef Name="DEPEIDDP" />
+      </Principal>
+      <Dependent Role="PEHIMO">
+        <PropertyRef Name="HIMOIDDP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="USP_OBTIENE_BOLSA_UBICACION_Result">
+    <Property Type="String" Name="CAEMCOEM" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="CAEMNPED" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="MCSICL" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CAEMPART" Nullable="false" MaxLength="7" />
+    <Property Type="DateTime" Name="CAEMFECH" Nullable="false" />
+    <Property Type="Decimal" Name="CAEMCAIT" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="CAEMPNTO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="CAEMPBTO" Nullable="false" Precision="9" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_DETALLE_BOLSA_Result">
+    <Property Type="String" Name="CAEMCOEM" Nullable="false" MaxLength="8" />
+    <Property Type="Decimal" Name="CAEMALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="String" Name="DEEMPART" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="DEEMARTI" Nullable="false" MaxLength="15" />
+    <Property Type="Decimal" Name="DEEMCANT" Nullable="false" Precision="7" Scale="2" />
+    <Property Type="Decimal" Name="DEEMPBRU" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEEMDEST" Nullable="false" Precision="7" Scale="2" />
+    <Property Type="Decimal" Name="DEEMNETO" Nullable="true" Precision="10" Scale="2" />
+  </ComplexType>
+  <EntityType Name="PEKABO">
+    <Key>
+      <PropertyRef Name="KABOIDKB" />
+    </Key>
+    <Property Name="KABOIDKB" Type="Decimal" Nullable="false" Precision="9" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KABOIDBO" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="KABOIDTM" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="KABOFECH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="KABOALMA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="KABOCANT" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="KABOPESO" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="KABOIDDP" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="KABOIDDO" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="KABOPART" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="KABOITEM" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="KABOTARA" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="KABOPEBR" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="KABOUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="KABOFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KABOUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="KABOFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PETMKB" Relationship="PEDIDOSModel.FK_PEKABO_PETMKB" FromRole="PEKABO" ToRole="PETMKB" />
+    <NavigationProperty Name="PEBOLS" Relationship="PEDIDOSModel.FK_PEKABO_PEBOLS" FromRole="PEKABO" ToRole="PEBOLS" />
+  </EntityType>
+  <Association Name="FK_PEKABO_PETMKB">
+    <End Type="PEDIDOSModel.PETMKB" Role="PETMKB" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEKABO" Role="PEKABO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PETMKB">
+        <PropertyRef Name="TMKBIDTM" />
+      </Principal>
+      <Dependent Role="PEKABO">
+        <PropertyRef Name="KABOIDTM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PEDEOS">
+    <Key>
+      <PropertyRef Name="DEOSIDDO" />
+    </Key>
+    <Property Name="DEOSIDDO" Type="Decimal" Nullable="false" Precision="9" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEOSIDCO" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="DEOSSECU" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="DEOSFOLI" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="DEOSPART" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="DEOSCOAR" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="DEOSALMA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="DEOSPESO" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSPEAT" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSCAAT" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSPERE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSTADE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSPEBR" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSSTOC" Type="Decimal" Precision="1" Scale="0" />
+    <Property Name="DEOSESTA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="DEOSUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="DEOSFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEOSUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="DEOSFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECAOS" Relationship="PEDIDOSModel.FK_PEDEOS_PECAOS" FromRole="PEDEOS" ToRole="PECAOS" />
+    <NavigationProperty Name="PEHIMO" Relationship="PEDIDOSModel.FK_PEHIMO_PEDEOS" FromRole="PEDEOS" ToRole="PEHIMO" />
+    <NavigationProperty Name="PEBODP" Relationship="PEDIDOSModel.FK_PEBODP_PEDEOS" FromRole="PEDEOS" ToRole="PEBODP" />
+    <Property Name="DEOSPEOR" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSCAOR" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEOSESPA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="DEOSSECR" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+  </EntityType>
+  <Association Name="FK_PEDEOS_PECAOS">
+    <End Type="PEDIDOSModel.PECAOS" Role="PECAOS" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEDEOS" Role="PEDEOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PECAOS">
+        <PropertyRef Name="CAOSIDCO" />
+      </Principal>
+      <Dependent Role="PEDEOS">
+        <PropertyRef Name="DEOSIDCO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEHIMO_PEDEOS">
+    <End Type="PEDIDOSModel.PEDEOS" Role="PEDEOS" Multiplicity="0..1" />
+    <End Type="PEDIDOSModel.PEHIMO" Role="PEHIMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDEOS">
+        <PropertyRef Name="DEOSIDDO" />
+      </Principal>
+      <Dependent Role="PEHIMO">
+        <PropertyRef Name="HIMOIDDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PEBODP">
+    <Key>
+      <PropertyRef Name="BODPIDDE" />
+    </Key>
+    <Property Name="BODPIDDE" Type="Decimal" Nullable="false" Precision="9" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BODPIDBO" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="BODPIDDP" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="BODPALMA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="BODPPART" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="BODPCOAR" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="BODPCANT" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="BODPPESO" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="BODPPERE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="BODPDIFE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="BODPIDDO" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="BODPSTCE" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="BODPINBO" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="BODPTADE" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="BODPPEBR" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="BODPUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="BODPFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BODPUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="BODPFEMO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PEDEOS" Relationship="PEDIDOSModel.FK_PEBODP_PEDEOS" FromRole="PEBODP" ToRole="PEDEOS" />
+    <NavigationProperty Name="PEDEPE" Relationship="PEDIDOSModel.FK_PEBODP_PEDEPE" FromRole="PEBODP" ToRole="PEDEPE" />
+    <Property Name="BODPESTA" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="BODPSECR" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="BODPTAUN" Type="Decimal" Nullable="false" Precision="9" Scale="3" />
+    <NavigationProperty Name="PEBOLS" Relationship="PEDIDOSModel.FK_PEBODP_PEBOLS" FromRole="PEBODP" ToRole="PEBOLS" />
+    <Property Name="BODPAPOR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_PEBODP_PEDEOS">
+    <End Type="PEDIDOSModel.PEDEOS" Role="PEDEOS" Multiplicity="0..1" />
+    <End Type="PEDIDOSModel.PEBODP" Role="PEBODP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDEOS">
+        <PropertyRef Name="DEOSIDDO" />
+      </Principal>
+      <Dependent Role="PEBODP">
+        <PropertyRef Name="BODPIDDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEBODP_PEDEPE">
+    <End Type="PEDIDOSModel.PEDEPE" Role="PEDEPE" Multiplicity="0..1" />
+    <End Type="PEDIDOSModel.PEBODP" Role="PEBODP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDEPE">
+        <PropertyRef Name="DEPEIDDP" />
+      </Principal>
+      <Dependent Role="PEBODP">
+        <PropertyRef Name="BODPIDDP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GMDEEM">
+    <Key>
+      <PropertyRef Name="DEEMCOEM" />
+      <PropertyRef Name="DEEMSECU" />
+    </Key>
+    <Property Name="DEEMCIA" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="DEEMCOEM" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="DEEMSECU" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="DEEMFECH" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DEEMHORA" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="DEEMPART" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="DEEMARTI" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="DEEMALMA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="DEEMCANT" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="DEEMTIPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DEEMPNET" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEEMDEST" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="DEEMACON" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="DEEMUSER" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="DEEMESTA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DEEMCAST" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="DEEMPEST" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="DEEMSTCE" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="DEEMESBO" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+  </EntityType>
+  <ComplexType Name="USP_OBTIENE_PEDIDO_CONSULTA_Result">
+    <Property Type="DateTime" Name="CAPEFECH" Nullable="false" />
+    <Property Type="DateTime" Name="CAPEFECR" Nullable="false" Precision="23" />
+    <Property Type="String" Name="CAPENOTG" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CAPENOTI" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CAPEDIRE" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="CLCNOM" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CLIRUC" Nullable="true" MaxLength="15" />
+    <Property Type="Decimal" Name="DEPEIDDP" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="DEPEIDCP" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="String" Name="DEPECOAR" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="DEPEPART" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="DEPECONT" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="DEPEALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="DEPECASO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPESO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPECAAT" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPEAT" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPERE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPETADE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPEBR" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPESTOC" Nullable="true" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEPEESTA" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEPEDISP" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="String" Name="DEPEUSCR" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="DEPEFECR" Nullable="false" Precision="23" />
+    <Property Type="String" Name="DEPEUSMO" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="DEPEFEMO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_DETALLE_OSA_PLANTA_Result">
+    <Property Type="Decimal" Name="OSASCIA" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="OSASFOLI" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="OSASSECU" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="OSASARTI" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="OSASPAOR" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="OSASALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="OSASCASO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="String" Name="OSASPADE" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="OSASFEEM" Nullable="false" />
+    <Property Type="String" Name="OSASRESP" Nullable="false" MaxLength="4" />
+    <Property Type="Decimal" Name="OSASCAEN" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="DateTime" Name="OSASFEAT" Nullable="false" />
+    <Property Type="String" Name="OSASREEN" Nullable="false" MaxLength="4" />
+    <Property Type="Decimal" Name="OSASCCOS" Nullable="false" Precision="6" Scale="0" />
+    <Property Type="String" Name="OSASDUEÑ" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="OSASSTOS" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="OSASUNID" Nullable="false" Precision="5" Scale="0" />
+    <Property Type="String" Name="OSASFILL" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="OSASFORZ" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="OSASSTAT" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="DEOSIDDO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="DEOSIDCO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="DEOSPEAT" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSCAAT" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSPERE" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSSTOC" Nullable="true" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEOSESPA" Nullable="true" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEOSPEOR" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSCAOR" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSESTA" Nullable="true" Precision="1" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_DETALLE_PEDIDOS_Result">
+    <Property Type="Decimal" Name="DEPEIDDP" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="DEPEIDCP" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="String" Name="DEPECOAR" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="DEPEPART" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="DEPECONT" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="DEPEALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="DEPECASO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPESO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPECAAT" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPEAT" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPERE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPETADE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPEPEBR" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEPESTOC" Nullable="true" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEPEESTA" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEPEDISP" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="String" Name="DEPEDSAR" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="DEPENUBU" Nullable="false" Precision="4" Scale="0" />
+    <Property Type="String" Name="DEPEUSCR" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="DEPEFECR" Nullable="false" Precision="23" />
+    <Property Type="String" Name="DEPEUSMO" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="DEPEFEMO" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="DEPESERS" Nullable="false" />
+    <Property Type="String" Name="ARTCITEM" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="PARTSTPR" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_OSAS_PENDIENTES_Result">
+    <Property Type="Decimal" Name="OSASCIA" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="OSASFOLI" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="PARTFEEF" Nullable="true" />
+    <Property Type="DateTime" Name="OSASFEEM" Nullable="false" />
+    <Property Type="String" Name="OSASRESP" Nullable="false" MaxLength="4" />
+    <Property Type="Decimal" Name="CAOSIDCO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="CAOSPRIO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="CAOSIDES" Nullable="true" Precision="2" Scale="0" />
+    <Property Type="String" Name="PARTSTPR" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <EntityType Name="PEPARM">
+    <Key>
+      <PropertyRef Name="PARMIDPA" />
+    </Key>
+    <Property Name="PARMIDPA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="PARMDSPA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PARMVAPA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="USP_OBTIENE_DETALLE_OSA_Result">
+    <Property Type="Decimal" Name="OSASCIA" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="OSASFOLI" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="OSASSECU" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="OSASARTI" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="OSASPAOR" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="OSASALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="OSASCASO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="String" Name="OSASPADE" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="OSASFEEM" Nullable="false" />
+    <Property Type="String" Name="OSASRESP" Nullable="false" MaxLength="4" />
+    <Property Type="Decimal" Name="OSASCAEN" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="DateTime" Name="OSASFEAT" Nullable="false" />
+    <Property Type="String" Name="OSASREEN" Nullable="false" MaxLength="4" />
+    <Property Type="Decimal" Name="OSASCCOS" Nullable="false" Precision="6" Scale="0" />
+    <Property Type="String" Name="OSASDUEÑ" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="OSASSTOS" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="OSASUNID" Nullable="false" Precision="5" Scale="0" />
+    <Property Type="String" Name="OSASFILL" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="OSASFORZ" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="OSASSTAT" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="DEOSIDDO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="DEOSIDCO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="DEOSPEAT" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSCAAT" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSPERE" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="DEOSSTOC" Nullable="true" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEOSESPA" Nullable="true" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="DEOSESTA" Nullable="true" Precision="1" Scale="0" />
+    <Property Type="String" Name="PARTSTPR" Nullable="true" MaxLength="1" />
+    <Property Type="Decimal" Name="DEOSSECR" Nullable="true" Precision="10" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="USP_FOLIO_USUARIO_Result">
+    <Property Type="Decimal" Name="TIFOIDTF" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="String" Name="TIFOCOFO" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="TIFODESC" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_BOLSA_OSA_Result">
+    <Property Type="Decimal" Name="DEOSIDDO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BOLSIDBO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="String" Name="BOLSCOEM" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="BOLSARTI" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="BOLSPART" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="BOLSALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="BOLSCANT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Decimal" Name="BOLSPESO" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TIEMTARA" Nullable="false" Precision="6" Scale="2" />
+    <Property Type="Decimal" Name="UNIDTARA" Nullable="true" Precision="17" Scale="10" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_BOLSA_Result">
+    <Property Type="Decimal" Name="DEPEIDDP" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BOLSIDBO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="String" Name="BOLSCOEM" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="BOLSARTI" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="BOLSPART" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="BOLSALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="BOLSCANT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Decimal" Name="BOLSPESO" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TIEMTARA" Nullable="false" Precision="6" Scale="2" />
+    <Property Type="Decimal" Name="UNIDTARA" Nullable="true" Precision="17" Scale="10" />
+  </ComplexType>
+  <EntityType Name="PEBOLS">
+    <Key>
+      <PropertyRef Name="BOLSIDBO" />
+    </Key>
+    <Property Name="BOLSIDBO" Type="Decimal" Nullable="false" Precision="9" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BOLSCOAR" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="BOLSIDTC" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+    <Property Name="BOLSCOEM" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="BOLSCOCA" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="BOLSALMA" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="BOLSESTA" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="BOLSUSCR" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="BOLSFECR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BOLSUSMO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="BOLSFEMO" Type="DateTime" Precision="3" />
+    <Property Name="BOLSUSUB" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="BOLSFEUB" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PECASI" Relationship="PEDIDOSModel.FK_PEBOLS_PECASI" FromRole="PEBOLS" ToRole="PECASI" />
+    <NavigationProperty Name="PEHIBO" Relationship="PEDIDOSModel.FK_PEHIBO_PEBOLS" FromRole="PEBOLS" ToRole="PEHIBO" />
+    <NavigationProperty Name="PEHIMO" Relationship="PEDIDOSModel.FK_PEHIMO_PEBOLS" FromRole="PEBOLS" ToRole="PEHIMO" />
+    <NavigationProperty Name="PEKABO" Relationship="PEDIDOSModel.FK_PEKABO_PEBOLS" FromRole="PEBOLS" ToRole="PEKABO" />
+    <NavigationProperty Name="PEBODP" Relationship="PEDIDOSModel.FK_PEBODP_PEBOLS" FromRole="PEBOLS" ToRole="PEBODP" />
+  </EntityType>
+  <Association Name="FK_PEBOLS_PECASI">
+    <End Type="PEDIDOSModel.PECASI" Role="PECASI" Multiplicity="0..1" />
+    <End Type="PEDIDOSModel.PEBOLS" Role="PEBOLS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PECASI">
+        <PropertyRef Name="CASICOCA" />
+      </Principal>
+      <Dependent Role="PEBOLS">
+        <PropertyRef Name="BOLSCOCA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEHIBO_PEBOLS">
+    <End Type="PEDIDOSModel.PEBOLS" Role="PEBOLS" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEHIBO" Role="PEHIBO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEBOLS">
+        <PropertyRef Name="BOLSIDBO" />
+      </Principal>
+      <Dependent Role="PEHIBO">
+        <PropertyRef Name="HIBOIDBO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEHIMO_PEBOLS">
+    <End Type="PEDIDOSModel.PEBOLS" Role="PEBOLS" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEHIMO" Role="PEHIMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEBOLS">
+        <PropertyRef Name="BOLSIDBO" />
+      </Principal>
+      <Dependent Role="PEHIMO">
+        <PropertyRef Name="HIMOIDBO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEKABO_PEBOLS">
+    <End Type="PEDIDOSModel.PEBOLS" Role="PEBOLS" Multiplicity="1" />
+    <End Type="PEDIDOSModel.PEKABO" Role="PEKABO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEBOLS">
+        <PropertyRef Name="BOLSIDBO" />
+      </Principal>
+      <Dependent Role="PEKABO">
+        <PropertyRef Name="KABOIDBO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result">
+    <Property Type="Decimal" Name="DEOSIDDO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BOLSIDBO" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="String" Name="BOLSCOEM" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="BOLSCOCA" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="BOLSARTI" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="BOLSPART" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="BOLSALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="BOLSCANT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Decimal" Name="BOLSPESO" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="BODPIDDE" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDBO" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDDO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPCANT" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPPESO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="TIEMTARA" Nullable="false" Precision="6" Scale="2" />
+    <Property Type="Decimal" Name="UNIDTARA" Nullable="true" Precision="17" Scale="10" />
+    <Property Type="Decimal" Name="BODPPERE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPSTCE" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPINBO" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPTADE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPPEBR" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPDIFE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPESTA" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="Decimal" Name="BODPSECR" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="BODPTAUN" Nullable="false" Precision="9" Scale="3" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_DETPREPARACION_POR_IDDETALLE_Result">
+    <Property Type="Decimal" Name="DEPEIDDP" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BOLSIDBO" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="String" Name="BOLSCOEM" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="BOLSCOCA" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="BOLSARTI" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="BOLSPART" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="BOLSALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="BOLSCANT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Decimal" Name="BOLSPESO" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="BODPIDDE" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDBO" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDDP" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPCANT" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPPESO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="TIEMTARA" Nullable="false" Precision="6" Scale="2" />
+    <Property Type="Decimal" Name="UNIDTARA" Nullable="true" Precision="17" Scale="10" />
+    <Property Type="Decimal" Name="BODPPERE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPSTCE" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPINBO" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPTADE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPPEBR" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPDIFE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPTAUN" Nullable="false" Precision="9" Scale="3" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_OSAS_PENDIENTES_PLANTA_Result">
+    <Property Type="Int64" Name="OSAROW" Nullable="true" />
+    <Property Type="Decimal" Name="OSASCIA" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="OSASFOLI" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="PARTFEEF" Nullable="true" />
+    <Property Type="DateTime" Name="OSASFEEM" Nullable="false" />
+    <Property Type="String" Name="OSASRESP" Nullable="true" MaxLength="4" />
+    <Property Type="Decimal" Name="CAOSIDCO" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="CAOSPRIO" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="CAOSIDES" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="CAOSUSPR" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="OSASPADE" Nullable="true" MaxLength="6" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTA_EMPAQUES_PARTIDA_Result">
+    <Property Type="String" Name="BOLSCOEM" Nullable="false" MaxLength="8" />
+    <Property Type="DateTime" Name="CAEMFECH" Nullable="false" />
+    <Property Type="String" Name="CAEMRESP" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="BOLSARTI" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="BOLSPART" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="BOLSALMA" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="BOLSCANT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Decimal" Name="PESONETO" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="String" Name="BOLSCOCA" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <Association Name="FK_PEBODP_PEBOLS">
+    <End Type="PEDIDOSModel.PEBOLS" Role="PEBOLS" Multiplicity="0..1" />
+    <End Type="PEDIDOSModel.PEBODP" Role="PEBODP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEBOLS">
+        <PropertyRef Name="BOLSIDBO" />
+      </Principal>
+      <Dependent Role="PEBODP">
+        <PropertyRef Name="BODPIDBO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="USP_OBTIENE_DETPREPARACION_POR_IDDETALLESE_Result">
+    <Property Type="Decimal" Name="DEPEIDDP" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BOLSIDBO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="String" Name="BOLSCOEM" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="BOLSCOCA" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="BOLSARTI" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="BOLSPART" Nullable="true" MaxLength="6" />
+    <Property Type="Decimal" Name="BOLSALMA" Nullable="true" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="BOLSCANT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Decimal" Name="BOLSPESO" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="BODPIDDE" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDBO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDDP" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPCANT" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPPESO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="TIEMTARA" Nullable="true" Precision="6" Scale="2" />
+    <Property Type="Decimal" Name="UNIDTARA" Nullable="true" Precision="17" Scale="10" />
+    <Property Type="Decimal" Name="BODPPERE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPSTCE" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPINBO" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPTADE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPPEBR" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPDIFE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPTAUN" Nullable="false" Precision="9" Scale="3" />
+  </ComplexType>
+  <ComplexType Name="USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE_Result">
+    <Property Type="Decimal" Name="DEOSIDDO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BOLSIDBO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="String" Name="BOLSCOEM" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="BOLSCOCA" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="BOLSARTI" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="BOLSPART" Nullable="true" MaxLength="6" />
+    <Property Type="Decimal" Name="BOLSALMA" Nullable="true" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="BOLSCANT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Decimal" Name="BOLSPESO" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="BODPIDDE" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDBO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPIDDO" Nullable="true" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPCANT" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Decimal" Name="BODPPESO" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="TIEMTARA" Nullable="true" Precision="6" Scale="2" />
+    <Property Type="Decimal" Name="UNIDTARA" Nullable="true" Precision="17" Scale="10" />
+    <Property Type="Decimal" Name="BODPPERE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPSTCE" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPINBO" Nullable="false" Precision="1" Scale="0" />
+    <Property Type="Decimal" Name="BODPTADE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPPEBR" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPDIFE" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="BODPESTA" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="Decimal" Name="BODPSECR" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="BODPTAUN" Nullable="false" Precision="9" Scale="3" />
+  </ComplexType>
+</Schema>

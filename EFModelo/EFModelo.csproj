@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B019229-E897-471E-8850-832C07A8B635}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EFModelo</RootNamespace>
+    <AssemblyName>EFModelo</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AMCLI.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCTIEM.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GMCAEM.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GMDEEM.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I1DD20A.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEBODP.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEBOLS.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PECAOS.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PECAPE.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PECASI.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PECOLU.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEDEOS.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEDEPE.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pedidos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pedidos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PEDPDG.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEESTA.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEHIBO.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEHIMO.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEKABO.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PENIVE.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEPARM.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEPASI.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEPEPG.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETICO.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETIFO.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETMKB.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEUSTF.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROSAS.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TCLIE.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_CONSULTA_EMPAQUES_PARTIDA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_FOLIO_USUARIO_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_BOLSA_OSA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_BOLSA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_BOLSA_UBICACION_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETALLE_BOLSA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETALLE_OSA_PLANTA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETALLE_OSA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETALLE_PEDIDOS_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETPREPARACION_POR_IDDETALLESE_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETPREPARACION_POR_IDDETALLE_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_OSAS_PENDIENTES_PLANTA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_OSAS_PENDIENTES_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_PEDIDO_CONSULTA_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_OBTIENE_UBICACIONES_Result.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VSED00A.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VSED02A.cs">
+      <DependentUpon>Pedidos.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Pedidos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Pedidos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Pedidos.edmx.diagram">
+      <DependentUpon>Pedidos.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pedidos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pedidos.edmx</DependentUpon>
+      <LastGenOutput>Pedidos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pedidos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pedidos.edmx</DependentUpon>
+      <LastGenOutput>Pedidos.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

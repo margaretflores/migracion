@@ -1,0 +1,34 @@
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll.config
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.pdb
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.csprojResolveAssemblyReference.cache
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.dll
+D:\RepositorioGit\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appDataContracts\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\backend\appDataContracts\obj\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appDataContracts\bin\Debug\appDataContracts.dll.config
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appDataContracts\bin\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appDataContracts\bin\Debug\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appDataContracts\obj\Debug\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\backend\appDataContracts\obj\Debug\appDataContracts.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appDataContracts\bin\Debug\appDataContracts.dll.config
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appDataContracts\bin\Debug\appDataContracts.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appDataContracts\bin\Debug\appDataContracts.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appDataContracts\obj\Debug\appDataContracts.csprojResolveAssemblyReference.cache
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appDataContracts\obj\Debug\appDataContracts.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\backend\appDataContracts\obj\Debug\appDataContracts.pdb

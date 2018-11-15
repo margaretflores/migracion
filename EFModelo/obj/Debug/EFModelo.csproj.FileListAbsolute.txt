@@ -1,0 +1,48 @@
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio\MejorIncaPrincipal-master\MejorIncaPrincipal-master\Proyectos\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\ServicioMovilSQL\EFModelo\obj\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\bin\Debug\EFModelo.dll.config
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\bin\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\bin\Debug\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\obj\Debug\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\MIGRACIONDB2\ServicioMovilDB2\EFModelo\obj\Debug\EFModelo.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Debug\EFModelo.dll.config
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Debug\EFModelo.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Debug\EFModelo.pdb
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\obj\Debug\EFModelo.csprojResolveAssemblyReference.cache
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\obj\Debug\EFModelo.dll
+C:\Users\help desk\Desktop\ServicioMovilDB2\EFModelo\obj\Debug\EFModelo.pdb

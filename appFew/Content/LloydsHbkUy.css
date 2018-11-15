@@ -1,0 +1,1502 @@
+
+/* begin fixes para Google Chrome*/
+
+#W0005TABLE4{width: auto;}
+
+#BARRA_DEBAJO_CABEZAL{display: none;}
+
+#titledivMenu0{padding-top: 10px;}
+
+#W0005IMGIDIOMA{width: 55;}
+
+iframe{width: 600px;}
+
+/* end fixes para Google Chrome*/
+
+.Attribute
+{
+	background-color : rgb(255, 255, 255);
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	border-width : 1;
+	border-color : rgb(255, 255, 255);
+	border-style : ridge;
+	
+}
+
+.FreeStyleGrid
+{
+	border-width : 0;
+	border-color : rgb(204, 204, 214);
+	border-style : none;
+	letter-spacing : ;
+	
+}
+.FreeStyleGridUniform
+{
+	border-width: 0;
+	background-color : rgb(255, 255, 255);
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	
+}
+.FreeStyleGridOdd
+{
+	border-width: 0;
+	background-color : rgb(204, 204, 214);
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	
+}
+.FreeStyleGridEven
+{
+	border-width: 0;
+	background-color : rgb(229, 229, 234);
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	
+}
+	
+.Grid
+{
+	background-image : ;
+	border-width : 1;
+	border-color : rgb(229, 229, 234);
+	border-style : solid;
+	text-indent : 2pt;
+	
+}
+.GridUniform
+{
+	border-width: 0;
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : ;
+	
+}
+.GridUniformTitle
+{
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	background-color : ;
+	
+}
+.GridTitle
+{
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	background-color : rgb(227, 227, 227);
+	
+}
+.GridOdd
+{
+	border-width: 0;
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : rgb(243, 243, 243);
+	
+}
+.GridEven
+{
+	border-width: 0;
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : rgb(227, 227, 227);
+	
+}
+	
+.Table
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	/* begin fixes para Google Chrome*/
+    /*width: 800px;*/
+    /* end fixes para Google Chrome*/	
+}
+
+.Image
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	
+}
+
+.Button
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 0, 0);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.Hyperlink
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : underline;
+	color : rgb(0, 0, 0);
+	letter-spacing : 1pt;
+	
+}
+
+.TextBlock
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	
+}
+
+.SpecialButtons
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnFirst
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnNext
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : outset;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnPrevious
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : outset;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnLast
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnSelect
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnGet
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 0;
+	vertical-align : baseline;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 5pt;
+	margin-bottom : 0pt;
+	
+}
+
+.BtnEnter
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : outset;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnCheck
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnCancel
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : outset;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnDelete
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.BtnHelp
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : outset;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.TableGrid
+{
+	background-color : rgb(255, 192, 192);
+	border-width : 1;
+	border-color : rgb(255, 0, 0);
+	border-style : solid;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 2pt;
+	padding-right : 2pt;
+	padding-left : 2pt;
+	padding-bottom : 2pt;
+	
+}
+
+.bullet
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	text-indent : 5pt;
+	
+}
+
+.TableTop
+{
+	background-color : rgb(233, 150, 122);
+	border-width : 0;
+	border-style : none;
+	height : 75;
+	width : 100%;
+	color : rgb(255, 255, 255);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	vertical-align : middle;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TableContent
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	vertical-align : top;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 10pt;
+	padding-right : 10pt;
+	padding-left : 10pt;
+	padding-bottom : 10pt;
+	
+}
+
+.TableLeftMenu
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	width : 100%;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	text-indent : 15pt;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TableTopMenu
+{
+	background-color : rgb(255, 160, 122);
+	border-width : 0;
+	border-style : none;
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	vertical-align : middle;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TextTable
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	
+}
+
+.TBTopMenu
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : underline;
+	background-color : rgb(176, 196, 222);
+	color : rgb(0, 0, 255);
+	text-indent : 3pt;
+	
+}
+
+.TBLeftMenu
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : underline;
+	background-color : rgb(255, 255, 255);
+	color : rgb(0, 0, 255);
+	
+}
+
+.Title
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 12pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(176, 36, 25);
+	
+}
+
+.WorkWith
+{
+	border-width : 1;
+	border-color : rgb(229, 229, 234);
+	border-style : solid;
+	text-indent : 2pt;
+	padding-top : 2pt;
+	padding-right : 2pt;
+	padding-left : 5pt;
+	padding-bottom : 2pt;
+	
+}
+.WorkWithUniform
+{
+	border-width: 0;
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : rgb(255, 255, 255);
+	
+}
+.WorkWithUniformTitle
+{
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	background-color : rgb(255, 255, 255);
+	
+}
+.WorkWithTitle
+{
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	background-color : rgb(255, 255, 255);
+	
+}
+.WorkWithOdd
+{
+	border-width: 0;
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : rgb(229, 229, 234);
+	
+}
+.WorkWithEven
+{
+	border-width: 0;
+	color : rgb(0, 0, 51);
+	font-family : Arial;
+	font-size : 8pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : rgb(192, 192, 192);
+	
+}
+	
+.ErrorViewer
+{
+	border-width : 0;
+	border-style : groove;
+	border-color : rgb(204, 204, 214);
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 0, 0);
+	letter-spacing : ;
+	
+}
+
+.SubTitle
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 11.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(176, 36, 25);
+	
+}
+
+.subBullet
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	text-indent : 10pt;
+	
+}
+
+.Table100W
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	width : 100%;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	vertical-align : top;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.Table100and5Padding
+{
+	background-color : rgb(237, 237, 237);
+	border-width : 0;
+	border-style : none;
+	width : 100%;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	vertical-align : top;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 5pt;
+	padding-right : 5pt;
+	padding-left : 5pt;
+	padding-bottom : 5pt;
+	
+}
+
+.Table100Wx580H
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	height : 580;
+	width : 100%;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	vertical-align : top;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.Table2Padding
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 2pt;
+	padding-right : 2pt;
+	padding-left : 2pt;
+	padding-bottom : 2pt;
+	
+}
+
+.Table100Wand2Padding
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	width : 100%;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	vertical-align : top;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 2pt;
+	padding-right : 2pt;
+	padding-left : 2pt;
+	padding-bottom : 2pt;
+	
+}
+
+.TableHorizontalLine
+{
+	background-color : rgb(224, 224, 224);
+	border-width : 0;
+	border-style : none;
+	height : 1;
+	width : 100%;
+	font-family : Arial;
+	font-size : 2.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TableHorizontalLineOrange
+{
+	background-color : rgb(250, 128, 114);
+	border-width : 0;
+	border-style : none;
+	height : 1;
+	width : 100%;
+	font-family : Arial;
+	font-size : 2.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TableHorizontalLineSkyBlue
+{
+	background-color : rgb(255, 228, 225);
+	border-width : 0;
+	border-style : none;
+	height : 1;
+	width : 100%;
+	font-family : Arial;
+	font-size : 2.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TableHorizontalLineBlue3H
+{
+	background-color : rgb(255, 99, 71);
+	border-width : 0;
+	border-style : none;
+	height : 3;
+	width : 100%;
+	font-family : Arial;
+	font-size : 2.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TableVerticalLine
+{
+	background-color : rgb(224, 224, 224);
+	border-width : 0;
+	border-style : none;
+	height : 100%;
+	width : 1;
+	font-family : Arial;
+	font-size : 2.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.TableVerticalLineOrange
+{
+	background-color : rgb(255, 160, 122);
+	border-width : 0;
+	border-style : none;
+	height : 100%;
+	width : 1;
+	font-family : Arial;
+	font-size : 2.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.Form
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : rgb(255, 255, 255);
+	color : rgb(0, 0, 0);
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+	
+}
+
+.BtnRefresh
+{
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 128, 128);
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	height : 18;
+	vertical-align : bottom;
+	letter-spacing : 0pt;
+	text-indent : 0pt;
+	margin-top : 3pt;
+	margin-right : 3pt;
+	margin-left : 0pt;
+	margin-bottom : 3pt;
+	
+}
+
+.ReadonlyAttribute
+{
+	background-color : ;
+	color : ;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	border-width : 0;
+	border-color : rgb(255, 255, 255);
+	border-style : ridge;
+	
+}
+
+.PageTitle
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 12.75pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(12, 8, 85);
+	letter-spacing : 1pt;
+	
+}
+
+.TableMenu
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 2;
+	border-color : rgb(255, 245, 238);
+	border-style : solid;
+	width : 100%;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	letter-spacing : ;
+	text-indent : 2pt;
+	
+}
+
+.menu
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	letter-spacing : 1pt;
+	
+}
+
+.menuatt
+{
+	background-color : rgb(255, 255, 255);
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	border-width : 0;
+	border-color : rgb(255, 255, 255);
+	border-style : none;
+	letter-spacing : 1pt;
+	
+}
+
+.LinkMenu
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : underline;
+	background-color : ;
+	color : rgb(0, 0, 0);
+	letter-spacing : 1pt;
+	
+}
+
+.Text1
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(34, 41, 81);
+	
+}
+
+.TextM
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 9.75pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 255, 255);
+	
+}
+
+.Tab1
+{
+	background-image : ;
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : solid;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	
+}
+
+.Tab2
+{
+	background-image :;
+	background-color : rgb(243, 243, 243);
+	border-style : none;
+	color :;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	background-image: url('');
+}
+
+.Tab3
+{
+	background-color : rgb(169, 169, 169);
+	border-width : 0;
+	border-color : ;
+	border-style : none;
+	color : rgb(0, 0, 0);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	
+}
+
+.Tab4
+{
+	background-color : rgb(34, 41, 81);
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	
+}
+
+.TextM2
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 255, 255);
+	
+}
+
+.L1Free
+{
+	background-color : rgb(237, 237, 237);
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	
+}
+
+.L2Free
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	
+}
+
+.T1Free
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 9pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(0, 0, 51);
+	
+}
+
+.ReadonlyHiddenOdd
+{
+	background-color : ;
+	color : rgb(192, 192, 192);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	border-width : 0;
+	border-color : rgb(255, 255, 255);
+	border-style : ridge;
+	
+}
+
+.ReadonlyHiddenEven
+{
+	background-color : ;
+	color : rgb(128, 128, 128);
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	border-width : 0;
+	border-color : rgb(255, 255, 255);
+	border-style : ridge;
+	
+}
+
+.Ldespl
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(34, 41, 81);
+	
+}
+
+.Ticket
+{
+	background-color : rgb(255, 255, 255);
+	border-width : 1;
+	border-color : rgb(0, 0, 51);
+	border-style : solid;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	white-space : ;
+	
+}
+
+.Style11
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 10pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(0, 0, 102);
+	
+}
+
+.Style6_link
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 6pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(51, 51, 51);
+	
+}
+
+.campos
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(153, 153, 153);
+	
+}
+
+.Style4
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 10pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(51, 51, 51);
+	
+}
+
+.campos_bold
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(153, 153, 153);
+	
+}
+
+.SubTitle2
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 9.75pt;
+	font-style : normal;
+	font-weight : bold;
+	text-decoration : none;
+	color : rgb(255, 0, 0);
+	
+}
+
+.Form1
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : rgb(224, 224, 224);
+	color : rgb(0, 0, 0);
+	margin-top : 0pt;
+	margin-right : 0pt;
+	margin-left : 0pt;
+	margin-bottom : 0pt;
+	padding-top : 0pt;
+	padding-right : 0pt;
+	padding-left : 0pt;
+	padding-bottom : 0pt;
+}
+
+.NoBorder
+{
+	border-width : 0;
+	border-style : none;
+	font-family : Arial;
+	font-size : 8.25pt;
+	font-style : normal;
+	font-weight : normal;
+	text-decoration : none;
+	background-color : ;
+	color : rgb(0, 0, 0);
+}
+
+.for-screen 
+{
+	display: block;
+}
+.for-print 
+{
+	display: none;
+}
+
+@media print {
+    .for-screen 
+    {
+    	display: none;
+    }
+    .for-print 
+    {
+    	display: block;
+    }
+}
+
+
+

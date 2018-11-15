@@ -1,0 +1,5 @@
+10:47:38 > SQL0205 La columna PRNCIDEN no está en la tabla PCPRNC en PRODDAT.
+10:48:23 > SQL0205 La columna PRNCIDEN no está en la tabla PCPRNC en PRODDAT.
+11:00:04 > SQL0551 No tiene autorización para el objeto USP_S00036 de PRODDAT tipo *PGM.
+12:07:22 > SQL0420 Un carácter del argumento CAST no es válido.
+12:36:57 > SQL0420 Un carácter del argumento CAST no es válido.

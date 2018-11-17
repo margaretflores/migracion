@@ -1367,7 +1367,7 @@ namespace appLogica
             return lista;
         }//LISTO
 
-        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")//cambiar proc
+        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> lista = null;
@@ -1411,7 +1411,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }//cambiar proc CLINTON
 
         public RESOPE cambiaEstadoPedInt(appWcfService.PECAOS estadopedint)
         {
@@ -1601,7 +1601,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//se usa no tocar
+        }//se usa no tocar REVISAR PROSA
 
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result> obtieneDetallePreparacionPedInt(decimal iddetallepedint)
         {
@@ -1669,7 +1669,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }//cambiar proc CLINTON
 
         public List<appWcfService.USP_CONSULTA_EMPAQUES_PARTIDA_Result> consultaEmpaquesPartida(string partida, string articulo, string empaque)
         {

@@ -291,11 +291,8 @@ namespace appLogica
                 List<EFModelo.PEPARM> listapar;
                 EFModelo.PEPARM par;
                 string mensajecorreo;
-                using (var sqlLogFile = new StreamWriter("D:\\scriptspedidos\\sqlLogFile.txt"))
-                {
                     using (var context = new PEDIDOSEntities())
                     {
-                        context.Database.Log = sqlLogFile.Write; // Console.Write;
                         var ent = context.PECAPE.Find(Convert.ToDecimal(estadopedido.ESPEIDPE));
                         if (ent == null)
                         {
@@ -318,8 +315,6 @@ namespace appLogica
                         context.SaveChanges();
                         listapar = context.PEPARM.ToList();
                     }
-                }
-                
                 vpar.ESTOPE = true;
 
                 //notificaciones cliente
@@ -367,27 +362,32 @@ namespace appLogica
 
         private void insertaMovimientoKardex(PEDIDOSEntities context, decimal? idbolsa, decimal idtipomovimiento, decimal almacen, string partida, string articulo, decimal cantidad, decimal peso, decimal pesobr, string usuario, Nullable<decimal> iddetpedido, Nullable<decimal> iddetosa)
         {
-            decimal valorsigno = 1;
-            if (idtipomovimiento == TIPO_MOV_SALIDA_PREP_PED)
+            using (var sqlLogFile = new StreamWriter("D:\\scriptspedidos\\sqlLogFile.txt"))
             {
-                valorsigno = -1;
+                context.Database.Log = sqlLogFile.Write; // Console.Write;
+                decimal valorsigno = 1;
+                if (idtipomovimiento == TIPO_MOV_SALIDA_PREP_PED)
+                {
+                    valorsigno = -1;
+                }
+                var entk = new EFModelo.PEKABO();
+                entk.KABOIDBO = idbolsa.Value;
+                entk.KABOIDTM = idtipomovimiento;
+                entk.KABOALMA = almacen;
+                entk.KABOPART = partida;
+                entk.KABOITEM = articulo;
+                entk.KABOCANT = cantidad * valorsigno;
+                entk.KABOPESO = peso * valorsigno;
+                entk.KABOPEBR = pesobr * valorsigno;
+                entk.KABOTARA = entk.KABOPEBR - entk.KABOPESO;
+                entk.KABOFECH = DateTime.Today;
+                entk.KABOUSCR = usuario;
+                entk.KABOFECR = DateTime.Now;
+                entk.KABOIDDP = iddetpedido;
+                entk.KABOIDDO = iddetosa;
+                context.PEKABO.Add(entk);
             }
-            var entk = new EFModelo.PEKABO();
-            entk.KABOIDBO = idbolsa.Value;
-            entk.KABOIDTM = idtipomovimiento;
-            entk.KABOALMA = almacen;
-            entk.KABOPART = partida;
-            entk.KABOITEM = articulo;
-            entk.KABOCANT = cantidad * valorsigno;
-            entk.KABOPESO = peso * valorsigno;
-            entk.KABOPEBR = pesobr * valorsigno;
-            entk.KABOTARA = entk.KABOPEBR - entk.KABOPESO;
-            entk.KABOFECH = DateTime.Today;
-            entk.KABOUSCR = usuario;
-            entk.KABOFECR = DateTime.Now;
-            entk.KABOIDDP = iddetpedido;
-            entk.KABOIDDO = iddetosa;
-            context.PEKABO.Add(entk);
+           
 
         }//dd
 
@@ -1342,7 +1342,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiado
+        }//LISTO
 
         public List<appWcfService.USP_FOLIO_USUARIO_Result> obtieneFoliosUsuario(string usuario)
         {
@@ -1365,7 +1365,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }//LISTO
 
         public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")//cambiar proc
         {
@@ -1422,110 +1422,109 @@ namespace appLogica
             string resultado = "";
             try
             {
-
-                using (var context = new PEDIDOSEntities())
-                {
-                    var ent = context.PECAOS.Find(Convert.ToDecimal(estadopedint.CAOSIDCO));
-                    //var ent = context.PECAOS.FirstOrDefault(x=> x.CAOSIDCO == estadopedint.CAOSIDCO);
-
-                    if (ent == null)
+                    using (var context = new PEDIDOSEntities())
                     {
-                        ent = new EFModelo.PECAOS();
-                        ent.CAOSFOLI = estadopedint.CAOSFOLI;
-                        ent.CAOSPRIO = 0;
-                        ent.CAOSFECR = DateTime.Now;
-                        ent.CAOSUSCR = estadopedint.CAOSUSCR;
-                        context.PECAOS.Add(ent);
-                        nuevoregistro = true;
-                    }
-                    else
-                    {
-                        if (!ent.CAOSFOLI.Trim().Equals(estadopedint.CAOSFOLI))
+                        var ent = context.PECAOS.Find(Convert.ToDecimal(estadopedint.CAOSIDCO));
+                        //var ent = context.PECAOS.FirstOrDefault(x=> x.CAOSIDCO == estadopedint.CAOSIDCO);
+
+                        if (ent == null)
                         {
-                            throw new Exception("Folio no válido");
+                            ent = new EFModelo.PECAOS();
+                            ent.CAOSFOLI = estadopedint.CAOSFOLI;
+                            ent.CAOSPRIO = 0;
+                            ent.CAOSFECR = DateTime.Now;
+                            ent.CAOSUSCR = estadopedint.CAOSUSCR;
+                            context.PECAOS.Add(ent);
+                            nuevoregistro = true;
                         }
-                        ent.CAOSFEMO = DateTime.Now;
-                        ent.CAOSUSMO = estadopedint.CAOSUSCR;
-                    }
-                    //ent.CAOSIDES = estadopedint.CAOSIDES;
-                    ent.CAOSIDES = estadopedint.CAOSIDES; //probar para la transacción
-                    if (estadopedint.CAOSIDES == 5 || estadopedint.CAOSIDES == 4) // se completo todas los detalles de ese folio
-                    {
-                        ent.CAOSFHFP = DateTime.Now;
-                        ent.CAOSUSFP = estadopedint.CAOSUSCR;
-                        ent.CAOSNOTA = estadopedint.CAOSNOTA;
-                    }
-                    if (ent.CAOSFHIP == null && ent.CAOSIDES == 3)
-                    {
-                        ent.CAOSFHIP = DateTime.Now;
-                        ent.CAOSUSIP = estadopedint.CAOSUSCR;
-                    }
-                    context.SaveChanges();
-                    //actualiza estado OSA en SQL --falta actualizar estado OSA en AS
-                    var osas = context.PROSAS.Where(ped => ped.OSASCIA == 1 && ped.OSASFOLI == estadopedint.CAOSFOLI).ToList();
-                    if (osas != null)
-                    {
-                        //eliiminar de pedeos todos los est de prosass E
-                        foreach (var osa in osas)
+                        else
                         {
-                            var detped = context.PEDEOS.FirstOrDefault(det => det.DEOSFOLI == osa.OSASFOLI && det.DEOSSECU == osa.OSASSECU);
-                            if (detped == null)
+                            if (!ent.CAOSFOLI.Trim().Equals(estadopedint.CAOSFOLI))
                             {
-                                //si llegaran a agregar lineas despues de emitida no funcionaría, peor si eliminan
-                                detped = new EFModelo.PEDEOS();
-                                detped.DEOSIDCO = ent.CAOSIDCO;
-                                detped.DEOSSECU = osa.OSASSECU;
-                                detped.DEOSFOLI = osa.OSASFOLI;
-                                detped.DEOSPEAT = 0;
-                                detped.DEOSCAAT = 0;
-                                detped.DEOSPERE = 0;
-                                detped.DEOSSTOC = 0;
-                                detped.DEOSESTA = 1; //CREADO //NO SE USA POR AHORA
-                                detped.DEOSFECR = DateTime.Now;
-                                detped.DEOSUSCR = estadopedint.CAOSUSCR;
-                                context.PEDEOS.Add(detped);
+                                throw new Exception("Folio no válido");
                             }
-                            if (detped.DEOSCOAR != osa.OSASARTI || detped.DEOSPART != osa.OSASPAOR || detped.DEOSALMA != osa.OSASALMA || detped.DEOSPESO != osa.OSASCASO)
+                            ent.CAOSFEMO = DateTime.Now;
+                            ent.CAOSUSMO = estadopedint.CAOSUSCR;
+                        }
+                        //ent.CAOSIDES = estadopedint.CAOSIDES;
+                        ent.CAOSIDES = estadopedint.CAOSIDES; //probar para la transacción
+                        if (estadopedint.CAOSIDES == 5 || estadopedint.CAOSIDES == 4) // se completo todas los detalles de ese folio
+                        {
+                            ent.CAOSFHFP = DateTime.Now;
+                            ent.CAOSUSFP = estadopedint.CAOSUSCR;
+                            ent.CAOSNOTA = estadopedint.CAOSNOTA;
+                        }
+                        if (ent.CAOSFHIP == null && ent.CAOSIDES == 3)
+                        {
+                            ent.CAOSFHIP = DateTime.Now;
+                            ent.CAOSUSIP = estadopedint.CAOSUSCR;
+                        }
+                        context.SaveChanges();
+                        //actualiza estado OSA en SQL --falta actualizar estado OSA en AS
+                        var osas = context.PROSAS.Where(ped => ped.OSASCIA == 1 && ped.OSASFOLI == estadopedint.CAOSFOLI).ToList();
+                        if (osas != null)
+                        {
+                            //eliiminar de pedeos todos los est de prosass E
+                            foreach (var osa in osas)
                             {
-                                detped.DEOSFEMO = DateTime.Now;
-                                detped.DEOSUSMO = estadopedint.CAOSUSCR;
-                            }
-                            detped.DEOSCOAR = osa.OSASARTI;
-                            detped.DEOSPART = osa.OSASPAOR;
-                            detped.DEOSALMA = osa.OSASALMA;
-                            detped.DEOSPESO = osa.OSASCASO;
-
-                            if (estadopedint.CAOSIDES == 3)  //3   En preparación                                    
-                            {
-                                //actualizar al guardar bolsa preparada o al trabajar item?
-                                //if (osa.OSASSTOS.Equals("E"))
-                                //{
-                                //    osa.OSASSTOS = "S";
-                                //    //actualizar estado PENDIENTE AS
-                                //}
-                                //actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, -1, osa.OSASSTOS); //Pendiente Validar AS
-
-                            }
-                            else if (estadopedint.CAOSIDES == 4 || estadopedint.CAOSIDES == 5)  //4   preparación finalizada
-                            {
-                                if (osa.OSASCASO > 0 && detped.DEOSESPA == 0 && !osa.OSASSTOS.Equals("T")) //osa.OSASSTOS.Equals("S") && .DEOSPEAT != 0
+                                var detped = context.PEDEOS.FirstOrDefault(det => det.DEOSFOLI == osa.OSASFOLI && det.DEOSSECU == osa.OSASSECU);
+                                if (detped == null)
                                 {
-                                    if (detped.DEOSPEAT == 0)
+                                    //si llegaran a agregar lineas despues de emitida no funcionaría, peor si eliminan
+                                    detped = new EFModelo.PEDEOS();
+                                    detped.DEOSIDCO = ent.CAOSIDCO;
+                                    detped.DEOSSECU = osa.OSASSECU;
+                                    detped.DEOSFOLI = osa.OSASFOLI;
+                                    detped.DEOSPEAT = 0;
+                                    detped.DEOSCAAT = 0;
+                                    detped.DEOSPERE = 0;
+                                    detped.DEOSSTOC = 0;
+                                    detped.DEOSESTA = 1; //CREADO //NO SE USA POR AHORA
+                                    detped.DEOSFECR = DateTime.Now;
+                                    detped.DEOSUSCR = estadopedint.CAOSUSCR;
+                                    context.PEDEOS.Add(detped);
+                                }
+                                if (detped.DEOSCOAR != osa.OSASARTI || detped.DEOSPART != osa.OSASPAOR || detped.DEOSALMA != osa.OSASALMA || detped.DEOSPESO != osa.OSASCASO)
+                                {
+                                    detped.DEOSFEMO = DateTime.Now;
+                                    detped.DEOSUSMO = estadopedint.CAOSUSCR;
+                                }
+                                detped.DEOSCOAR = osa.OSASARTI;
+                                detped.DEOSPART = osa.OSASPAOR;
+                                detped.DEOSALMA = osa.OSASALMA;
+                                detped.DEOSPESO = osa.OSASCASO;
+
+                                if (estadopedint.CAOSIDES == 3)  //3   En preparación                                    
+                                {
+                                    //actualizar al guardar bolsa preparada o al trabajar item?
+                                    //if (osa.OSASSTOS.Equals("E"))
+                                    //{
+                                    //    osa.OSASSTOS = "S";
+                                    //    //actualizar estado PENDIENTE AS
+                                    //}
+                                    //actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, -1, osa.OSASSTOS); //Pendiente Validar AS
+
+                                }
+                                else if (estadopedint.CAOSIDES == 4 || estadopedint.CAOSIDES == 5)  //4   preparación finalizada
+                                {
+                                    if (osa.OSASCASO > 0 && detped.DEOSESPA == 0 && !osa.OSASSTOS.Equals("T")) //osa.OSASSTOS.Equals("S") && .DEOSPEAT != 0
                                     {
-                                        osa.OSASSTOS = "T";
+                                        if (detped.DEOSPEAT == 0)
+                                        {
+                                            osa.OSASSTOS = "T";
+                                        }
+                                        else
+                                        {
+                                            osa.OSASSTOS = "C";
+                                        }
+                                        //actualizar estado PENDIENTE AS
+                                        actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, -1, osa.OSASSTOS); //Pendiente verficar si es correcto.
                                     }
-                                    else
-                                    {
-                                        osa.OSASSTOS = "C";
-                                    }
-                                    //actualizar estado PENDIENTE AS
-                                    actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, -1, osa.OSASSTOS); //Pendiente verficar si es correcto.
                                 }
                             }
                         }
+                        context.SaveChanges();
                     }
-                    context.SaveChanges();
-                }
                 vpar.ESTOPE = true;
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException e)
@@ -1551,7 +1550,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//dd
+        }///REVISAR LLAMA A UNA FUNCION
 
         public RESOPE actualizaPreparacionItemOSA(appWcfService.PEDEOS detpedint)
         {
@@ -1744,69 +1743,72 @@ namespace appLogica
             string resultado = "";
             try
             {
-
-                using (var context = new PEDIDOSEntities())
+                using (var sqlLogFile = new StreamWriter("D:\\scriptspedidos\\sqlLogFile.txt"))
                 {
-                    var casi = context.PECASI.Find(bolsa.BOLSCOCA);
-                    if (casi == null)
+                    using (var context = new PEDIDOSEntities())
                     {
-                        vpar.ESTOPE = false;
-                        resultado = "Ubicación incorrecta.";
-                    }
-                    else
-                    {
-                        var emp = context.GMCAEM.First(b => b.CAEMCIA == 1 && b.CAEMCOEM == bolsa.BOLSCOEM);
-                        if (emp != null)
+                        context.Database.Log = sqlLogFile.Write; // Console.Write;
+                        var casi = context.PECASI.Find(bolsa.BOLSCOCA);
+                        if (casi == null)
                         {
-                            //bool inserta = false;
-                            var bol = context.PEBOLS.FirstOrDefault(b => b.BOLSCOEM == bolsa.BOLSCOEM); //.Find(bolsa.BOLSIDBO);
-                            if (bol == null) //no existe pbols, insertar
-                            {
-                                bol = new EFModelo.PEBOLS();
-                                //inserta = true;
-                                bol.BOLSCOEM = bolsa.BOLSCOEM;
-                                bol.BOLSUSCR = bolsa.BOLSUSCR;
-                                bol.BOLSFECR = DateTime.Now;
-                                bol.BOLSESTA = 1;
-                                bol.BOLSALMA = emp.CAEMALMA;
-                                bol.BOLSCOAR = "";
-                                context.PEBOLS.Add(bol);
-                                //inserta tipo 1 SALIDA
-                                //insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
-                            }
-                            else
-                            {
-                                bol.BOLSUSMO = bolsa.BOLSUSCR;
-                                bol.BOLSFEMO = DateTime.Now;
-                                //SOLO si las cantidades o pesos son diferentes
-                                //inserta tipo 3 reingreso
-                                //inserta tipo 1 salida
-                                if (bol.BOLSALMA == 0)
-                                {
-                                    bol.BOLSALMA = emp.CAEMALMA;
-                                }
-
-                            }
-                            //if (!bol.BOLSCOEM.Equals(bolsa.BOLSCOEM))
-                            //{
-                            //    throw new Exception("Código Empaque no válido");
-                            //}
-                            //automatizar el parse sin incluir la PK
-                            bol.BOLSCOCA = bolsa.BOLSCOCA;
-                            bol.BOLSUSUB = bolsa.BOLSUSCR;
-                            bol.BOLSFEUB = DateTime.Now;
-
-                            //bol.BOLSESTA = 1;
-                            context.SaveChanges(); //necesite guardar 1ro labolsa actual para luego recuperar todas las bolsas de la BD
-
-                            vpar.VALSAL = new List<string>();
-                            vpar.VALSAL.Add(bol.BOLSIDBO.ToString());
-
-                            vpar.ESTOPE = true;
+                            vpar.ESTOPE = false;
+                            resultado = "Ubicación incorrecta.";
                         }
                         else
                         {
-                            resultado = "Código de empaque incorrecto";
+                            var emp = context.GMCAEM.First(b => b.CAEMCIA == 1 && b.CAEMCOEM == bolsa.BOLSCOEM);
+                            if (emp != null)
+                            {
+                                //bool inserta = false;
+                                var bol = context.PEBOLS.FirstOrDefault(b => b.BOLSCOEM == bolsa.BOLSCOEM); //.Find(bolsa.BOLSIDBO);
+                                if (bol == null) //no existe pbols, insertar
+                                {
+                                    bol = new EFModelo.PEBOLS();
+                                    //inserta = true;
+                                    bol.BOLSCOEM = bolsa.BOLSCOEM;
+                                    bol.BOLSUSCR = bolsa.BOLSUSCR;
+                                    bol.BOLSFECR = DateTime.Now;
+                                    bol.BOLSESTA = 1;
+                                    bol.BOLSALMA = emp.CAEMALMA;
+                                    bol.BOLSCOAR = "";
+                                    context.PEBOLS.Add(bol);
+                                    //inserta tipo 1 SALIDA
+                                    //insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
+                                }
+                                else
+                                {
+                                    bol.BOLSUSMO = bolsa.BOLSUSCR;
+                                    bol.BOLSFEMO = DateTime.Now;
+                                    //SOLO si las cantidades o pesos son diferentes
+                                    //inserta tipo 3 reingreso
+                                    //inserta tipo 1 salida
+                                    if (bol.BOLSALMA == 0)
+                                    {
+                                        bol.BOLSALMA = emp.CAEMALMA;
+                                    }
+
+                                }
+                                //if (!bol.BOLSCOEM.Equals(bolsa.BOLSCOEM))
+                                //{
+                                //    throw new Exception("Código Empaque no válido");
+                                //}
+                                //automatizar el parse sin incluir la PK
+                                bol.BOLSCOCA = bolsa.BOLSCOCA;
+                                bol.BOLSUSUB = bolsa.BOLSUSCR;
+                                bol.BOLSFEUB = DateTime.Now;
+
+                                //bol.BOLSESTA = 1;
+                                context.SaveChanges(); //necesite guardar 1ro labolsa actual para luego recuperar todas las bolsas de la BD
+
+                                vpar.VALSAL = new List<string>();
+                                vpar.VALSAL.Add(bol.BOLSIDBO.ToString());
+
+                                vpar.ESTOPE = true;
+                            }
+                            else
+                            {
+                                resultado = "Código de empaque incorrecto";
+                            }
                         }
                     }
                 }
@@ -2017,7 +2019,7 @@ namespace appLogica
                 }
             }
             return vpar;
-        }//dd
+        }//REVISAR TIENE LLAMADO A DB2
 
         public RESOPE cambiaestaDeosBodp(DTO_USP_OBTIENE_DETALLE_OSA_Result paramOperacion)
         {
@@ -2035,114 +2037,114 @@ namespace appLogica
 
                 foreach (var item in listdetosas)
                 {
-                    using (var context = new PEDIDOSEntities())
-                    {
-                        var deos = context.PEDEOS.Find(item.DEOSIDDO);
-                        if (deos != null)
+                        using (var context = new PEDIDOSEntities())
                         {
-                            //deos.DEOSESTA = item.DEOSESTA; //20180420
-                            var caos = context.PECAOS.Find(item.DEOSIDCO);
-
-                            switch (Int32.Parse(item.DEOSESTA.ToString()))
+                            var deos = context.PEDEOS.Find(item.DEOSIDDO);
+                            if (deos != null)
                             {
-                                case 1:
-                                    deos.DEOSESPA = item.DEOSESPA.Value;
-                                    break;
-                                case 3:
-                                    if (deos.DEOSESTA != 3 && deos.DEOSESTA != 7) //PODRIA SER 2 o 6 //7 para que no se generen errores de no descarga //20181004
-                                    {
-                                        //20180713 cambiar el peso origen, no usar el valor de peso atendido, en su lugar usar cant entregada de la OSA
-                                        var osa = context.PROSAS.FirstOrDefault(o => o.OSASCIA == 1 && o.OSASFOLI == deos.DEOSFOLI && o.OSASSECU == deos.DEOSSECU);
+                                //deos.DEOSESTA = item.DEOSESTA; //20180420
+                                var caos = context.PECAOS.Find(item.DEOSIDCO);
 
-                                        //20180420 SI SE IMPLEMENTA REABRIR DE EN PREPARACION A EMITIDO DEBE HACERSE EL PROCESO INVERSO
-                                        deos.DEOSCAOR = item.DEOSCAAT.Value;
-                                        if (osa == null)
+                                switch (Int32.Parse(item.DEOSESTA.ToString()))
+                                {
+                                    case 1:
+                                        deos.DEOSESPA = item.DEOSESPA.Value;
+                                        break;
+                                    case 3:
+                                        if (deos.DEOSESTA != 3 && deos.DEOSESTA != 7) //PODRIA SER 2 o 6 //7 para que no se generen errores de no descarga //20181004
                                         {
-                                            //como estaba antes, no tendria porque no ocurrir
-                                            deos.DEOSPEOR = item.DEOSPEAT.Value;
-                                        }
-                                        else
-                                        {
-                                            deos.DEOSPEOR = osa.OSASCAEN;
-                                        }
-                                    }
-                                    deos.DEOSESTA = item.DEOSESTA;
+                                            //20180713 cambiar el peso origen, no usar el valor de peso atendido, en su lugar usar cant entregada de la OSA
+                                            var osa = context.PROSAS.FirstOrDefault(o => o.OSASCIA == 1 && o.OSASFOLI == deos.DEOSFOLI && o.OSASSECU == deos.DEOSSECU);
 
-                                    break;
-                                case 6: //FINALIZAR PREPARACION
-                                    deos.DEOSESPA = 1;
-                                    if (deos.DEOSPEAT >= deos.DEOSPESO) //20180425 peso atendido mayor igual a peso solicitado
-                                    {
+                                            //20180420 SI SE IMPLEMENTA REABRIR DE EN PREPARACION A EMITIDO DEBE HACERSE EL PROCESO INVERSO
+                                            deos.DEOSCAOR = item.DEOSCAAT.Value;
+                                            if (osa == null)
+                                            {
+                                                //como estaba antes, no tendria porque no ocurrir
+                                                deos.DEOSPEOR = item.DEOSPEAT.Value;
+                                            }
+                                            else
+                                            {
+                                                deos.DEOSPEOR = osa.OSASCAEN;
+                                            }
+                                        }
+                                        deos.DEOSESTA = item.DEOSESTA;
+
+                                        break;
+                                    case 6: //FINALIZAR PREPARACION
+                                        deos.DEOSESPA = 1;
+                                        if (deos.DEOSPEAT >= deos.DEOSPESO) //20180425 peso atendido mayor igual a peso solicitado
+                                        {
+                                            deos.DEOSESPA = 0;
+                                        }
+                                        //20180420
+                                        //deos.DEOSCAOR = item.DEOSCAAT.Value;
+                                        //deos.DEOSPEOR = item.DEOSPEAT.Value;
+                                        deos.DEOSESTA = item.DEOSESTA;
+
+                                        if (estado == 4)
+                                        {
+                                            deos.DEOSSECR = deos.DEOSSECR + 1;
+                                        }
+                                        break;
+                                    case 5: //FINALIZAR PREPARACION
+                                        deos.DEOSESTA = item.DEOSESTA;
                                         deos.DEOSESPA = 0;
-                                    }
-                                    //20180420
-                                    //deos.DEOSCAOR = item.DEOSCAAT.Value;
-                                    //deos.DEOSPEOR = item.DEOSPEAT.Value;
-                                    deos.DEOSESTA = item.DEOSESTA;
-
-                                    if (estado == 4)
-                                    {
-                                        deos.DEOSSECR = deos.DEOSSECR + 1;
-                                    }
-                                    break;
-                                case 5: //FINALIZAR PREPARACION
-                                    deos.DEOSESTA = item.DEOSESTA;
-                                    deos.DEOSESPA = 0;
-                                    if (estado == 4)
-                                    {
-                                        deos.DEOSSECR = deos.DEOSSECR + 1;
-                                    }
-                                    //caos.CAOSFHFP = DateTime.Now;
-                                    //caos.CAOSUSFP = usuario;
-                                    break;
-                                default:
-                                    deos.DEOSESTA = item.DEOSESTA;
-                                    break;
-                            }
-                            //////
-                            listaeo = context.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA(item.DEOSIDDO).ToList();
-                            //lista = Util.ParseEntityObject<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result>(listaeo);
-                            ////
-                            int estacambia = 0;
-                            decimal secuencia = 0;
-                            switch (Int32.Parse(estado.ToString())) //QUE ES ESTADO????
-                            {
-                                case 4:
-                                    estacambia = 3;
-                                    secuencia = 1;
-                                    break;
-                                case 3:
-                                    estacambia = 4;
-                                    break;
-                            }
-                            ////
-
-                            foreach (var item1 in listaeo)
-                            {
-                                if (estacambia != 0)
-                                {
-                                    var ent = context.PEBODP.FirstOrDefault(x => x.BODPIDDE == item1.BODPIDDE);
-                                    if (ent != null)
-                                    {
-                                        if (ent.BODPESTA == estacambia) // || ent.BODPESTA == estacreado
+                                        if (estado == 4)
                                         {
-                                            ent.BODPESTA = estado;
-                                            ent.BODPFEMO = DateTime.Now;
-                                            ent.BODPUSMO = usuario;
+                                            deos.DEOSSECR = deos.DEOSSECR + 1;
                                         }
-                                        ent.BODPSECR = ent.BODPSECR + secuencia;
-                                    }
+                                        //caos.CAOSFHFP = DateTime.Now;
+                                        //caos.CAOSUSFP = usuario;
+                                        break;
+                                    default:
+                                        deos.DEOSESTA = item.DEOSESTA;
+                                        break;
                                 }
-                                else
+                                //////
+                                listaeo = context.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA(item.DEOSIDDO).ToList();
+                                //lista = Util.ParseEntityObject<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result>(listaeo);
+                                ////
+                                int estacambia = 0;
+                                decimal secuencia = 0;
+                                switch (Int32.Parse(estado.ToString())) //QUE ES ESTADO????
                                 {
-                                    break;
+                                    case 4:
+                                        estacambia = 3;
+                                        secuencia = 1;
+                                        break;
+                                    case 3:
+                                        estacambia = 4;
+                                        break;
                                 }
+                                ////
 
+                                foreach (var item1 in listaeo)
+                                {
+                                    if (estacambia != 0)
+                                    {
+                                        var ent = context.PEBODP.FirstOrDefault(x => x.BODPIDDE == item1.BODPIDDE);
+                                        if (ent != null)
+                                        {
+                                            if (ent.BODPESTA == estacambia) // || ent.BODPESTA == estacreado
+                                            {
+                                                ent.BODPESTA = estado;
+                                                ent.BODPFEMO = DateTime.Now;
+                                                ent.BODPUSMO = usuario;
+                                            }
+                                            ent.BODPSECR = ent.BODPSECR + secuencia;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+
+                                }
+                                //////
+                                context.SaveChanges();
                             }
-                            //////
-                            context.SaveChanges();
                         }
-                    }
                 }
                 vpar.VALSAL = new List<string>();
                 vpar.ESTOPE = true;
@@ -2165,7 +2167,7 @@ namespace appLogica
 
             }
             return vpar;
-        }//dd
+        }///REVISAR LLAMA A UNA FUNCION
 
         /// <summary>
         /// Actualiza PROSAS en AS
@@ -2957,7 +2959,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }///REVISAR LLAMA A UNA FUNCION
 
         public RESOPE remueveBolsaPedidose(decimal idbolsapedido, string usuario)
         {
@@ -3140,7 +3142,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }///REVISAR LLAMA A UNA FUNCION
 
         //DMA 17_10_2018
         public RESOPE remueveBolsaPedidose2(string idbolsapedido, string usuario)

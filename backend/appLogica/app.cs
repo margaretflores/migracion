@@ -1367,7 +1367,7 @@ namespace appLogica
             return lista;
         }//LISTO
 
-        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")//LISTO
+        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")//LISTO HAY UN PROBLEMA CON OSAS CAMBIADAS A N
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> lista = null;

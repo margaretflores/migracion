@@ -161,7 +161,7 @@ namespace appLogica
             return lista;
         }//LISTO
 
-        public List<appWcfService.USP_OBTIENE_DETALLE_PEDIDOS_Result> mostrarDetallePedidos(decimal idpedido)//cambiar procedimiento
+        public List<appWcfService.USP_OBTIENE_DETALLE_PEDIDOS_Result> mostrarDetallePedidos(decimal idpedido)
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_DETALLE_PEDIDOS_Result> lista = null;
@@ -181,7 +181,7 @@ namespace appLogica
             {
             }
             return lista;
-        }
+        }//LISTO
 
         public RESOPE cambiaEstadoPedido(PEESPE estadopedido)
         {
@@ -270,7 +270,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }//NO SE USA
         public RESOPE cambiaEstadoPedido2(PEESPE estadopedido)
         {
             RESOPE vpar;
@@ -291,31 +291,35 @@ namespace appLogica
                 List<EFModelo.PEPARM> listapar;
                 EFModelo.PEPARM par;
                 string mensajecorreo;
-
-                using (var context = new PEDIDOSEntities())
+                using (var sqlLogFile = new StreamWriter("D:\\scriptspedidos\\sqlLogFile.txt"))
                 {
-                    var ent = context.PECAPE.Find(Convert.ToDecimal(estadopedido.ESPEIDPE));
-                    if (ent == null)
+                    using (var context = new PEDIDOSEntities())
                     {
-                        vpar.MENERR = Mensajes.MENSAJE_PEDIDO_NO_ENCONTRADO;
-                        return vpar;
+                        context.Database.Log = sqlLogFile.Write; // Console.Write;
+                        var ent = context.PECAPE.Find(Convert.ToDecimal(estadopedido.ESPEIDPE));
+                        if (ent == null)
+                        {
+                            vpar.MENERR = Mensajes.MENSAJE_PEDIDO_NO_ENCONTRADO;
+                            return vpar;
+                        }
+                        if (Convert.ToDecimal(estadopedido.ESPEIDES) == 3/* && ent.CAPEIDES != 2*/)  //3   En preparación                                    
+                        {
+                            ent.CAPEUSIP = estadopedido.USUARIO;
+                            ent.CAPEFHIP = DateTime.Now;
+                        }
+                        else if (Convert.ToDecimal(estadopedido.ESPEIDES) == 4 /*&& ent.CAPEIDES != 3*/)  //4   preparación finalizada
+                        {
+                            ent.CAPEUSFP = estadopedido.USUARIO;
+                            ent.CAPEFHFP = DateTime.Now;
+                            ent.CAPENUBU = estadopedido.CAPENUBU;
+                            ent.CAPETADE = estadopedido.CAPETADE;
+                        }
+                        ent.CAPEIDES = Convert.ToDecimal(estadopedido.ESPEIDES);
+                        context.SaveChanges();
+                        listapar = context.PEPARM.ToList();
                     }
-                    if (Convert.ToDecimal(estadopedido.ESPEIDES) == 3/* && ent.CAPEIDES != 2*/)  //3   En preparación                                    
-                    {
-                        ent.CAPEUSIP = estadopedido.USUARIO;
-                        ent.CAPEFHIP = DateTime.Now;
-                    }
-                    else if (Convert.ToDecimal(estadopedido.ESPEIDES) == 4 /*&& ent.CAPEIDES != 3*/)  //4   preparación finalizada
-                    {
-                        ent.CAPEUSFP = estadopedido.USUARIO;
-                        ent.CAPEFHFP = DateTime.Now;
-                        ent.CAPENUBU = estadopedido.CAPENUBU;
-                        ent.CAPETADE = estadopedido.CAPETADE;
-                    }
-                    ent.CAPEIDES = Convert.ToDecimal(estadopedido.ESPEIDES);
-                    context.SaveChanges();
-                    listapar = context.PEPARM.ToList();
                 }
+                
                 vpar.ESTOPE = true;
 
                 //notificaciones cliente
@@ -359,7 +363,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }//NO SE USA
 
         private void insertaMovimientoKardex(PEDIDOSEntities context, decimal? idbolsa, decimal idtipomovimiento, decimal almacen, string partida, string articulo, decimal cantidad, decimal peso, decimal pesobr, string usuario, Nullable<decimal> iddetpedido, Nullable<decimal> iddetosa)
         {
@@ -684,7 +688,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }//NO SE USA
 
         //cambio 26 -04-2018
         public RESOPE guardaPreparacionBolsa2(appWcfService.DTO_PEBODP paramOperacion)
@@ -1000,7 +1004,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }//NO SE USA
         //cambio 26 -04-2018
 
 
@@ -1173,7 +1177,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//dd
+        }//NO SE USA
 
         //public string cambiaEstadoPedidodic(Dictionary<string, string> estadopedido)
         //{
@@ -1227,7 +1231,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }//LISTO
 
         public List<appWcfService.USP_OBTIENE_BOLSA_Result> obtieneBolsa(decimal iddetalle, string empaque)
         {
@@ -1273,7 +1277,7 @@ namespace appLogica
         //    return lista;
         //}
 
-        public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETALLE_Result> obtieneDetallePreparacionPedidos(decimal iddetallepedido)
+        public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETALLE_Result> obtieneDetallePreparacionPedidos(decimal iddetallepedido)//NO SE USA
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETALLE_Result> lista = null;
@@ -1293,7 +1297,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
         public void Finaliza()
         {
             //DB2 = null;
@@ -1363,7 +1367,7 @@ namespace appLogica
             return lista;
         }//cambiar proc
 
-        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")
+        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")//cambiar proc
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> lista = null;
@@ -1384,7 +1388,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         public List<appWcfService.USP_OBTIENE_DETALLE_OSA_Result> mostrarDetallePedidosInternos(string folio)
         {
@@ -1598,7 +1602,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//Dd
+        }//se usa no tocar
 
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result> obtieneDetallePreparacionPedInt(decimal iddetallepedint)
         {
@@ -1620,7 +1624,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }//NO SE USA
 
         public List<appWcfService.USP_OBTIENE_BOLSA_OSA_Result> obtieneBolsaOsa(decimal iddetalle, string empaque)
         {
@@ -2255,7 +2259,7 @@ namespace appLogica
 
         #region SIN EMPAQUE
 
-        public RESOPE guardaPreparacionBolsase(appWcfService.PEBODP detallebolsa)
+        public RESOPE guardaPreparacionBolsase(appWcfService.PEBODP detallebolsa)// NO SE USA
         {
             Nullable<decimal> iddetpedidostoc = null;
 
@@ -2571,7 +2575,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }
 
         public RESOPE guardaPreparacionBolsa2se(appWcfService.DTO_PEBODP paramOperacion)
         {
@@ -3331,7 +3335,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//d
+        }//NO SE USA
 
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETALLESE_Result> obtieneDetallePreparacionPedidosse(decimal iddetallepedido)
         {

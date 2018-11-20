@@ -135,7 +135,8 @@ namespace appLogica
         //    return lista;
         //}
 
-        public List<appWcfService.PEDEPE> mostrarDetallePedidosApp(decimal idpedido)
+        //LISTO
+        public List<appWcfService.PEDEPE> mostrarDetallePedidosApp(decimal idpedido)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.PEDEPE> lista = null;
@@ -159,8 +160,8 @@ namespace appLogica
             {
             }
             return lista;
-        }//LISTO
-
+        }
+        //LISTO
         public List<appWcfService.USP_OBTIENE_DETALLE_PEDIDOS_Result> mostrarDetallePedidos(decimal idpedido)
         {
             List<object> listaeo = null;
@@ -181,9 +182,9 @@ namespace appLogica
             {
             }
             return lista;
-        }//LISTO
+        }
 
-        public RESOPE cambiaEstadoPedido(PEESPE estadopedido)
+        public RESOPE cambiaEstadoPedido(PEESPE estadopedido)//NO SE USA
         {
             RESOPE vpar;
             vpar = new RESOPE() { ESTOPE = false };
@@ -270,7 +271,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//NO SE USA
+        }
         public RESOPE cambiaEstadoPedido2(PEESPE estadopedido)
         {
             RESOPE vpar;
@@ -358,7 +359,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//NO SE USA
+        }
 
         private void insertaMovimientoKardex(PEDIDOSEntities context, decimal? idbolsa, decimal idtipomovimiento, decimal almacen, string partida, string articulo, decimal cantidad, decimal peso, decimal pesobr, string usuario, Nullable<decimal> iddetpedido, Nullable<decimal> iddetosa)
         {
@@ -389,9 +390,9 @@ namespace appLogica
             }
            
 
-        }//dd
+        }
 
-        public RESOPE guardaPreparacionBolsa(appWcfService.PEBODP detallebolsa)
+        public RESOPE guardaPreparacionBolsa(appWcfService.PEBODP detallebolsa)//NO SE USA
         {
             Nullable<decimal> iddetpedidostoc = null;
 
@@ -688,10 +689,10 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//NO SE USA
+        }
 
         //cambio 26 -04-2018
-        public RESOPE guardaPreparacionBolsa2(appWcfService.DTO_PEBODP paramOperacion)
+        public RESOPE guardaPreparacionBolsa2(appWcfService.DTO_PEBODP paramOperacion)//NO SE USA
         {
             //detallebolsa
             List<appWcfService.PEBODP> listBolsas = null;
@@ -1004,13 +1005,13 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//NO SE USA
+        }
         //cambio 26 -04-2018
 
 
 
 
-        public RESOPE remueveBolsaPedido(decimal idbolsapedido, string usuario)
+        public RESOPE remueveBolsaPedido(decimal idbolsapedido, string usuario)//NO SE USA
         {
             Nullable<decimal> iddetpedido;
             Nullable<decimal> iddetpedidoint;
@@ -1177,7 +1178,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//NO SE USA
+        }
 
         //public string cambiaEstadoPedidodic(Dictionary<string, string> estadopedido)
         //{
@@ -1211,7 +1212,7 @@ namespace appLogica
         //    return resultado;
         //}
 
-        public List<PEUBIC> mostrarUbicacionesArticulo(string articulo, string partida, decimal idalmacen)
+        public List<PEUBIC> mostrarUbicacionesArticulo(string articulo, string partida, decimal idalmacen)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.PEUBIC> lista = null;
@@ -1231,7 +1232,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//LISTO
+        }
 
         public List<appWcfService.USP_OBTIENE_BOLSA_Result> obtieneBolsa(decimal iddetalle, string empaque)
         {
@@ -1253,7 +1254,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         //public List<appWcfService.PEBODP> obtieneDetallePreparacionPedidos(decimal iddetallepedido)
         //{
@@ -1317,7 +1318,7 @@ namespace appLogica
 
 
         #region PEDIDOS INTERNOS
-        public List<appWcfService.PETIFO> obtieneTiposFolio()
+        public List<appWcfService.PETIFO> obtieneTiposFolio()//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.PETIFO> lista = null;
@@ -1342,9 +1343,9 @@ namespace appLogica
             {
             }
             return lista;
-        }//LISTO
+        }
 
-        public List<appWcfService.USP_FOLIO_USUARIO_Result> obtieneFoliosUsuario(string usuario)
+        public List<appWcfService.USP_FOLIO_USUARIO_Result> obtieneFoliosUsuario(string usuario)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.USP_FOLIO_USUARIO_Result> lista = null;
@@ -1365,7 +1366,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//LISTO
+        }
 
         public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_Result> mostrarPedidosInternos(string tipofolios, string partida = "")//LISTO HAY UN PROBLEMA CON OSAS CAMBIADAS A N
         {
@@ -1390,7 +1391,7 @@ namespace appLogica
             return lista;
         }
 
-        public List<appWcfService.USP_OBTIENE_DETALLE_OSA_Result> mostrarDetallePedidosInternos(string folio)
+        public List<appWcfService.USP_OBTIENE_DETALLE_OSA_Result> mostrarDetallePedidosInternos(string folio)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_DETALLE_OSA_Result> lista = null;
@@ -1411,7 +1412,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc CLINTON
+        }
 
         public RESOPE cambiaEstadoPedInt(appWcfService.PECAOS estadopedint)
         {
@@ -1550,7 +1551,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }///REVISAR LLAMA A UNA FUNCION
+        }
 
         public RESOPE actualizaPreparacionItemOSA(appWcfService.PEDEOS detpedint)
         {
@@ -1601,9 +1602,9 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//se usa no tocar REVISAR PROSA
+        }
 
-        public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result> obtieneDetallePreparacionPedInt(decimal iddetallepedint)
+        public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result> obtieneDetallePreparacionPedInt(decimal iddetallepedint)//NO SE USA
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSA_Result> lista = null;
@@ -1623,7 +1624,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//NO SE USA
+        }
 
         public List<appWcfService.USP_OBTIENE_BOLSA_OSA_Result> obtieneBolsaOsa(decimal iddetalle, string empaque)
         {
@@ -1645,7 +1646,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
         #endregion
 
         #region ubicaciones
@@ -1669,9 +1670,9 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc CLINTON
+        }
 
-        public List<appWcfService.USP_CONSULTA_EMPAQUES_PARTIDA_Result> consultaEmpaquesPartida(string partida, string articulo, string empaque)
+        public List<appWcfService.USP_CONSULTA_EMPAQUES_PARTIDA_Result> consultaEmpaquesPartida(string partida, string articulo, string empaque)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.USP_CONSULTA_EMPAQUES_PARTIDA_Result> lista = null;
@@ -1710,9 +1711,9 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
-        public List<appWcfService.USP_OBTIENE_DETALLE_BOLSA_Result> obtieneDetalleBolsa(string empaque)
+        public List<appWcfService.USP_OBTIENE_DETALLE_BOLSA_Result> obtieneDetalleBolsa(string empaque)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_DETALLE_BOLSA_Result> lista = null;
@@ -1732,7 +1733,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         public RESOPE guardaBolsaUbicacion(appWcfService.PEBOLS bolsa)
         {
@@ -1823,12 +1824,12 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//dd
+        }
 
         #endregion
 
         #region recepcion osa
-        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_PLANTA_Result> mostrarPedidosIntPendRecepcion(string tipofolios, string numfolio)
+        public List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_PLANTA_Result> mostrarPedidosIntPendRecepcion(string tipofolios, string numfolio)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_OSAS_PENDIENTES_PLANTA_Result> lista = null;
@@ -1849,7 +1850,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         public List<appWcfService.USP_OBTIENE_DETALLE_OSA_PLANTA_Result> mostrarDetallePedidosIntPendRecepcion(string folio)
         {
@@ -1872,7 +1873,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         public RESOPE conformidadRecepcionOsa(appWcfService.DET_USP_OBTIENE_DETALLE_OSA_PLANTA_Result objetoLista)
         {
@@ -2019,7 +2020,7 @@ namespace appLogica
                 }
             }
             return vpar;
-        }//REVISAR TIENE LLAMADO A DB2
+        }
 
         public RESOPE cambiaestaDeosBodp(DTO_USP_OBTIENE_DETALLE_OSA_Result paramOperacion)
         {
@@ -2167,7 +2168,7 @@ namespace appLogica
 
             }
             return vpar;
-        }///REVISAR LLAMA A UNA FUNCION
+        }
 
         /// <summary>
         /// Actualiza PROSAS en AS
@@ -2959,7 +2960,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }///REVISAR LLAMA A UNA FUNCION
+        }
 
         public RESOPE remueveBolsaPedidose(decimal idbolsapedido, string usuario)
         {
@@ -3142,10 +3143,10 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }///REVISAR LLAMA A UNA FUNCION
+        }
 
         //DMA 17_10_2018
-        public RESOPE remueveBolsaPedidose2(string idbolsapedido, string usuario)
+        public RESOPE remueveBolsaPedidose2(string idbolsapedido, string usuario)//NO SE USA
         {
             //Recibira una lista ('1','2','5')
 
@@ -3337,7 +3338,7 @@ namespace appLogica
             }
             vpar.MENERR = resultado;
             return vpar;
-        }//NO SE USA
+        }
 
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETALLESE_Result> obtieneDetallePreparacionPedidosse(decimal iddetallepedido)
         {
@@ -3359,7 +3360,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE_Result> obtieneDetallePreparacionPedIntse(decimal iddetallepedint)
         {
@@ -3381,7 +3382,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         //DMA 17/10/2018
         public List<appWcfService.USP_OBTIENE_DETPREPARACION_POR_IDDETOSASE_Result> obtieneDetallePreparacionPedIntse2(string iddetallepedint)
@@ -3413,7 +3414,7 @@ namespace appLogica
             {
             }
             return lista;
-        }//cambiar proc
+        }
 
         #endregion
 

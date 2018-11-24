@@ -1852,7 +1852,7 @@ namespace appLogica
             return lista;
         }
 
-        public List<appWcfService.USP_OBTIENE_DETALLE_OSA_PLANTA_Result> mostrarDetallePedidosIntPendRecepcion(string folio)
+        public List<appWcfService.USP_OBTIENE_DETALLE_OSA_PLANTA_Result> mostrarDetallePedidosIntPendRecepcion(string folio)//LISTO
         {
             List<object> listaeo = null;
             List<appWcfService.USP_OBTIENE_DETALLE_OSA_PLANTA_Result> lista = null;

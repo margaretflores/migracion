@@ -1,0 +1,5 @@
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appDataContracts\bin\Release\appDataContracts.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appDataContracts\bin\Release\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appDataContracts\bin\Release\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appDataContracts\obj\Release\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appDataContracts\obj\Release\appDataContracts.pdb

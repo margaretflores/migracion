@@ -1,0 +1,84 @@
+﻿<Window x:Class="appfe.Trabajar_Item"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Preparar Item" Height="615.5" Width="965.833" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize" KeyDown="Window_KeyDown" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Plantilla.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Código de empaque" Height="27" HorizontalAlignment="Left" Margin="10,117,0,0" Name="label2" VerticalAlignment="Top" />
+        <Button Content="Agregar Empaque" Height="23" HorizontalAlignment="Left" Margin="275,120,0,0" Name="AgregarBolsabutton" VerticalAlignment="Top" Width="110" Click="AgregarBolsabutton_Click" ToolTip="Agregue el empaque." TabIndex="1" />
+        <Button x:Name="btnlimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="505,120,0,0" VerticalAlignment="Top" Width="68" Click="btnlimpiar_Click" ToolTip="Limpie el cuadro el cuadro de texto de ingreso de empaque." TabIndex="2" Height="23"/>
+        <Button Content="Sin Empaque" Height="23" HorizontalAlignment="Left" Margin="390,120,0,0" Name="sinEmpaquebutton" VerticalAlignment="Top" Width="110" TabIndex="1" Click="sinEmpaquebutton_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="133,120,0,0" Name="CodigoBolsatextBox" VerticalAlignment="Top" Width="137" MaxLength="8" KeyDown="CodigoBolsatextBox_KeyDown" ToolTip="Ingrese el número de empaque, presione ENTER para agregar o ESC para limpiar el campo." TabIndex="0" />
+        <Button Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="578,120,0,0" Name="Eliminarbutton" VerticalAlignment="Top" Width="68" Click="Eliminarbutton_Click" ToolTip="Elimine de la preparación las bolsas seleccionadas." TabIndex="3" />
+        <DataGrid AutoGenerateColumns="False" Height="390" HorizontalAlignment="Left" Margin="8,148,0,0" Name="DetalleItemsdataGrid" VerticalAlignment="Top" Width="638" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" MouseDoubleClick="DetalleItemsdataGrid_MouseDoubleClick" LoadingRow="DetalleItemsdataGrid_LoadingRow" TabIndex="4">
+            <DataGrid.Columns>
+                <!--<DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding BODPCHECK, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="Cod. Empaque" Width="1*" IsReadOnly="True" Binding="{Binding BOLSCOEM }" CanUserReorder="False" CanUserResize="False" />
+                <DataGridTextColumn Header="Artículo" Width="1*" IsReadOnly="True" Binding="{Binding BOLSARTI }" CanUserReorder="False" CanUserResize="False" />
+                <DataGridTextColumn Header="Partida" Width="1*" IsReadOnly="True" Binding="{Binding BOLSPART }" CanUserReorder="False" CanUserResize="False"/>
+                <DataGridTextColumn Header="Almacén" Width="1*" IsReadOnly="True" Binding="{Binding BOLSALMA }" CanUserReorder="False" CanUserResize="False"/>
+                <DataGridTextColumn Header="Cant. Bolsa" Width="1*" IsReadOnly="True" Binding="{Binding BOLSCANT }" CanUserReorder="False" CanUserResize="False"/>
+                <DataGridTextColumn Header="Peso Bolsa" Width="1*" IsReadOnly="True" Binding="{Binding BOLSPESO, StringFormat=F }" CanUserReorder="False" CanUserResize="False"/>
+                <DataGridTextColumn Header="Cant. Atendida" Width="1*" Binding="{Binding BODPCANT }" CanUserReorder="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Peso Atendido" Width="1*" Binding="{Binding BODPPESO , StringFormat=F}" CanUserReorder="False" CanUserResize="False" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Content" Value="{Binding Path=(ItemsControl.AlternationIndex),RelativeSource={RelativeSource AncestorType=DataGridRow}}"/>
+                </Style>
+            </DataGrid.RowHeaderStyle>
+        </DataGrid>
+        <Button Content="Volver" Height="23" HorizontalAlignment="Left" Margin="491,543,0,0" Name="Cancelarbutton" VerticalAlignment="Top" Width="75" Click="Cancelarbutton_Click" ToolTip="Volver a la pantalla anterior." TabIndex="9" />
+        <Button Content="Guardar" Height="23" HorizontalAlignment="Left" Margin="571,543,0,0" x:Name="guardarbutton" VerticalAlignment="Top" Width="75" Click="guardarbutton_Click" ToolTip="Guarde la preparación del item." TabIndex="8" />
+        <TextBlock x:Name="trabajaritemlabel" Style="{StaticResource StyleTBTitulo}" Width="960" FontFamily="Segoe UI" FontWeight="Normal" FontSize="24" Height="50" VerticalAlignment="Top" Text="Preparar Item"/>
+        <GroupBox Header="Información Referencial" HorizontalAlignment="Left" Margin="8,55,0,0" VerticalAlignment="Top" Width="638" Height="60" BorderBrush="#FF791D1D">
+            <Grid>
+                <Label Content="TOTAL PARTIDA" Height="28" HorizontalAlignment="Left" Margin="23,5,0,0" x:Name="label3" VerticalAlignment="Top" />
+                <Label Content="PESO SOLICITADO" Height="28" HorizontalAlignment="Left" Margin="184,5,0,0" x:Name="label5" VerticalAlignment="Top" />
+                <Label Content="DIFERENCIA" Height="28" HorizontalAlignment="Left" Margin="357,5,0,0" x:Name="label6" VerticalAlignment="Top" />
+                <Label Content="00.00 KG" Height="28" HorizontalAlignment="Left" Margin="114,5,0,0" x:Name="totalpartidalabel" VerticalAlignment="Top" FontWeight="Bold" />
+                <Label Content="00.00 KG" Height="28" HorizontalAlignment="Left" Margin="287,5,0,0" x:Name="pesosolicitadolabel" VerticalAlignment="Top" FontWeight="Bold" />
+                <Label Content="00.00 KG" Height="28" HorizontalAlignment="Left" Margin="427,5,0,0" x:Name="diferencialabel" VerticalAlignment="Top" FontWeight="Bold" />
+                <Label Content="ALMACEN" Height="28" HorizontalAlignment="Left" Margin="500,5,0,0" x:Name="almacen" VerticalAlignment="Top" />
+                <Label Content="  " Height="28" HorizontalAlignment="Left" Margin="567,5,0,0" x:Name="almacenlabel" VerticalAlignment="Top" FontWeight="Bold" />
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Ubicaciones" HorizontalAlignment="Left" Margin="651,256,0,0" VerticalAlignment="Top" Width="293" Height="319" BorderBrush="#FF791D1D">
+            <Grid>
+                <DataGrid x:Name="Ubicacionesdatagrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="277" Width="261" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" ToolTip="Detalle de ubicaciones." TabIndex="4">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Ubicación" Width="1*" Binding="{Binding UBICCOCA}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="N° Bolsas" Width="1*" Binding="{Binding UBICCANT}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="" HorizontalAlignment="Left" Margin="651,55,0,0" VerticalAlignment="Top" Width="293" Height="196" BorderBrush="#FF791D1D">
+            <Grid>
+                <Label Content="TOTAL CANTIDAD" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" FontSize="14"/>
+                <Label Content="TOTAL PESO BRUTO" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" FontSize="14"/>
+                <Label Content="TOTAL TARA" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" FontSize="14"/>
+                <Label Content="TOTAL PESO NETO" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" FontSize="14"/>
+                <Label x:Name="cantidadlabel" Content="00 UND" HorizontalAlignment="Left" Margin="181,10,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold" FontSize="14"/>
+                <Label x:Name="pesobrutolabel" Content="00.00 KG" HorizontalAlignment="Left" Margin="181,41,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold" FontSize="14"/>
+                <Label x:Name="taralabel" Content="00.00 KG" HorizontalAlignment="Left" Margin="181,72,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold" FontSize="14"/>
+                <Label x:Name="pesonetolabel" Content="00.00 KG" HorizontalAlignment="Left" Margin="181,103,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold" FontSize="14"/>
+                <Button x:Name="pesadomultiplebutton" Content="Pesado Multiple" HorizontalAlignment="Left" Margin="107,142,0,0" VerticalAlignment="Top" Width="164" Click="pesadomultiplebutton_Click" ToolTip="Realice los calculos de todas las bolsas." TabIndex="6"/>
+                <CheckBox x:Name="stockcheckbox" Content="STOCK 0" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" ToolTip="Indique que la partida quedó con stock 0." TabIndex="5"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

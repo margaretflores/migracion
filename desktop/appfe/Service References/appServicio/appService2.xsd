@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/appWcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/appWcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52991/appService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PAROPE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODOPE" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="VALENT" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PAROPE" nillable="true" type="tns:PAROPE" />
+  <xs:complexType name="RESOPE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ESTOPE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MENERR" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="VALSAL" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RESOPE" nillable="true" type="tns:RESOPE" />
+</xs:schema>

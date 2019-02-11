@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+12:29:32 > An error occurred while executing the command definition. See the inner exception for details.
+12:30:24 > An error occurred while executing the command definition. See the inner exception for details.
+12:49:51 > The underlying provider failed on Open.
+14:11:36 > The underlying provider failed on Open.
+=======
+15:28:03 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+15:28:47 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+15:29:36 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+15:31:11 > No se puede reconocer la cadena como valor DateTime válido.
+15:40:47 > No se puede reconocer la cadena como valor DateTime válido.
+15:43:47 > No se puede reconocer la cadena como valor DateTime válido.
+16:18:12 > DbComparisonExpression requires arguments with comparable types.
+>>>>>>> eb475537d67bacc79198fe25c481d106ac9d96c3

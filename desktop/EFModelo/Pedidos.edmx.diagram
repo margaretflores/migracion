@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b93570fd1dda4ae4b8ee4b82a8f4f505" Name="Diagram1" ZoomLevel="65" ShowGrid="true">
+        <EntityTypeShape EntityType="PEDIDOSModel.AMCLI" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PECAOS" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEDPDG" Width="1.5" PointX="9.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEESTA" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEHIBO" Width="1.5" PointX="12.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEHIMO" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEPEPG" Width="1.5" PointX="7.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PETIFO" Width="1.5" PointX="12.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PETMKB" Width="1.5" PointX="10.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEUSTF" Width="1.5" PointX="15" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PROSAS" Width="1.5" PointX="13.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PEDIDOSModel.TCLIE" Width="1.5" PointX="2.875" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PECAOS_PEESTA" ManuallyRouted="false" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEUSTF_PETIFO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PEDIDOSModel.I1DD20A" Width="1.5" PointX="17.5" PointY="1.875" />
+        <EntityTypeShape EntityType="PEDIDOSModel.VSED00A" Width="1.5" PointX="16.375" PointY="18.75" />
+        <EntityTypeShape EntityType="PEDIDOSModel.VSED02A" Width="1.5" PointX="15.375" PointY="5.75" />
+        <EntityTypeShape EntityType="PEDIDOSModel.FCTIEM" Width="1.5" PointX="18.375" PointY="20.125" />
+        <EntityTypeShape EntityType="PEDIDOSModel.GMCAEM" Width="1.5" PointX="20.625" PointY="19.125" />
+        <EntityTypeShape EntityType="PEDIDOSModel.GMDEEM" Width="1.5" PointX="20.375" PointY="0.75" />
+        <AssociationConnector Association="PEDIDOSModel.FK_GMCAEM_FCTIEM1" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PECASI" Width="1.5" PointX="5.25" PointY="10.625" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEHIBO_PECASI" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PECOLU" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PENIVE" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEPASI" Width="1.5" PointX="0.75" PointY="10" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PECASI_PECOLU1" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PECASI_PENIVE1" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PECOLU_PEPASI" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PENIVE_PEPASI" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PETICO" Width="1.5" PointX="10.375" PointY="21" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEKABO" Width="1.5" PointX="12.75" PointY="6.75" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEKABO_PETMKB" />
+        <EntityTypeShape EntityType="PEDIDOSModel.I1DD41A" Width="1.5" PointX="12.375" PointY="20.75" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEDEOS" Width="1.5" PointX="7.5" PointY="1.75" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PRCALI" Width="1.5" PointX="23.25" PointY="12.875" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PRPART" Width="1.5" PointX="25.625" PointY="16.875" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEDEOS_PECAOS" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEHIMO_PEDEOS" />
+        <EntityTypeShape EntityType="PEDIDOSModel.CSALES" Width="1.5" PointX="22.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEDEPE" Width="1.5" PointX="19.75" PointY="8.625" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEPARM" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PRASIG" Width="1.5" PointX="24.375" PointY="0.75" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEDEPE_I1DD20A" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEDPDG_PEDEPE" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEHIMO_PEDEPE" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEBOLS" Width="1.5" PointX="7.5" PointY="10.5" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEBOLS_PECASI" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEHIBO_PEBOLS" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEHIMO_PEBOLS" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEKABO_PEBOLS" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PECAPE" Width="1.5" PointX="5.25" PointY="16.25" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PECAPE_PEESTA" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PECAPE_TCLIE" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEDEPE_PECAPE" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEPEPG_PECAPE" />
+        <EntityTypeShape EntityType="PEDIDOSModel.PEBODP" Width="1.5" PointX="23" PointY="5.625" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEBODP_PEBOLS" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEBODP_PEDEOS" />
+        <AssociationConnector Association="PEDIDOSModel.FK_PEBODP_PEDEPE" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

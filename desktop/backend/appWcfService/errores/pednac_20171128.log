@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+12:20:08 > LINQ to Entities does not recognize the method 'System.Decimal Parse(System.String)' method, and this method cannot be translated into a store expression.
+12:44:28 > An error occurred while executing the command definition. See the inner exception for details.
+12:45:06 > The underlying provider failed on Open.
+12:45:07 > The underlying provider failed on Open.
+=======
+12:01:32 > DbComparisonExpression requires arguments with comparable types.
+12:03:57 > LINQ to Entities does not recognize the method 'System.Decimal Parse(System.String)' method, and this method cannot be translated into a store expression.
+>>>>>>> 4903eb3d175d35f4c2197237a65fca902ab3aaee
+14:20:31 > La cadena de entrada no tiene el formato correcto.
+14:20:36 > La cadena de entrada no tiene el formato correcto.
+14:20:44 > La cadena de entrada no tiene el formato correcto.
+14:20:50 > La cadena de entrada no tiene el formato correcto.
+14:36:36 > La cadena de entrada no tiene el formato correcto.
+14:38:28 > La cadena de entrada no tiene el formato correcto.
+14:38:35 > La cadena de entrada no tiene el formato correcto.
+14:38:49 > La cadena de entrada no tiene el formato correcto.
+14:40:07 > La cadena de entrada no tiene el formato correcto.
+14:49:06 > La cadena de entrada no tiene el formato correcto.

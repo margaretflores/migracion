@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+12:11:39 > Se produjo una excepción en el destino de la invocación.
+12:12:17 > Se produjo una excepción en el destino de la invocación.
+=======
+12:15:39 > An error occurred while updating the entries. See the inner exception for details.
+12:16:30 > An error occurred while updating the entries. See the inner exception for details.
+>>>>>>> b39e3118bfe4764722487bb5c844c9ca1dde61e4

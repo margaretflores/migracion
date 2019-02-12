@@ -1,0 +1,39 @@
+﻿<Window x:Class="appfe.Editar_Bolsa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Editar Bolsa" Height="426.02" Width="362.009" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" Closing="Window_Closing" ResizeMode="NoResize" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Plantilla.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <TextBlock x:Name="labeleditarbolsa" Style="{StaticResource StyleTBTitulo}" Width="375" FontFamily="Segoe UI" FontWeight="Normal" FontSize="24" Height="50" VerticalAlignment="Top" Text="Editar Bolsa"/>
+        <TextBox x:Name="cantidadtextbox" HorizontalAlignment="Left" Height="23" Margin="238,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextChanged="cantidadtextbox_TextChanged" KeyDown="cantidadtextbox_KeyDown" MaxLength="5" ToolTip="Ingrese la cantidad de conos, presione ESC para limpiar el cuadro de texto." TabIndex="2"/>
+        <Label x:Name="bolsalabel" Content="BOLSA:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="pesobrutotext" HorizontalAlignment="Left" Height="23" Margin="238,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextChanged="pesobrutotext_TextChanged" KeyDown="pesobrutotext_KeyDown" MaxLength="10" ToolTip="Ingrese el peso bruto, presione ESC para limpiar el cuadro de texto." TabIndex="3"/>
+        <TextBox x:Name="taraunitext" HorizontalAlignment="Left" Height="23" Margin="238,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" IsEnabled="True" MaxLength="5" TabIndex="5" KeyDown="taraunitext_KeyDown" TextChanged="taraunitext_TextChanged"/>
+        <TextBox x:Name="taradespachotext" HorizontalAlignment="Left" Height="23" Margin="238,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextChanged="taradespachotext_TextChanged" KeyDown="taradespachotext_KeyDown" MaxLength="5" ToolTip="Ingrese la tara de despacho adicional, presione ESC para limpiar el cuadro de texto." TabIndex="6"/>
+        <TextBox x:Name="pesonetorealtext" HorizontalAlignment="Left" Height="23" Margin="238,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" IsEnabled="False" MaxLength="5" TabIndex="7"/>
+        <TextBox x:Name="pesobrutofinaltext" HorizontalAlignment="Left" Height="23" Margin="238,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" IsEnabled="False" MaxLength="10" TabIndex="8"/>
+        <TextBox x:Name="pesonetomodificadotext" HorizontalAlignment="Left" Height="23" Margin="238,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" KeyDown="pesonetomodificadotext_KeyDown" MaxLength="10" ToolTip="Modifique el peso neto si lo desea, presione ESC para limpiar el cuadro de texto." TabIndex="9" />
+        <Label Content="PESO BRUTO" HorizontalAlignment="Left" Margin="38,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="TARA CONO" HorizontalAlignment="Left" Margin="38,161,0,0" VerticalAlignment="Top"/>
+        <Label Content="TARA ADICIONAL" HorizontalAlignment="Left" Margin="38,227,0,0" VerticalAlignment="Top"/>
+        <Label Content="PESO NETO REAL" HorizontalAlignment="Left" Margin="38,255,0,0" VerticalAlignment="Top"/>
+        <Label Content="PESO BRUTO FINAL" HorizontalAlignment="Left" Margin="38,283,0,0" VerticalAlignment="Top"/>
+        <Label Content="PESO NETO MODIFICADO" HorizontalAlignment="Left" Margin="38,311,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="stock0checkbox" Content="Stock 0" HorizontalAlignment="Left" Margin="238,83,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="stock0checkbox_Click" TabIndex="1"/>
+        <CheckBox x:Name="pesobolsacheckbox" Content="Incluir peso de bolsa" HorizontalAlignment="Left" Margin="20,83,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="pesobolsacheckbox_Click" TabIndex="0"/>
+        <Button x:Name="cancelarbutton" Content="Cancelar" HorizontalAlignment="Left" Margin="81,349,0,0" VerticalAlignment="Top" Width="75" Click="cancelarbutton_Click" ToolTip="Cancelar." TabIndex="11"/>
+        <Button x:Name="aceptarbutton" Content="Aceptar" HorizontalAlignment="Left" Margin="206,349,0,0" VerticalAlignment="Top" Width="75" Click="aceptarbutton_Click" ToolTip="Guarde los cambios modificados." TabIndex="10"/>
+        <Label Content="CANTIDAD" HorizontalAlignment="Left" Margin="38,105,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="partidalabel" Content="PARTIDA:" HorizontalAlignment="Left" Margin="122,55,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="almacenlabel" Content="ALMACEN:" HorizontalAlignment="Left" Margin="257,55,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="taratext" HorizontalAlignment="Left" Height="23" Margin="238,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" IsEnabled="False" MaxLength="5" TabIndex="5" TextChanged="taratext_TextChanged"/>
+        <Label Content="TARA CALC." HorizontalAlignment="Left" Margin="38,195,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

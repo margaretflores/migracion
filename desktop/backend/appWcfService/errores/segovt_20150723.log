@@ -1,0 +1,4 @@
+17:26:57 > ERROR [IM002] [Microsoft][Administrador de controladores ODBC] No se encuentra el nombre del origen de datos y no se especificó ningún controlador predeterminado
+17:30:55 > ERROR [IM002] [Microsoft][Administrador de controladores ODBC] No se encuentra el nombre del origen de datos y no se especificó ningún controlador predeterminado
+18:01:40 > Se ha producido un error de comunicación.
+18:06:42 > La propiedad ConnectionString no es válida.

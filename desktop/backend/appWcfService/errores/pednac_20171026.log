@@ -1,0 +1,6 @@
+10:24:55 > An error occurred while executing the command definition. See the inner exception for details.
+10:28:13 > An error occurred while executing the command definition. See the inner exception for details.
+15:34:44 > Error al generar el documento XML.
+16:00:14 > Se produjo una excepción de tipo 'System.OutOfMemoryException'.
+16:01:03 > Se produjo una excepción de tipo 'System.OutOfMemoryException'.
+16:08:52 > Se produjo una excepción de tipo 'System.OutOfMemoryException'.

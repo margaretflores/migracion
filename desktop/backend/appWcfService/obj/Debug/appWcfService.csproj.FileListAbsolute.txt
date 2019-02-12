@@ -1,0 +1,114 @@
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll.config
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll.config
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.xml
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.pdb
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.xml
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.csprojResolveAssemblyReference.cache
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.dll
+C:\Repositorio Git\MejorIncaPrincipal\Proyectos\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.csprojResolveAssemblyReference.cache
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\JWT.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\Newtonsoft.Json.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\Newtonsoft.Json.xml
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll.config
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appWcfService.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\JWT.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\Newtonsoft.Json.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appConstantes.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDataContracts.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLanzador.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appLogica.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.xml
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EntityFramework.SqlServer.xml
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\Newtonsoft.Json.xml
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\appDTO.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\EFModelo.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.pdb
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\AccesoDatos.xml
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\bin\IBM.Data.DB2.iSeries.xml
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.csprojResolveAssemblyReference.cache
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.dll
+C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appWcfService\obj\Debug\appWcfService.pdb

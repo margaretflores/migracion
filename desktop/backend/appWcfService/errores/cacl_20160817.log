@@ -1,0 +1,3 @@
+15:49:45 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+15:51:48 > SQL0204 USP_OBTENER_MAQUINAS en *N de tipo *N no encontrado.

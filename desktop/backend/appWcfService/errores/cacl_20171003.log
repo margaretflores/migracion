@@ -1,0 +1,10 @@
+12:55:32 > An error occurred while executing the command definition. See the inner exception for details.
+14:29:16 > An error occurred while executing the command definition. See the inner exception for details.
+14:36:56 > An error occurred while executing the command definition. See the inner exception for details.
+15:01:04 > An error occurred while preparing the command definition. See the inner exception for details.
+15:51:44 > Se produjo una excepción en el destino de la invocación.
+15:52:30 > Se produjo una excepción en el destino de la invocación.
+15:53:04 > El objeto de tipo 'System.Data.Entity.DynamicProxies.TCLIE_C8BA478CC1018E9F1A3B809459A3B7CFB2470DF20B307041788795643787C87E' no puede convertirse en el tipo 'appWcfService.TCLIE'.
+15:57:19 > El objeto de tipo 'System.Data.Entity.DynamicProxies.TCLIE_C8BA478CC1018E9F1A3B809459A3B7CFB2470DF20B307041788795643787C87E' no puede convertirse en el tipo 'appWcfService.TCLIE'.
+15:58:02 > El objeto de tipo 'System.Data.Entity.DynamicProxies.TCLIE_C8BA478CC1018E9F1A3B809459A3B7CFB2470DF20B307041788795643787C87E' no puede convertirse en el tipo 'appWcfService.TCLIE'.
+16:08:04 > El objeto de tipo 'System.Data.Entity.DynamicProxies.TCLIE_C8BA478CC1018E9F1A3B809459A3B7CFB2470DF20B307041788795643787C87E' no puede convertirse en el tipo 'appWcfService.TCLIE'.

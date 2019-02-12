@@ -1,0 +1,6 @@
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\bin\Release\appConstantes.dll.config
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\bin\Release\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\bin\Release\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\obj\Release\appConstantes.dll
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\obj\Release\appConstantes.pdb
+D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\obj\Release\appConstantes.csprojResolveAssemblyReference.cache

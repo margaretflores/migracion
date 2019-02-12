@@ -1,0 +1,24 @@
+12:51:20 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+12:51:39 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+12:52:39 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+12:59:50 > The operation cannot be completed because the DbContext has been disposed.
+<<<<<<< HEAD
+13:01:41 > The number of primary key values passed must match number of primary key values defined on the entity.
+Nombre del parámetro: keyValues
+13:02:56 > The number of primary key values passed must match number of primary key values defined on the entity.
+Nombre del parámetro: keyValues
+14:16:07 > The number of primary key values passed must match number of primary key values defined on the entity.
+Nombre del parámetro: keyValues
+14:18:25 > La cadena de entrada no tiene el formato correcto.
+14:19:58 > La cadena de entrada no tiene el formato correcto.
+14:22:46 > Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+14:24:08 > Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+14:34:18 > Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+14:45:26 > Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+=======
+14:23:35 > Especificador de formato no válido.
+14:27:51 > Especificador de formato no válido.
+>>>>>>> c8f4f196970032d6483138240691712c0dec7279

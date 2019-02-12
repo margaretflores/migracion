@@ -1,7 +1,0 @@
-18:29:14 > SQL0803 Se ha especificado valor de clave duplicada.
-18:29:46 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
-Nombre del parámetro: index
-18:31:43 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
-Nombre del parámetro: index
-18:32:31 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
-Nombre del parámetro: index

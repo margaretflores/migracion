@@ -1,7 +1,0 @@
-16:47:37 > SQL0204 RESULTADOSP en U01SMLR de tipo *FILE no encontrado.
-16:48:33 > SQL0551 No tiene autorización para el objeto USP_S00023 de PRODDAT tipo *PGM.
-16:48:54 > SQL0255 La función no tiene soporte en la consulta.
-17:20:43 > SQL0551 No tiene autorización para el objeto USP_S00023 de PRODDAT tipo *PGM.
-17:47:59 > Error en el documento XML (1, 41).
-18:00:18 > SQL0551 No tiene autorización para el objeto USP_S00023 de PRODDAT tipo *PGM.
-18:27:36 > SQL0440 La rutina USP_SCC_OBTENER_TABLA_ESTANDARES de  no se ha encontrado con los parámetros especificados.

@@ -1,9 +1,0 @@
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\bin\Release\appDTO.dll.config
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\bin\Release\appDTO.dll
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\bin\Release\appDTO.pdb
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\bin\Release\Microsoft.ReportViewer.WinForms.dll
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\bin\Release\Microsoft.ReportViewer.Common.dll
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\bin\Release\Microsoft.ReportViewer.WinForms.xml
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\obj\Release\appDTO.dll
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\obj\Release\appDTO.pdb
-D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\obj\Release\appDTO.csprojResolveAssemblyReference.cache

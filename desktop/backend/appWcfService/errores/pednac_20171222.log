@@ -1,5 +1,0 @@
-11:39:49 > The number of primary key values passed must match number of primary key values defined on the entity.
-Nombre del parámetro: keyValues
-11:41:18 > The number of primary key values passed must match number of primary key values defined on the entity.
-Nombre del parámetro: keyValues
-11:42:08 > The operation cannot be completed because the DbContext has been disposed.

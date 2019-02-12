@@ -1,2 +1,0 @@
-16:00:18 > El canal de solicitud agotó el tiempo de espera mientras esperaba una respuesta después de 00:00:59.9989799. Aumente el valor de tiempo de espera pasado a la llamada a Request, o bien aumente el valor de SendTimeout en el enlace. El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor.
-16:08:36 > El cliente no puede finalizar la negociación de seguridad en el tiempo de espera configurado (00:01:00). La sección de negociación actual es 1 (00:01:00).  

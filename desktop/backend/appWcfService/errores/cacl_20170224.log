@@ -1,4 +1,0 @@
-15:26:23 > La conexión no se puede abrir porque se ha sobrepasado el tiempo de espera de la conexión.
-15:26:24 > Se ha producido una excepción inesperada.  Type: System.AccessViolationException, Message: Intento de leer o escribir en la memoria protegida. A menudo, esto indica que hay otra memoria dañada..
-15:26:45 > La conexión no se puede abrir porque se ha sobrepasado el tiempo de espera de la conexión.
-15:26:46 > Se ha producido una excepción inesperada.  Type: System.AccessViolationException, Message: Intento de leer o escribir en la memoria protegida. A menudo, esto indica que hay otra memoria dañada..

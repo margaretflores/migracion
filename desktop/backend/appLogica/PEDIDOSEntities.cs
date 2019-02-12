@@ -842,7 +842,7 @@ namespace appLogica
         string pCASIUSMO = null,
         DateTime? pCASIFEMO = null)
         {
-            DB2.CrearComando("PRPEDAT.USP_PEDEPE_UPDATE", CommandType.StoredProcedure);
+            DB2.CrearComando("PRPEDAT.USP_PECASI_UPDATE", CommandType.StoredProcedure);
             DB2.AsignarParamProcAlmac("CASICOCA", iDB2DbType.iDB2Char, pCASICOCA);
             if (pCASIIDPA == null)
             {

@@ -2328,8 +2328,7 @@ namespace appLogica
                         String descripcionitem;
                         var detPed = context.PEDEPE_Find(item.DEPEIDDP);//.PEDEPE.Find(item.DEPEIDDP);
                         secuemcia++;
-                        descripcionitem = "";//temporal 11/02/2019
-                       // descripcionitem = _appDB2.descripcionItem(false, item.DEPECOAR, "", item.DEPECONT, "N", Convert.ToString(secuemcia), Convert.ToInt32(item.DEPECAAT).ToString(), "3");
+                        descripcionitem = _appDB2.descripcionItem(false, item.DEPECOAR, "", item.DEPECONT, "N", Convert.ToString(secuemcia), Convert.ToInt32(item.DEPECAAT).ToString(), "3");
                         item.DEPEDSAR = descripcionitem;
                         detPed.DEPEDSAR = descripcionitem;
 
@@ -2566,7 +2565,7 @@ namespace appLogica
                         cas.CASIANCH = Casillero.CASIANCH;
                         cas.CASIUSMO = Casillero.CASIUSMO;
                         cas.CASIFEMO = DateTime.Now;
-                        context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
+                        context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA ,  pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
                                 pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
                                 , pCASILARG: cas.CASILARG);
                         //context.SaveChanges();
@@ -2608,9 +2607,9 @@ namespace appLogica
                             cas.CASIESTA = 0;
                             cas.CASIUSMO = usuario;
                             cas.CASIFEMO = DateTime.Now;
-                            context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
+                            context.PECASI_UPDATE(cas.CASICOCA, pCASIIDPA: cas.CASIIDPA, pCASIESTA: cas.CASIESTA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
                                 pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
-                                , pCASILARG: cas.CASILARG);
+                                , pCASILARG: cas.CASILARG, pCASIUSMO: cas.CASIUSMO, pCASIFEMO: cas.CASIFEMO);
                             //context.SaveChanges();
                             vpar.ESTOPE = true;
                         }
@@ -2668,7 +2667,7 @@ namespace appLogica
                                 else cas.CASIESTA = 0;
                                 cas.CASIUSMO = usuario;
                                 cas.CASIFEMO = DateTime.Now;
-                                context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
+                                context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
                                 pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
                                 , pCASILARG: cas.CASILARG);
                             }
@@ -2741,7 +2740,7 @@ namespace appLogica
                                 else cas.CASIESTA = 0;
                                 cas.CASIUSMO = usuario;
                                 cas.CASIFEMO = DateTime.Now;
-                                context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
+                                context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
                                 pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
                                 , pCASILARG: cas.CASILARG);
                             }
@@ -2814,7 +2813,7 @@ namespace appLogica
                                 else cas.CASIESTA = 0;
                                 cas.CASIUSMO = usuario;
                                 cas.CASIFEMO = DateTime.Now;
-                                context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
+                                context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
                                 pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
                                 , pCASILARG: cas.CASILARG);
                             }
@@ -3089,9 +3088,10 @@ namespace appLogica
                     //var ped = context.PENIVE.Max(x => x.NIVEIDNI);
                     num = Encoding.ASCII.GetBytes(nivel)[0];
                     num++;
-                    var det = context.PENIVE_Find((num).ToString(), pasillo);//.PENIVE.Find((num).ToString(), pasillo);
                     byte[] bytes2 = BitConverter.GetBytes(num);
                     string a = Encoding.ASCII.GetString(bytes2);
+                    var det = context.PENIVE_Find((a[0]).ToString(), pasillo);//.PENIVE.Find((num).ToString(), pasillo);
+                    
                     if (det == null)
                     {
                         //det = new EFModelo.PENIVE();
@@ -3196,7 +3196,7 @@ namespace appLogica
                             casillero.CASIALTU = 0;
                             casillero.CASIANCH = 0;
                             casillero.CASILARG = 0;
-                            context.PECASI_UPDATE(casillero.CASICOCA, pCASIESTA: casillero.CASIESTA, pCASIIDNI: casillero.CASIIDNI, pCASIIDCO: casillero.CASIIDCO,
+                            context.PECASI_UPDATE(casillero.CASICOCA, pCASIESTA: casillero.CASIESTA, pCASIIDPA: casillero.CASIIDPA, pCASIIDNI: casillero.CASIIDNI, pCASIIDCO: casillero.CASIIDCO,
                                 pCASICAPA: casillero.CASICAPA, pCASIUSCR: casillero.CASIUSCR, pCASIFECR: casillero.CASIFECR, pCASIALTU: casillero.CASIALTU, pCASIANCH: casillero.CASIANCH
                                 , pCASILARG: casillero.CASILARG);
                         }

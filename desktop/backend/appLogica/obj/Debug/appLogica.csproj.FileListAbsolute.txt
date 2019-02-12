@@ -86,3 +86,25 @@ C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appLogica\bin\Debu
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appLogica\obj\Debug\appLogica.dll
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appLogica\obj\Debug\appLogica.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appLogica.dll.config
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appLogica.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appLogica.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\AccesoDatos.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appConstantes.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appDataContracts.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appDTO.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EFModelo.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EntityFramework.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EntityFramework.SqlServer.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appConstantes.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appDTO.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EFModelo.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\AccesoDatos.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appDataContracts.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EntityFramework.xml
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
+D:\mar\migracion\desktop\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+D:\mar\migracion\desktop\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\backend\appLogica\obj\Debug\appLogica.dll
+D:\mar\migracion\desktop\backend\appLogica\obj\Debug\appLogica.pdb

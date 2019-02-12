@@ -3875,23 +3875,23 @@ namespace appLogica
         /// <param name="secuencia"></param>
         /// <param name="pesoentregado">Peso entregado en la OSA, -1 si no se actualizará</param>
         /// <param name="estado">estado de la OSA, solo se actualizará si pesoentregado es -1</param>
-        private void actualizaPROSAS(string folio, decimal secuencia, decimal pesoentregado, string estado)
-        {
-            appLogica.appDB2 _appDB2 = null;
-            try
-            {
-                _appDB2 = new appLogica.appDB2();
-                _appDB2.actualizaPROSAS(folio, secuencia, pesoentregado, estado);
-            }
-            finally
-            {
-                if (_appDB2 != null)
-                {
-                    _appDB2.Finaliza();
-                    _appDB2 = null;
-                }
-            }
-        }
+        //private void actualizaPROSAS(string folio, decimal secuencia, decimal pesoentregado, string estado)
+        //{
+        //    appLogica.appDB2 _appDB2 = null;
+        //    try
+        //    {
+        //        _appDB2 = new appLogica.appDB2();
+        //        _appDB2.actualizaPROSAS(folio, secuencia, pesoentregado, estado);
+        //    }
+        //    finally
+        //    {
+        //        if (_appDB2 != null)
+        //        {
+        //            _appDB2.Finaliza();
+        //            _appDB2 = null;
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// Actualiza GMDEEM en AS
@@ -3902,23 +3902,23 @@ namespace appLogica
         /// <param name="pesorestante"></param>
         /// <param name="stockcerobolsa">Valor 1 o 0 para indicar que la bolsa se marcó como stock cero, -1 para no actualizar el valor</param>
         /// <param name="estadobolsa"></param>
-        private void actualizaGMDEEM(string empaque, decimal secuencia, decimal cantidadrestante, decimal pesorestante, decimal stockcerobolsa, decimal estadobolsa)
-        {
-            appLogica.appDB2 _appDB2 = null;
-            try
-            {
-                _appDB2 = new appLogica.appDB2();
-                _appDB2.actualizaGMDEEM(empaque, secuencia, cantidadrestante, pesorestante, stockcerobolsa, estadobolsa);
-            }
-            finally
-            {
-                if (_appDB2 != null)
-                {
-                    _appDB2.Finaliza();
-                    _appDB2 = null;
-                }
-            }
-        }
+        //private void actualizaGMDEEM(string empaque, decimal secuencia, decimal cantidadrestante, decimal pesorestante, decimal stockcerobolsa, decimal estadobolsa)
+        //{
+        //    appLogica.appDB2 _appDB2 = null;
+        //    try
+        //    {
+        //        _appDB2 = new appLogica.appDB2();
+        //        _appDB2.actualizaGMDEEM(empaque, secuencia, cantidadrestante, pesorestante, stockcerobolsa, estadobolsa);
+        //    }
+        //    finally
+        //    {
+        //        if (_appDB2 != null)
+        //        {
+        //            _appDB2.Finaliza();
+        //            _appDB2 = null;
+        //        }
+        //    }
+        //}
 
         #region SIN EMPAQUE
 

@@ -13,3 +13,9 @@ C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appDTO\bin\Debug\appDTO.pd
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appDTO\obj\Debug\appDTO.csprojResolveAssemblyReference.cache
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appDTO\obj\Debug\appDTO.dll
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appDTO\obj\Debug\appDTO.pdb
+D:\mar\migracion\desktop\appDTO\bin\Debug\appDTO.dll.config
+D:\mar\migracion\desktop\appDTO\bin\Debug\appDTO.dll
+D:\mar\migracion\desktop\appDTO\bin\Debug\appDTO.pdb
+D:\mar\migracion\desktop\appDTO\obj\Debug\appDTO.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\appDTO\obj\Debug\appDTO.dll
+D:\mar\migracion\desktop\appDTO\obj\Debug\appDTO.pdb

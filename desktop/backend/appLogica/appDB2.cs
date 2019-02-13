@@ -3409,8 +3409,8 @@ namespace appLogica
                         }
                         else
                         {
-                            context.PEDEPE_UPDATE(det.DEPEIDDP, pDEPEIDCP: det.DEPEIDCP, pDEPEFECR: det.DEPEFECR, pDEPEUSCR: det.DEPEUSCR
-                               , pDEPEESTA: det.DEPEESTA, pDEPEALMA: det.DEPEALMA, pDEPECASO: det.DEPECASO, pDEPEPESO: det.DEPEPESO,
+                            context.PEDEPE_UPDATE(det.DEPEIDDP, pDEPEIDCP: det.DEPEIDCP, pDEPEESTA: det.DEPEESTA, pDEPEALMA: det.DEPEALMA, 
+                                pDEPECASO: det.DEPECASO, pDEPEPESO: det.DEPEPESO,
                                pDEPECOAR: det.DEPECOAR, pDEPEPART: det.DEPEPART, pDEPECONT: det.DEPECONT, pDEPEDISP: det.DEPEDISP,
                                pDEPEDSAR: det.DEPEDSAR, pDEPESERS: det.DEPESERS, pDEPESECU: det.DEPESECU, pDEPEFEMO: det.DEPEFEMO, pDEPEUSMO: det.DEPEUSMO);
                         }
@@ -3499,7 +3499,7 @@ namespace appLogica
             context.PEKABO_INSERT(entk.KABOIDBO, pKABOIDTM: entk.KABOIDTM, pKABOFECH: entk.KABOFECH, pKABOALMA: entk.KABOALMA,
                 pKABOCANT: entk.KABOCANT, pKABOPESO: entk.KABOPESO, pKABOIDDP: entk.KABOIDDP, pKABOIDDO: entk.KABOIDDO
                 , pKABOPART: entk.KABOPART, pKABOITEM: entk.KABOITEM, pKABOTARA: entk.KABOTARA, pKABOPEBR: entk.KABOPEBR,
-                pKABOUSCR: entk.KABOUSCR, pKABOFECR: entk.KABOFECR, pKABOUSMO: entk.KABOUSMO, pKABOFEMO: entk.KABOFEMO);
+                pKABOUSCR: entk.KABOUSCR, pKABOFECR: entk.KABOFECR);
 
         }
 
@@ -3560,7 +3560,7 @@ namespace appLogica
                         {
                             insertaMovimientoKardex(context, ent.BODPIDBO, TIPO_MOV_CANCELA_SALIDA_PREP_PED, bol.BOLSALMA, partida, articulo, ent.BODPCANT, ent.BODPPESO, ent.BODPPEBR - ent.BODPTADE, usuario, ent.BODPIDDP, ent.BODPIDDO);
                         }
-                        context.PEBODP_DELETE(ent.BODPIDBO, ent.BODPIDDP, ent.BODPIDDE, ent.BODPIDDO);//.PEBODP.Remove(ent);
+                        context.PEBODP_DELETE( ent.BODPIDDE);//.PEBODP.Remove(ent);
                         //context.SaveChanges();
                         decimal cantatendida, pesoatendido, pesoreal, tade, pebr;
 
@@ -3868,6 +3868,11 @@ namespace appLogica
                             //context.SaveChanges(); //necesite guardar 1ro labolsa actual para luego recuperar todas las bolsas de la BD
                             if (insert)
                             {
+                                if (sinempaque)
+                                {
+                                    ent.BODPIDBO = null;
+                                }
+
                                 context.PEBODP_INSERT(PBODPIDBO: ent.BODPIDBO, PBODPIDDP: ent.BODPIDDP, PBODPALMA: ent.BODPALMA,
                                     PBODPPART: ent.BODPPART, PBODPCOAR: ent.BODPCOAR, PBODPCANT: ent.BODPCANT, PBODPPESO: ent.BODPPESO,
                                     PBODPPERE: ent.BODPPERE, PBODPDIFE: ent.BODPDIFE, PBODPIDDO: ent.BODPIDDO, PBODPSTCE: ent.BODPSTCE,

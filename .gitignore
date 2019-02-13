@@ -5,3 +5,7 @@ desktop/.vs/spnw001/v14/.suo
 *.txt
 *.cache
 *.lref
+*.lref
+*.cache
+*.pdb
+*.exe

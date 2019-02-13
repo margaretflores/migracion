@@ -68,10 +68,10 @@ namespace appfe
                         ListaPedidosdataGrid.ItemsSource = listpedidos;
                         ListaPedidosdataGrid.SelectedIndex = index;
                         BuscarPedidotextBox.Focus();
-                        txtNum.IsEnabled = false;
-                        cmdDown.IsEnabled = false;
-                        cmdUp.IsEnabled = false;
-                        moverbutton.IsEnabled = false;
+                        //txtNum.IsEnabled = false;
+                        //cmdDown.IsEnabled = false;
+                        //cmdUp.IsEnabled = false;
+                        //moverbutton.IsEnabled = false;
                         FiltroBusquedacomboBox.Items.Add("Todos los estados"); //Filtro segun los estados de los pedidos
                         FiltroBusquedacomboBox.Items.Add("Creado"); //Filtro segun los estados de los pedidos
                         FiltroBusquedacomboBox.Items.Add("Emitido");
@@ -785,7 +785,7 @@ namespace appfe
                 Listgrilla = ListaPedidosdataGrid.ItemsSource.Cast<appWcfService.PECAPE>().ToList();
                 Seleccionado = ListaPedidosdataGrid.SelectedItem as appWcfService.PECAPE;
 
-                if (ParametrosFe.Usuario.Equals(Seleccionado.CAPEUSCR.ToString()))
+                if (true)//ParametrosFe.Usuario.Equals(Seleccionado.CAPEUSCR.ToString()))
                 {
                     if (!txtNum.Text.Equals(numseleccion.ToString()))
                     {
@@ -868,11 +868,11 @@ namespace appfe
                     emitirbutton.IsEnabled = true;
                     reabributton.IsEnabled = true;
                     AnularPedidobutton.IsEnabled = true;
-                    txtNum.IsEnabled = false;
-                    cmdDown.IsEnabled = false;
-                    cmdUp.IsEnabled = false;
-                    moverbutton.IsEnabled = false;
-                    countcheck = false;
+                    //txtNum.IsEnabled = false;
+                    //cmdDown.IsEnabled = false;
+                    //cmdUp.IsEnabled = false;
+                    //moverbutton.IsEnabled = false;
+                    //countcheck = false;
 
                     //SubirPrioridadbutton.IsEnabled = false;
                     //BajarPrioridadbutton.IsEnabled = false;
@@ -882,12 +882,12 @@ namespace appfe
 
                 case 1:
                     txtNum.IsEnabled = false;
-                    cmdDown.IsEnabled = false;
-                    cmdUp.IsEnabled = false;
-                    moverbutton.IsEnabled = false;
+                    //cmdDown.IsEnabled = false;
+                    //cmdUp.IsEnabled = false;
+                    //moverbutton.IsEnabled = false;
                     reabributton.IsEnabled = false;
                     emitirbutton.IsEnabled = true;
-                    countcheck = false;
+                    //countcheck = false;
 
                     //SubirPrioridadbutton.IsEnabled = false;
                     //BajarPrioridadbutton.IsEnabled = false;
@@ -898,11 +898,11 @@ namespace appfe
                 case 2:
                     if (FechaIniciodtp.SelectedDate != null || FechaFindtp.SelectedDate != null || !BuscarPedidotextBox.Text.Trim().Equals("") || !string.IsNullOrWhiteSpace(TextBoxSerie.Text.Trim()))
                     {
-                        txtNum.IsEnabled = false;
-                        cmdDown.IsEnabled = false;
-                        cmdUp.IsEnabled = false;
-                        moverbutton.IsEnabled = false;
-                        countcheck = false;
+                        //txtNum.IsEnabled = false;
+                        //cmdDown.IsEnabled = false;
+                        //cmdUp.IsEnabled = false;
+                        //moverbutton.IsEnabled = false;
+                        //countcheck = false;
                     }
                     else
                     {
@@ -925,13 +925,13 @@ namespace appfe
                     emitirbutton.IsEnabled = false;
                     reabributton.IsEnabled = false;
                     AnularPedidobutton.IsEnabled = false;
-                    countcheck = false;
+                    //countcheck = false;
 
 
-                    txtNum.IsEnabled = false;
-                    cmdDown.IsEnabled = false;
-                    cmdUp.IsEnabled = false;
-                    moverbutton.IsEnabled = false;
+                    //txtNum.IsEnabled = false;
+                    //cmdDown.IsEnabled = false;
+                    //cmdUp.IsEnabled = false;
+                    //moverbutton.IsEnabled = false;
 
                     //SubirPrioridadbutton.IsEnabled = false;
                     //BajarPrioridadbutton.IsEnabled = false;

@@ -1,0 +1,18 @@
+11:52:24 > SQL0206 No se ha encontrado la columna o variable global DEPEIDDP.
+14:37:47 > SQL0440 La rutina USP_PEDEPE_UPDATE de PRPEDAT no se ha encontrado con los parámetros especificados.
+15:00:21 > SQL0204 USP_PEDEPE en PRPEDAT de tipo *FILE no encontrado.
+15:02:03 > SQL0204 USP_PEDEPE en PRPEDAT de tipo *FILE no encontrado.
+15:04:15 > SQL7008 PEBODP de PRPEDAT no válido para la operación.
+15:05:21 > SQL0204 USP_PE_PEBOLS_FIND_IDBO en PRPEDAT de tipo *N no encontrado.
+15:10:19 > SQL0204 USP_PE_PEBOLS_FIND_IDBO en PRPEDAT de tipo *N no encontrado.
+15:13:21 > SQL0204 USP_PE_PEBOLS_FIND_IDBO en PRPEDAT de tipo *N no encontrado.
+15:19:44 > SQL0440 La rutina USP_PE_PEBOLS_FIND_IDBO de PRPEDAT no se ha encontrado con los parámetros especificados.
+15:40:56 > No se puede encontrar la tabla 0.
+15:44:46 > No se puede encontrar la tabla 0.
+16:32:24 > SQL0440 La rutina USP_PE_INSERTAR_PEKABO de PRPEDAT no se ha encontrado con los parámetros especificados.
+16:41:06 > SQL0440 La rutina USP_PE_INSERTAR_PEKABO de PRPEDAT no se ha encontrado con los parámetros especificados.
+16:41:35 > SQL0440 La rutina USP_PE_INSERTAR_PEKABO de PRPEDAT no se ha encontrado con los parámetros especificados.
+16:47:37 > SQL0440 La rutina USP_PE_INSERTAR_PEKABO de PRPEDAT no se ha encontrado con los parámetros especificados.
+16:49:16 > SQL0440 La rutina USP_PE_INSERTAR_PEKABO de PRPEDAT no se ha encontrado con los parámetros especificados.
+16:54:11 > SQL0440 La rutina USP_PE_INSERTAR_PEKABO de PRPEDAT no se ha encontrado con los parámetros especificados.
+16:55:28 > SQL0440 La rutina USP_PE_INSERTAR_PEKABO de PRPEDAT no se ha encontrado con los parámetros especificados.

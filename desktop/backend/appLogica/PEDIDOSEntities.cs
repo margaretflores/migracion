@@ -608,8 +608,6 @@ namespace appLogica
 	        decimal? pDEPEDISP  = null,
 	        string pDEPEDSAR  = null,
 	        decimal? pDEPENUBU  = null,
-	        string pDEPEUSCR  = null,
-	        DateTime? pDEPEFECR  = null,
 	        string pDEPEUSMO = null,
 	        DateTime? pDEPEFEMO = null,
 	        decimal? pDEPESERS  = null,
@@ -754,22 +752,7 @@ namespace appLogica
             {
                 DB2.AsignarParamProcAlmac("DEPENUBU", iDB2DbType.iDB2Numeric, pDEPENUBU);
             }
-            if (pDEPEUSCR == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEUSCR", iDB2DbType.iDB2Char, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEUSCR", iDB2DbType.iDB2Char, pDEPEUSCR);
-            }
-            if (pDEPEFECR == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEFECR", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEFECR", iDB2DbType.iDB2TimeStamp, pDEPEFECR);
-            }
+            
             if (pDEPEUSMO == null)
             {
                 DB2.AsignarParamProcAlmac("DEPEUSMO", iDB2DbType.iDB2Char, DBNull.Value);
@@ -1929,125 +1912,116 @@ namespace appLogica
             decimal? pKABOTARA = null,
             decimal? pKABOPEBR = null,
             string pKABOUSCR = null,
-            DateTime? pKABOFECR = null,//timestamp
-            string pKABOUSMO = null,
-            DateTime? pKABOFEMO = null//timestamp
+            DateTime? pKABOFECR = null//timestamp
             )
         {
             DB2.CrearComando("PRPEDAT.USP_PE_INSERTAR_PEKABO", CommandType.StoredProcedure);
-            DB2.AsignarParamProcAlmac("KABOIDBO", iDB2DbType.iDB2Numeric, pKABOIDBO);
+            DB2.AsignarParamProcAlmac("PKABOIDBO", iDB2DbType.iDB2Numeric, pKABOIDBO);
             if (pKABOIDTM == null)
             {
-                DB2.AsignarParamProcAlmac("KABOIDTM", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOIDTM", iDB2DbType.iDB2Numeric, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOIDTM", iDB2DbType.iDB2Numeric, pKABOIDTM);
+                DB2.AsignarParamProcAlmac("PKABOIDTM", iDB2DbType.iDB2Numeric, pKABOIDTM);
             }
             if (pKABOFECH == null)
             {
-                DB2.AsignarParamProcAlmac("KABOFECH", iDB2DbType.iDB2Date, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOFECH", iDB2DbType.iDB2Date, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOFECH", iDB2DbType.iDB2Date, pKABOFECH);
+                DB2.AsignarParamProcAlmac("PKABOFECH", iDB2DbType.iDB2Date, pKABOFECH);
             }
             if (pKABOALMA == null)
             {
-                DB2.AsignarParamProcAlmac("KABOALMA", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOALMA", iDB2DbType.iDB2Numeric, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOALMA", iDB2DbType.iDB2Numeric, pKABOALMA);
+                DB2.AsignarParamProcAlmac("PKABOALMA", iDB2DbType.iDB2Numeric, pKABOALMA);
             }
             if (pKABOCANT == null)
             {
-                DB2.AsignarParamProcAlmac("KABOCANT", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOCANT", iDB2DbType.iDB2Numeric, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOCANT", iDB2DbType.iDB2Numeric, pKABOCANT);
+                DB2.AsignarParamProcAlmac("PKABOCANT", iDB2DbType.iDB2Numeric, pKABOCANT);
             }
             if (pKABOPESO == null)
             {
-                DB2.AsignarParamProcAlmac("KABOPESO", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOPESO", iDB2DbType.iDB2Numeric, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOPESO", iDB2DbType.iDB2Numeric, pKABOPESO);
+                DB2.AsignarParamProcAlmac("PKABOPESO", iDB2DbType.iDB2Numeric, pKABOPESO);
             }
             if (pKABOIDDP == null)
             {
-                DB2.AsignarParamProcAlmac("KABOIDDP", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOIDDP", iDB2DbType.iDB2Numeric, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOIDDP", iDB2DbType.iDB2Numeric, pKABOIDDP);
+                DB2.AsignarParamProcAlmac("PKABOIDDP", iDB2DbType.iDB2Numeric, pKABOIDDP);
+            }
+            if (pKABOIDDO == null)
+            {
+                DB2.AsignarParamProcAlmac("PKABOIDDO", iDB2DbType.iDB2Numeric, DBNull.Value);
+            }
+            else
+            {
+                DB2.AsignarParamProcAlmac("PKABOIDDO", iDB2DbType.iDB2Numeric, pKABOIDDO);
             }
             if (pKABOPART == null)
             {
-                DB2.AsignarParamProcAlmac("KABOPART", iDB2DbType.iDB2Char, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOPART", iDB2DbType.iDB2Char, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOPART", iDB2DbType.iDB2Char, pKABOPART);
+                DB2.AsignarParamProcAlmac("PKABOPART", iDB2DbType.iDB2Char, pKABOPART);
             }
             if (pKABOITEM == null)
             {
-                DB2.AsignarParamProcAlmac("KABOITEM", iDB2DbType.iDB2Char, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOITEM", iDB2DbType.iDB2Char, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOITEM", iDB2DbType.iDB2Char, pKABOITEM);
+                DB2.AsignarParamProcAlmac("PKABOITEM", iDB2DbType.iDB2Char, pKABOITEM);
             }
             if (pKABOTARA == null)
             {
-                DB2.AsignarParamProcAlmac("KABOTARA", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOTARA", iDB2DbType.iDB2Numeric, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOTARA", iDB2DbType.iDB2Numeric, pKABOTARA);
+                DB2.AsignarParamProcAlmac("PKABOTARA", iDB2DbType.iDB2Numeric, pKABOTARA);
             }
             if (pKABOPEBR == null)
             {
-                DB2.AsignarParamProcAlmac("KABOPEBR", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOPEBR", iDB2DbType.iDB2Numeric, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOPEBR", iDB2DbType.iDB2Numeric, pKABOPEBR);
+                DB2.AsignarParamProcAlmac("PKABOPEBR", iDB2DbType.iDB2Numeric, pKABOPEBR);
             }
             if (pKABOUSCR == null)
             {
-                DB2.AsignarParamProcAlmac("KABOUSCR", iDB2DbType.iDB2Char, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOUSCR", iDB2DbType.iDB2Char, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOUSCR", iDB2DbType.iDB2Char, pKABOUSCR);
+                DB2.AsignarParamProcAlmac("PKABOUSCR", iDB2DbType.iDB2Char, pKABOUSCR);
             }
             if (pKABOFECR == null)
             {
-                DB2.AsignarParamProcAlmac("KABOFECR", iDB2DbType.iDB2TimeStamp, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PKABOFECR", iDB2DbType.iDB2TimeStamp, DBNull.Value);
             }
             else
             {
-                DB2.AsignarParamProcAlmac("KABOFECR", iDB2DbType.iDB2TimeStamp, pKABOFECR);
+                DB2.AsignarParamProcAlmac("PKABOFECR", iDB2DbType.iDB2TimeStamp, pKABOFECR);
             }
-            if (pKABOUSMO == null)
-            {
-                DB2.AsignarParamProcAlmac("KABOUSMO", iDB2DbType.iDB2Char, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("KABOUSMO", iDB2DbType.iDB2Char, pKABOUSMO);
-            }
-            if (pKABOFEMO == null)
-            {
-                DB2.AsignarParamProcAlmac("KABOFEMO", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("KABOFEMO", iDB2DbType.iDB2TimeStamp, pKABOFEMO);
-            }
+           
             DB2.EjecutarProcedimientoAlmacenado();
         }
 
@@ -2186,15 +2160,11 @@ namespace appLogica
             return deem;
         }
 
-        public void PEBODP_DELETE(decimal? BODPIDBO, decimal? BODPIDDP, decimal? BODPIDDE, decimal? BODPIDDO)///BODPIDBO , BODPIDDP , BODPIDDE , BODPIDDO
+        public void PEBODP_DELETE(decimal? BODPIDDE)///BODPIDBO , BODPIDDP , BODPIDDE , BODPIDDO
         {
-            DataTable cabeceraDataTable = null;
             DB2.CrearComando("PRPEDAT.USP_EP_PEBODP_DELETE", CommandType.StoredProcedure);
-            DB2.AsignarParamProcAlmac("PBODPIDBO", iDB2DbType.iDB2Numeric, BODPIDBO);
-            DB2.AsignarParamProcAlmac("PBODPIDDP", iDB2DbType.iDB2Numeric, BODPIDDP);
             DB2.AsignarParamProcAlmac("PBODPIDDE", iDB2DbType.iDB2Numeric, BODPIDDE);
-            DB2.AsignarParamProcAlmac("PBODPIDDO", iDB2DbType.iDB2Numeric, BODPIDDO);
-            cabeceraDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+            DB2.EjecutarProcedimientoAlmacenado();
         }
 
 

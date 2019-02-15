@@ -3745,6 +3745,7 @@ namespace appLogica
                         if (emp != null || sinempaque)
                         {
                             appWcfService.PEBOLS bol = null;
+                            appWcfService.PEBOLS bolcreada = null;//  objeto para obtener el idbo creado
                             if (!sinempaque)
                             {
                                 bol = context.PEBOLS_Find_first(detallebolsa.PEBOLS.BOLSCOEM);
@@ -3770,8 +3771,9 @@ namespace appLogica
 
                                     //context.SaveChanges();
                                     Util.EscribeLog("5");
-
-                                    detallebolsa.BODPIDBO = bol.BOLSIDBO;
+                                    //2019-02-15
+                                    bolcreada = context.PEBOLS_Find_first(detallebolsa.PEBOLS.BOLSCOEM);
+                                    detallebolsa.BODPIDBO = bolcreada.BOLSIDBO;
                                 }
                                 else
                                 {
@@ -3820,7 +3822,7 @@ namespace appLogica
                                 if (!sinempaque)
                                 {
                                     //inserta tipo 1 SALIDA
-                                    insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bol.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
+                                    insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bolcreada.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
                                 }
                             }
                             else
@@ -3836,8 +3838,8 @@ namespace appLogica
                                     //inserta tipo 1 salida
                                     if (detallebolsa.BODPCANT != ent.BODPCANT || detallebolsa.BODPPESO != ent.BODPPESO)
                                     {
-                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_MODIFICA_SALIDA_PREP_PED, bol.BOLSALMA, partida, articulo, ent.BODPCANT, ent.BODPPESO, ent.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
-                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bol.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
+                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_MODIFICA_SALIDA_PREP_PED, bolcreada.BOLSALMA, partida, articulo, ent.BODPCANT, ent.BODPPESO, ent.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
+                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bolcreada.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
                                     }
                                 }
                             }
@@ -3962,7 +3964,7 @@ namespace appLogica
                             if (!sinempaque)
                             {
                                 //actualiza el stock de la bolsa
-                                var todasbolsasprep = context.PEBODP_Find_IDBO_ALMA_PART_COAR(bol.BOLSIDBO, bol.BOLSALMA, partida, articulo);
+                                var todasbolsasprep = context.PEBODP_Find_IDBO_ALMA_PART_COAR(bolcreada.BOLSIDBO, bolcreada.BOLSALMA, partida, articulo);
                                     //.PEBODP.Where(prep => prep.BODPIDBO == bol.BOLSIDBO && prep.BODPALMA == bol.BOLSALMA && prep.BODPPART == partida && prep.BODPCOAR == articulo).ToList();
                                 //decimal cantatendida, pesoatendido, pesoreal, tade, pebr;
                                 cantatendida = pesoatendido = pesoreal = tade = pebr = 0;
@@ -4007,17 +4009,17 @@ namespace appLogica
                                     //actualizaGMDEEM(detemp.DEEMCOEM, detemp.DEEMSECU, detemp.DEEMCAST, detemp.DEEMPEST, detemp.DEEMSTCE, detemp.DEEMESBO);
                                     //context.SaveChanges();
                                     //buscar una partida en la bolsa que no este vacia, si no hay ninguna actualizar a 9 anulado
-                                    detemp = context.GMDEEM_Find_DEEMESBO(1, bol.BOLSCOEM, "N", 9);
+                                    detemp = context.GMDEEM_Find_DEEMESBO(1, bolcreada.BOLSCOEM, "N", 9);
                                         //.GMDEEM.FirstOrDefault(det => det.DEEMCIA == 1 && det.DEEMCOEM == bol.BOLSCOEM && det.DEEMTIPE == "N" && det.DEEMESBO != 9);
                                     if (detemp == null)
                                     {
-                                        bol.BOLSESTA = 9; //ya no se usa la bolsa
-                                        context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA);
+                                        bolcreada.BOLSESTA = 9; //ya no se usa la bolsa
+                                        context.PEBOLS_UPDATE(bolcreada.BOLSIDBO, PBOLSESTA: bolcreada.BOLSESTA);
                                     }
                                     else
                                     {
-                                        bol.BOLSESTA = 1; //ya no se usa la bolsa - si se modifica la cant o kilos de la bolsa o si se le quito el stock cero desmarcar la bolsa
-                                        context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA);
+                                        bolcreada.BOLSESTA = 1; //ya no se usa la bolsa - si se modifica la cant o kilos de la bolsa o si se le quito el stock cero desmarcar la bolsa
+                                        context.PEBOLS_UPDATE(bolcreada.BOLSIDBO, PBOLSESTA: bolcreada.BOLSESTA);
                                     }
                                     //context.SaveChanges();
                                 }

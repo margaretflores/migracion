@@ -2022,7 +2022,7 @@ namespace appLogica
             DB2.EjecutarProcedimientoAlmacenado();
         }
 
-        public appWcfService.PEDEOS PEDEOS_Find(decimal? DEOSIDDO)
+        public appWcfService.PEDEOS PEDEOS_Find(decimal? DEOSIDDO)//NOSE USA SOLO PARA OSAS
         {
             appWcfService.PEDEOS deos = null;
             DataTable cabeceraDataTable = null;
@@ -2089,7 +2089,7 @@ namespace appLogica
             return bodp;
         }
 
-        public appWcfService.PROSAS PROSAS_Find(decimal? OSASCIA, string OSASFOLI, decimal? OSASSECU)
+        public appWcfService.PROSAS PROSAS_Find(decimal? OSASCIA, string OSASFOLI, decimal? OSASSECU)//SOLO SE USA EN OSAS
         {
             appWcfService.PROSAS prosa = null;
             DataTable cabeceraDataTable = null;
@@ -2372,7 +2372,7 @@ namespace appLogica
             DB2.EjecutarProcedimientoAlmacenado();
         }
 
-        public void PEDEOS_UPDATE(
+        public void PEDEOS_UPDATE( // NO SE USA SOLO PARA OSAS
 
             decimal pDEOSIDDO,
             decimal? pDEOSIDCO = null, 
@@ -2672,7 +2672,7 @@ namespace appLogica
             }
             if (PBOLSIDTC == null)
             {
-                DB2.AsignarParamProcAlmac("PBOLSIDTC", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("PBOLSIDTC", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {

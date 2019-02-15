@@ -1,0 +1,33 @@
+09:31:14 > SQL0440 La rutina USP_PE_PEBOLS_FIND_IDBO de PRPEDAT no se ha encontrado con los parámetros especificados.
+09:35:38 > SQL0440 La rutina USP_PE_PEBOLS_FIND_IDBO de PRPEDAT no se ha encontrado con los parámetros especificados.
+09:41:08 > SQL0440 La rutina USP_PE_PEBOLS_FIND_IDBO de PRPEDAT no se ha encontrado con los parámetros especificados.
+09:51:46 > Error al generar el documento XML.
+09:52:31 > Error al generar el documento XML.
+09:53:22 > Error al generar el documento XML.
+09:54:59 > Error al generar el documento XML.
+15:47:54 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+15:48:56 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+15:49:58 > El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+15:53:17 > Error al generar el documento XML.
+15:53:21 > Error al generar el documento XML.
+15:58:57 > Error al generar el documento XML.
+15:59:54 > Error al generar el documento XML.
+16:06:40 > Error al generar el documento XML.
+16:06:55 > Error al generar el documento XML.
+16:07:31 > Error al generar el documento XML.
+16:34:59 > SQL7008 PECAPE de PRPEDAT no válido para la operación.
+16:48:15 > SQL7008 PECAPE de PRPEDAT no válido para la operación.
+17:00:05 > SQL0440 La rutina USP_PE_PECAPE_INSERT de PRPEDAT no se ha encontrado con los parámetros especificados.
+17:04:00 > SQL7008 PECAPE de PRPEDAT no válido para la operación.
+17:07:12 > SQL0407 Valores nulos no permitidos en la columna o variable CAPEEPRI.
+17:17:11 > SQL0407 Valores nulos no permitidos en la columna o variable CAPEPRIO.
+17:21:23 > SQL0407 Valores nulos no permitidos en la columna o variable CAPENUBU.
+17:23:22 > SQL0407 Valores nulos no permitidos en la columna o variable CAPETADE.
+17:27:26 > SQL0440 La rutina USP_PE_PEDEPE_INSERT de PRPEDAT no se ha encontrado con los parámetros especificados.
+17:37:17 > SQL0407 Valores nulos no permitidos en la columna o variable DEPECAAT.
+17:40:10 > SQL0407 Valores nulos no permitidos en la columna o variable DEPENUBU.
+17:42:47 > SQL0407 Valores nulos no permitidos en la columna o variable DEPESECR.
+17:56:49 > No se puede encontrar la tabla 0.

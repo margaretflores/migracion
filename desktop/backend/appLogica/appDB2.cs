@@ -1867,83 +1867,85 @@ namespace appLogica
 
         public bool EnviaCorreoNotificacionPedido(decimal idpedido, out string mensaje)
         {
-            string destinatario, cc, bcc, asunto, body;
+            //string destinatario, cc, bcc, asunto, body;
 
             bool vpar;
             vpar = false;
-            //List<object> listaeo = null;
-            List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> lista = null;
-            appLogica.appDB2 _appDB2 = null;
-            appLogica.MKT _appcs = null;
+            mensaje = "comentado 2019-02-14";//2019-02-14
+            //2019-02-14
+            ////List<object> listaeo = null;
+            //List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> lista = null;
+            //appLogica.appDB2 _appDB2 = null;
+            //appLogica.MKT _appcs = null;
 
-            try
-            {
-                destinatario = bcc = "";
+            //try
+            //{
+            //    destinatario = bcc = "";
 
-                using (var context = new PEDIDOSEntitiesDB2())
-                {
-                    lista = context.EnviaCorreoNotificacionPedido(idpedido);
-                }
-                //lista = Util.ParseEntityObject<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result>(listaeo);
+            //    using (var context = new PEDIDOSEntitiesDB2())
+            //    {
+            //        lista = context.EnviaCorreoNotificacionPedido(idpedido);
+            //    }
+            //    //lista = Util.ParseEntityObject<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result>(listaeo);
 
-                if (lista.Count > 0)
-                {
-                    if (lista[0].CAPEIDES == 1)
-                    {
-                        mensaje = "Pedido no emitido";
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrWhiteSpace(lista[0].CAPEEMAI))
-                        {
-                            destinatario = lista[0].CAPEEMAI.Trim();
-                        }
-                        //pruebas
-                        destinatario = "ddk_sk@hotmail.com";
-                        _appDB2 = new appLogica.appDB2();
-                        RFEUSER usuario = _appDB2.ObtieneUsuarioDeFacturacion(lista[0].CAPEUSEM);
-                        if (usuario != null)
-                        {
-                            bcc = usuario.USERMAIL.Trim();
-                        }
-                        //pruebas
-                        bcc = "mlopez@incatops.com";
-                        if ( _appcs.PreparaCorreoNotificacionPedido(lista, out cc, out asunto, out body, out mensaje))
-                        {
-                            if ( _appcs.EnvioCorreo(destinatario, cc, bcc, asunto, body))
-                            {
-                                vpar = true;
-                            }
-                            else
-                            {
-                                mensaje = Mensajes.MENSAJE_CORREO_ERROR_ENVIO;
-                            }
-                        }
-                        else
-                        {
-                            //vpar.MENERR = mensaje;
-                        }
-                    }
-                }
-                else
-                {
-                    mensaje = Mensajes.MENSAJE_PEDIDO_NO_ENCONTRADO;
-                }
-            }
-            catch (Exception ex)
-            {
-                Util.EscribeLog(ex.Message);
-                mensaje = ErrorGenerico(ex.Message);
-                //throw ex;
-            }
-            finally
-            {
-                if (_appDB2 != null)
-                {
-                    _appDB2.Finaliza();
-                    _appDB2 = null;
-                }
-            }
+            //    if (lista.Count > 0)
+            //    {
+            //        if (lista[0].CAPEIDES == 1)
+            //        {
+            //            mensaje = "Pedido no emitido";
+            //        }
+            //        else
+            //        {
+            //            if (!string.IsNullOrWhiteSpace(lista[0].CAPEEMAI))
+            //            {
+            //                destinatario = lista[0].CAPEEMAI.Trim();
+            //            }
+            //            //pruebas
+            //            destinatario = "ddk_sk@hotmail.com";
+            //            _appDB2 = new appLogica.appDB2();
+            //            RFEUSER usuario = _appDB2.ObtieneUsuarioDeFacturacion(lista[0].CAPEUSEM);
+            //            if (usuario != null)
+            //            {
+            //                bcc = usuario.USERMAIL.Trim();
+            //            }
+            //            //pruebas
+            //            bcc = "mlopez@incatops.com";
+            //            if ( _appcs.PreparaCorreoNotificacionPedido(lista, out cc, out asunto, out body, out mensaje))
+            //            {
+            //                if ( _appcs.EnvioCorreo(destinatario, cc, bcc, asunto, body))
+            //                {
+            //                    vpar = true;
+            //                }
+            //                else
+            //                {
+            //                    mensaje = Mensajes.MENSAJE_CORREO_ERROR_ENVIO;
+            //                }
+            //            }
+            //            else
+            //            {
+            //                //vpar.MENERR = mensaje;
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        mensaje = Mensajes.MENSAJE_PEDIDO_NO_ENCONTRADO;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Util.EscribeLog(ex.Message);
+            //    mensaje = ErrorGenerico(ex.Message);
+            //    //throw ex;
+            //}
+            //finally
+            //{
+            //    if (_appDB2 != null)
+            //    {
+            //        _appDB2.Finaliza();
+            //        _appDB2 = null;
+            //    }
+            //}
             return vpar;
         }//YA ESTA
 
@@ -3252,7 +3254,7 @@ namespace appLogica
             decimal idpedido, idestado, idcabpedido;
             string numeropedido;
 
-            ///2018-12-29 (1- se agrega, 2 - se actualiza)
+            ///2018-12-29 (1- se agrega, 2 - se actualiza) MF
             int tipo = 0;
             ///
 
@@ -3326,7 +3328,7 @@ namespace appLogica
                     ///2018-12-29 añadiendo o actualizando
                     if (tipo == 1)
                     {
-                        context.PECAPE_INSERT(ped.CAPEIDCP, pCAPESERI: ped.CAPESERI, pCAPEUSCR: ped.CAPEUSCR, pCAPEFECR: ped.CAPEFECR,
+                        context.PECAPE_INSERT( pCAPESERI: ped.CAPESERI, pCAPEUSCR: ped.CAPEUSCR, pCAPEFECR: ped.CAPEFECR,
                             pCAPENUME: ped.CAPENUME, pCAPEIDCL: ped.CAPEIDCL, pCAPEFECH: ped.CAPEFECH, pCAPEDIRE: ped.CAPEDIRE, pCAPEIDES: ped.CAPEIDES,
                             pCAPEEMAI: ped.CAPEEMAI, pCAPENOTI: ped.CAPENOTI, pCAPENOTG: ped.CAPENOTG, pCAPETIPO: ped.CAPETIPO, pCAPEIDTD: ped.CAPEIDTD, pCAPEDEST: ped.CAPEDEST);
                     }

@@ -1161,11 +1161,10 @@ namespace appLogica
 
         public void PEDEPE_DELETE(decimal pdepeiddp, decimal pdepeidcp)
         {
-            DataTable cabeceraDataTable = null;
             DB2.CrearComando("PRPEDAT.USP_ELIMINAR_DETALLE_PEDIDO", CommandType.StoredProcedure);
             DB2.AsignarParamProcAlmac("PDEPEIDDP", iDB2DbType.iDB2Numeric, pdepeiddp);
             DB2.AsignarParamProcAlmac("PDEPEIDCP", iDB2DbType.iDB2Numeric, pdepeidcp);
-            cabeceraDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+            DB2.EjecutarProcedimientoAlmacenado();
         }
 
         public void PEPASI_INSERT(decimal pPASIIDPA,
@@ -1374,7 +1373,7 @@ namespace appLogica
             DB2.EjecutarProcedimientoAlmacenado();
         }
 
-        public void PECAPE_INSERT(decimal pCAPEIDCP, string pCAPESERI = null,
+        public void PECAPE_INSERT(string pCAPESERI = null,
            decimal? pCAPENUME = null,
            string pCAPEIDCL = null,
            DateTime? pCAPEFECH = null,
@@ -1407,7 +1406,6 @@ namespace appLogica
            string pCAPEDEST = null)
         {
             DB2.CrearComando("PRPEDAT.USP_PE_PECAPE_INSERT", CommandType.StoredProcedure);
-            DB2.AsignarParamProcAlmac("PCAPEIDCP", iDB2DbType.iDB2Numeric, pCAPEIDCP);
             if (pCAPESERI == null)
             {
                 DB2.AsignarParamProcAlmac("CAPESERI", iDB2DbType.iDB2Char, DBNull.Value);
@@ -1458,7 +1456,7 @@ namespace appLogica
             }
             if (pCAPEEPRI == null)
             {
-                DB2.AsignarParamProcAlmac("CAPEEPRI", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("CAPEEPRI", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1466,7 +1464,7 @@ namespace appLogica
             }
             if (pCAPEPRIO == null)
             {
-                DB2.AsignarParamProcAlmac("CAPEPRIO", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("CAPEPRIO", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1514,7 +1512,7 @@ namespace appLogica
             }
             if (pCAPENUBU == null)
             {
-                DB2.AsignarParamProcAlmac("CAPENUBU", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("CAPENUBU", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1634,7 +1632,7 @@ namespace appLogica
             }
             if (pCAPETADE == null)
             {
-                DB2.AsignarParamProcAlmac("CAPETADE", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("CAPETADE", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1686,7 +1684,6 @@ namespace appLogica
             decimal? pDEPESECU = null)
         {
             DB2.CrearComando("PRPEDAT.USP_PE_PEDEPE_INSERT", CommandType.StoredProcedure);
-            DB2.AsignarParamProcAlmac("PDEPEIDDP", iDB2DbType.iDB2Numeric, pDEPEIDDP);
             if (pDEPEIDCP == null)
             {
                 DB2.AsignarParamProcAlmac("DEPEIDCP", iDB2DbType.iDB2Numeric, DBNull.Value);
@@ -1745,7 +1742,7 @@ namespace appLogica
             }
             if (pDEPECAAT == null)
             {
-                DB2.AsignarParamProcAlmac("DEPECAAT", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("DEPECAAT", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1753,7 +1750,7 @@ namespace appLogica
             }
             if (pDEPEPEAT == null)
             {
-                DB2.AsignarParamProcAlmac("DEPEPEAT", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("DEPEPEAT", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1761,7 +1758,7 @@ namespace appLogica
             }
             if (pDEPEPERE == null)
             {
-                DB2.AsignarParamProcAlmac("DEPEPERE", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("DEPEPERE", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1769,7 +1766,7 @@ namespace appLogica
             }
             if (pDEPETADE == null)
             {
-                DB2.AsignarParamProcAlmac("DEPETADE", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("DEPETADE", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1777,7 +1774,7 @@ namespace appLogica
             }
             if (pDEPEPEBR == null)
             {
-                DB2.AsignarParamProcAlmac("DEPEPEBR", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("DEPEPEBR", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1817,7 +1814,7 @@ namespace appLogica
             }
             if (pDEPENUBU == null)
             {
-                DB2.AsignarParamProcAlmac("DEPENUBU", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("DEPENUBU", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -1865,7 +1862,7 @@ namespace appLogica
             }
             if (pDEPESECR == null)
             {
-                DB2.AsignarParamProcAlmac("DEPESECR", iDB2DbType.iDB2Numeric, DBNull.Value);
+                DB2.AsignarParamProcAlmac("DEPESECR", iDB2DbType.iDB2Numeric, 0);
             }
             else
             {
@@ -2081,7 +2078,7 @@ namespace appLogica
             return bodp;
         }
 
-        public List<appWcfService.PEBODP> PEBODP_Find_IDDO(decimal? BODPIDDO)
+        public List<appWcfService.PEBODP> PEBODP_Find_IDDO(decimal? BODPIDDO)//SOLO PARA OSAS
         {
             List<appWcfService.PEBODP> bodp = null;
             DataTable cabeceraDataTable = null;

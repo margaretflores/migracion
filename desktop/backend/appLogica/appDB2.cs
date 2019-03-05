@@ -29,6 +29,8 @@ namespace appLogica
         private const decimal TIPO_MOV_CANCELA_SALIDA_PREP_PED = 2; //+
         private const decimal TIPO_MOV_MODIFICA_SALIDA_PREP_PED = 3;  //+
 
+        private string ServidorSMTP, CuentaDe, CuentaDescripcion, ClaveCuenta, DominioCuenta, PuertoSMTP;
+
         #endregion
 
         public appDB2()
@@ -223,138 +225,143 @@ namespace appLogica
             return vpar;
         }
 
-        public RESOPE GeneraPreguia(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> cabdetpedido, string serie, string usuario, string codprovtrans, string estabpart, decimal estadest)
-        {
-            DataTable otrosDataTable;
-            RESOPE vpar;
-            vpar = new RESOPE() { ESTOPE = false };
-            try
-            {
-                StringBuilder comandoSql;
-                string ptopartida = "";
-                decimal idpreguia;
-                DB2.Conectar();
+        ///descomentar
 
-                //stock
-                vpar.VALSAL = new List<string>();
+        //public RESOPE GeneraPreguia(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> cabdetpedido, string serie, string usuario, string codprovtrans, string estabpart, decimal estadest)
+        //{
+        //    DataTable otrosDataTable;
+        //    RESOPE vpar;
+        //    vpar = new RESOPE() { ESTOPE = false };
+        //    try
+        //    {
+        //        StringBuilder comandoSql;
+        //        string ptopartida = "";
+        //        decimal idpreguia;
+        //        DB2.Conectar();
 
-                comandoSql = new StringBuilder();
-                comandoSql.Append("COSTDAT.USP_OBTIENE_ESTABLECIMIENTO"); //COSTDAT
-                DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
-                DB2.AsignarParamProcAlmac("@PESTAESTA", iDB2DbType.iDB2Char, estabpart); //032
-                otrosDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
-                if (!Util.TablaVacia(otrosDataTable))
-                {
-                    DataRow row = otrosDataTable.Rows[0];
-                    ptopartida = Convert.ToString(row["ESTADIR1"]).Trim() + Convert.ToString(row["ESTADIR2"]).Trim() + " - " + Convert.ToString(row["ESTADIST"]).Trim() + " - " + Convert.ToString(row["ESTAPROV"]).Trim() + " - " + Convert.ToString(row["ESTADEPA"]).Trim();
-                }
-                //por tipo usar el tipodoc y motivo en guia
+        //        //stock
+        //        vpar.VALSAL = new List<string>();
 
-                comandoSql = new StringBuilder();
-                comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_CAB"); //FAELDAT
-                DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
-                //20181123
-                if (cabdetpedido[0].CAPETIPO == Constantes.VENTA || cabdetpedido[0].CAPETIPO == Constantes.CONSIGNACION)
-                {
-                    //20180418
-                    Decimal idtipdoc = cabdetpedido[0].CAPEIDTD;
-                    if (idtipdoc != Constantes.ID_TIPO_DOC_GUIA && idtipdoc != Constantes.ID_TIPO_DOC_NE)
-                    {
-                        idtipdoc = Constantes.ID_TIPO_DOC_GUIA;
-                    }
-                    if (idtipdoc == Constantes.ID_TIPO_DOC_NE)
-                    {
-                        codprovtrans = "";
-                        DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_NE); //7 creado
-                    }
-                    else
-                    {
-                        DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
-                    }
+        //        comandoSql = new StringBuilder();
+        //        comandoSql.Append("COSTDAT.USP_OBTIENE_ESTABLECIMIENTO"); //COSTDAT
+        //        DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
+        //        DB2.AsignarParamProcAlmac("@PESTAESTA", iDB2DbType.iDB2Char, estabpart); //032
+        //        otrosDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+        //        if (!Util.TablaVacia(otrosDataTable))
+        //        {
+        //            DataRow row = otrosDataTable.Rows[0];
+        //            ptopartida = Convert.ToString(row["ESTADIR1"]).Trim() + Convert.ToString(row["ESTADIR2"]).Trim() + " - " + Convert.ToString(row["ESTADIST"]).Trim() + " - " + Convert.ToString(row["ESTAPROV"]).Trim() + " - " + Convert.ToString(row["ESTADEPA"]).Trim();
+        //        }
+        //        //por tipo usar el tipodoc y motivo en guia
 
-                    DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, idtipdoc); //3 TIPO GUIA o 5 NOTA ENTR
-                }
-                else if (cabdetpedido[0].CAPETIPO == Constantes.TRANSF_ALMACENES)
-                {
-                    DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
-                    DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_GUIA); //3 TIPO GUIA
-                }
-                else
-                {
-                    DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_TI); //7 creado
-                    DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_TI); //ERA 14 NO 11 TIPO TI
-                }
-                decimal totalbruto = cabdetpedido.Sum(X => X.DEPEPEBR) + cabdetpedido[0].CAPETADE;
-                DB2.AsignarParamProcAlmac("@PDOCOSRIE", iDB2DbType.iDB2Char, serie); //R007 o T001
-                DB2.AsignarParamProcAlmac("@PDOCOEMIS", iDB2DbType.iDB2Date, DateTime.Today); // new DateTime(2016, 12, 1)); // DateTime.Today);
-                DB2.AsignarParamProcAlmac("@PDOCOPBRU", iDB2DbType.iDB2Numeric, totalbruto);
-                DB2.AsignarParamProcAlmac("@PDOCONBTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU);
-                DB2.AsignarParamProcAlmac("@PDOCOOBSE", iDB2DbType.iDB2VarChar, cabdetpedido[0].CAPENOTG);
-                DB2.AsignarParamProcAlmac("@PDOCODIRC", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEDIRE);
-                DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
-                DB2.AsignarParamProcAlmac("@PENTICUID", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEIDCL);
-                DB2.AsignarParamProcAlmac("@PDCENTRAN", iDB2DbType.iDB2Char, codprovtrans);
-                DB2.AsignarParamProcAlmac("@PDCENPUPATR", iDB2DbType.iDB2VarChar, ptopartida);
-                DB2.AsignarParamProcAlmac("@PFECHTRAS", iDB2DbType.iDB2TimeStamp, DateTime.Now); //new DateTime(2016, 12, 1));  //DateTime.Today); //---TEMPORAL PARA PRUEBAS
-                DB2.AsignarParamProcAlmac("@PTIPOPEDI", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPETIPO); //20180221 MOTIVO DEL PEDIDO
-                DB2.AsignarParamProcAlmac("@PESTADEST", iDB2DbType.iDB2Numeric, estadest); //20180221 MOTIVO DEL PEDIDO
+        //        comandoSql = new StringBuilder();
+        //        comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_CAB"); //FAELDAT
+        //        DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
+        //        //20181123
+        //        if (cabdetpedido[0].CAPETIPO == Constantes.VENTA || cabdetpedido[0].CAPETIPO == Constantes.CONSIGNACION)
+        //        {
+        //            //20180418
+        //            Decimal idtipdoc = cabdetpedido[0].CAPEIDTD;
+        //            if (idtipdoc != Constantes.ID_TIPO_DOC_GUIA && idtipdoc != Constantes.ID_TIPO_DOC_NE)
+        //            {
+        //                idtipdoc = Constantes.ID_TIPO_DOC_GUIA;
+        //            }
+        //            if (idtipdoc == Constantes.ID_TIPO_DOC_NE)
+        //            {
+        //                codprovtrans = "";
+        //                DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_NE); //7 creado
+        //            }
+        //            else
+        //            {
+        //                DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
+        //            }
 
-                DB2.AsignarParamSalidaProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, 19);
-                DB2.EjecutarProcedimientoAlmacenado();
-                idpreguia = Convert.ToDecimal(DB2.ObtieneParametro("@PDOCOCUID"));
+        //            DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, idtipdoc); //3 TIPO GUIA o 5 NOTA ENTR
+        //        }
+        //        else if (cabdetpedido[0].CAPETIPO == Constantes.TRANSF_ALMACENES)
+        //        {
+        //            DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
+        //            DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_GUIA); //3 TIPO GUIA
+        //        }
+        //        else
+        //        {
+        //            DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_TI); //7 creado
+        //            DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_TI); //ERA 14 NO 11 TIPO TI
+        //        }
+        //        decimal totalbruto = cabdetpedido.Sum(X => X.DEPEPEBR) + cabdetpedido[0].CAPETADE;
+        //        DB2.AsignarParamProcAlmac("@PDOCOSRIE", iDB2DbType.iDB2Char, serie); //R007 o T001
+        //        DB2.AsignarParamProcAlmac("@PDOCOEMIS", iDB2DbType.iDB2Date, DateTime.Today); // new DateTime(2016, 12, 1)); // DateTime.Today);
+        //        DB2.AsignarParamProcAlmac("@PDOCOPBRU", iDB2DbType.iDB2Numeric, totalbruto);
+        //        DB2.AsignarParamProcAlmac("@PDOCONBTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU);
+        //        DB2.AsignarParamProcAlmac("@PDOCOOBSE", iDB2DbType.iDB2VarChar, cabdetpedido[0].CAPENOTG);
+        //        DB2.AsignarParamProcAlmac("@PDOCODIRC", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEDIRE);
+        //        DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
+        //        DB2.AsignarParamProcAlmac("@PENTICUID", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEIDCL);
+        //        DB2.AsignarParamProcAlmac("@PDCENTRAN", iDB2DbType.iDB2Char, codprovtrans);
+        //        DB2.AsignarParamProcAlmac("@PDCENPUPATR", iDB2DbType.iDB2VarChar, ptopartida);
+        //        DB2.AsignarParamProcAlmac("@PFECHTRAS", iDB2DbType.iDB2TimeStamp, DateTime.Now); //new DateTime(2016, 12, 1));  //DateTime.Today); //---TEMPORAL PARA PRUEBAS
+        //        DB2.AsignarParamProcAlmac("@PTIPOPEDI", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPETIPO); //20180221 MOTIVO DEL PEDIDO
+        //        DB2.AsignarParamProcAlmac("@PESTADEST", iDB2DbType.iDB2Numeric, estadest); //20180221 MOTIVO DEL PEDIDO
 
-                int numitemdet = 0;
+        //        DB2.AsignarParamSalidaProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, 19);
+        //        DB2.EjecutarProcedimientoAlmacenado();
+        //        idpreguia = Convert.ToDecimal(DB2.ObtieneParametro("@PDOCOCUID"));
+
+        //        int numitemdet = 0;
                     
-                foreach (var item in cabdetpedido)
-                {
-                    numitemdet++;
-                    comandoSql = new StringBuilder();
-                    comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_DET"); //FAELDAT
-                    DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
-                    DB2.AsignarParamProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, idpreguia);
-                    DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
-                    DB2.AsignarParamProcAlmac("@PDDCOESAF", iDB2DbType.iDB2Numeric, 2); //2
-                    DB2.AsignarParamProcAlmac("@PDDCODESC", iDB2DbType.iDB2VarChar, item.DEPEDSAR); //INVOCAR CL ANTES O DESPUES
-                    if (numitemdet == 1)
-                    {
-                        DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU); //ES BULTOS NO CONOS DE DONDE SALE
-                        DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
-                        DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR + cabdetpedido[0].CAPETADE);
-                    }
-                    else
-                    {
-                        DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, 0); //ES BULTOS NO CONOS DE DONDE SALE
-                        DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
-                        DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR);
-                    }
-                    DB2.AsignarParamProcAlmac("@PDDCOPNET", iDB2DbType.iDB2Numeric, item.DEPEPEAT);
-                    DB2.AsignarParamProcAlmac("@PDDCOFACN", iDB2DbType.iDB2Numeric, 0);
-                    DB2.AsignarParamProcAlmac("@PPDDCIDPI", iDB2DbType.iDB2Char, item.DEPECOAR);
-                    DB2.AsignarParamProcAlmac("@PPDDCCANT", iDB2DbType.iDB2Numeric, item.DEPECAAT);
-                    DB2.AsignarParamProcAlmac("@PPDDCPEDI", iDB2DbType.iDB2Char, item.DEPECONT);
-                    DB2.AsignarParamProcAlmac("@PPRALIDAL", iDB2DbType.iDB2Numeric, item.DEPEALMA);
-                    DB2.AsignarParamProcAlmac("@PPRALIDPA", iDB2DbType.iDB2Char, item.DEPEPART);
+        //        foreach (var item in cabdetpedido)
+        //        {
+        //            numitemdet++;
+        //            comandoSql = new StringBuilder();
+        //            comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_DET"); //FAELDAT
+        //            DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
+        //            DB2.AsignarParamProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, idpreguia);
+        //            DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
+        //            DB2.AsignarParamProcAlmac("@PDDCOESAF", iDB2DbType.iDB2Numeric, 2); //2
+        //            DB2.AsignarParamProcAlmac("@PDDCODESC", iDB2DbType.iDB2VarChar, item.DEPEDSAR); //INVOCAR CL ANTES O DESPUES
+        //            if (numitemdet == 1)
+        //            {
+        //                DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU); //ES BULTOS NO CONOS DE DONDE SALE
+        //                DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
+        //                DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR + cabdetpedido[0].CAPETADE);
+        //            }
+        //            else
+        //            {
+        //                DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, 0); //ES BULTOS NO CONOS DE DONDE SALE
+        //                DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
+        //                DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR);
+        //            }
+        //            DB2.AsignarParamProcAlmac("@PDDCOPNET", iDB2DbType.iDB2Numeric, item.DEPEPEAT);
+        //            DB2.AsignarParamProcAlmac("@PDDCOFACN", iDB2DbType.iDB2Numeric, 0);
+        //            DB2.AsignarParamProcAlmac("@PPDDCIDPI", iDB2DbType.iDB2Char, item.DEPECOAR);
+        //            DB2.AsignarParamProcAlmac("@PPDDCCANT", iDB2DbType.iDB2Numeric, item.DEPECAAT);
+        //            DB2.AsignarParamProcAlmac("@PPDDCPEDI", iDB2DbType.iDB2Char, item.DEPECONT);
+        //            DB2.AsignarParamProcAlmac("@PPRALIDAL", iDB2DbType.iDB2Numeric, item.DEPEALMA);
+        //            DB2.AsignarParamProcAlmac("@PPRALIDPA", iDB2DbType.iDB2Char, item.DEPEPART);
 
-                    DB2.AsignarParamProcAlmac("@PCVTDSECU", iDB2DbType.iDB2Numeric, item.DEPESECU);
+        //            DB2.AsignarParamProcAlmac("@PCVTDSECU", iDB2DbType.iDB2Numeric, item.DEPESECU);
 
-                    DB2.AsignarParamSalidaProcAlmac("@PDDCOCUID", iDB2DbType.iDB2Numeric, 19);
-                    DB2.EjecutarProcedimientoAlmacenado();
+        //            DB2.AsignarParamSalidaProcAlmac("@PDDCOCUID", iDB2DbType.iDB2Numeric, 19);
+        //            DB2.EjecutarProcedimientoAlmacenado();
 
-                }
-                vpar.VALSAL.Add(Convert.ToString(idpreguia));
-                vpar.ESTOPE = true;
-            }
-            catch (Exception ex)
-            {
-                Util.EscribeLog(ex.Message);
-                vpar.MENERR = ErrorGenerico(ex.Message);
-            }
-            finally
-            {
-                DB2.Desconectar();
-            }
-            return vpar;
-        }
+        //        }
+        //        vpar.VALSAL.Add(Convert.ToString(idpreguia));
+        //        vpar.ESTOPE = true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Util.EscribeLog(ex.Message);
+        //        vpar.MENERR = ErrorGenerico(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        DB2.Desconectar();
+        //    }
+        //    return vpar;
+        //}
+
+        ///descomentar
+
         //public RESOPE GeneraPreguia(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> cabdetpedido, string serie, string usuario, string codprovtrans, string estabpart)
         //{
         //    DataTable otrosDataTable;
@@ -472,63 +479,70 @@ namespace appLogica
         /// M = Modificar Reserva
         /// E = Entregar o Atender Reserva
         /// R = Reconfirmar Reserva</param>
-        public void generaReserva(bool conectado, string TipRsrva, string NoFolio, string Secuencia, string Articulo, string Partida, string Almacen, string Destino, string TpDest, string SecDest, string ScPrdDst, string ScPrdAtn, string Cantidad, string TipAcci)
-        {
-            try
-            {
+        /// 
 
-                if (!conectado)
-                {
-                    DB2.Conectar();
-                }
-                StringBuilder comandoSql = new StringBuilder();
-                StringBuilder actreservSql; // = new StringBuilder();
 
-                TipRsrva = TipRsrva.PadRight(1, ' ');
-                NoFolio = NoFolio.PadLeft(5, '0').Substring(0,5);
-                Secuencia = Secuencia.PadLeft(2, '0');
-                Articulo = Articulo.PadRight(15, ' ');
-                Partida = Partida.PadRight(6, ' ');
-                Almacen = Almacen.PadLeft(3, '0');
-                Destino = Destino.PadRight(6, ' ').Substring(0,6);
-                TpDest = TpDest.PadRight(1, ' ');
+        ///descomentar
+        //public void generaReserva(bool conectado, string TipRsrva, string NoFolio, string Secuencia, string Articulo, string Partida, string Almacen, string Destino, string TpDest, string SecDest, string ScPrdDst, string ScPrdAtn, string Cantidad, string TipAcci)
+        //{
+        //    try
+        //    {
 
-                SecDest = SecDest.PadLeft(2, '0');
-                ScPrdDst = ScPrdDst.PadLeft(3, '0');
-                ScPrdAtn = ScPrdAtn.PadLeft(3, '0');
-                Cantidad = Cantidad.PadLeft(9, '0');
-                TipAcci = TipAcci.PadRight(1, ' ');
+        //        if (!conectado)
+        //        {
+        //            DB2.Conectar();
+        //        }
+        //        StringBuilder comandoSql = new StringBuilder();
+        //        StringBuilder actreservSql; // = new StringBuilder();
 
-                actreservSql = new StringBuilder();
-                actreservSql.Append("CALL INCAOBJ.ACTRESPP(");  //GMA003PP 20151130 PRUEBAS USUARIO
-                actreservSql.Append("'").Append(TipRsrva).Append("', ");
-                actreservSql.Append("'").Append(NoFolio).Append("', ");
-                actreservSql.Append("'").Append(Secuencia).Append("', ");
-                actreservSql.Append("'").Append(Articulo).Append("', ");
-                actreservSql.Append("'").Append(Partida).Append("', ");
-                actreservSql.Append("'").Append(Almacen).Append("', ");
-                actreservSql.Append("'").Append(Destino).Append("', ");
-                actreservSql.Append("'").Append(TpDest).Append("', ");
-                actreservSql.Append("'").Append(SecDest).Append("', ");
-                actreservSql.Append("'").Append(ScPrdDst).Append("', ");
-                actreservSql.Append("'").Append(ScPrdAtn).Append("', ");
-                actreservSql.Append("'").Append(Cantidad).Append("', ");
-                actreservSql.Append("'").Append(TipAcci).Append("') ");
+        //        TipRsrva = TipRsrva.PadRight(1, ' ');
+        //        NoFolio = NoFolio.PadLeft(5, '0').Substring(0,5);
+        //        Secuencia = Secuencia.PadLeft(2, '0');
+        //        Articulo = Articulo.PadRight(15, ' ');
+        //        Partida = Partida.PadRight(6, ' ');
+        //        Almacen = Almacen.PadLeft(3, '0');
+        //        Destino = Destino.PadRight(6, ' ').Substring(0,6);
+        //        TpDest = TpDest.PadRight(1, ' ');
 
-                //xselec = "call GEMAPRG.GMA003PP('"+cia +"','"+ allt(tcomp) +"','"+ allt(comprob) +"','"+ allt(fecha) +"','"+ m->articulo +"','"+ allt(m->almacen) +"','"+ allt(partida) +"','"+ allt(cantidad) +"','"+ total +"','"+ m->signo +"','"+ orides +"','"+ destino +"','"+ unidad +"','"+ item +"','" + estado +"')"
+        //        SecDest = SecDest.PadLeft(2, '0');
+        //        ScPrdDst = ScPrdDst.PadLeft(3, '0');
+        //        ScPrdAtn = ScPrdAtn.PadLeft(3, '0');
+        //        Cantidad = Cantidad.PadLeft(9, '0');
+        //        TipAcci = TipAcci.PadRight(1, ' ');
 
-                DB2.CrearComando(actreservSql.ToString(), CommandType.Text);
-                //PRUEBAS 
-                DB2.EjecutarComando();
-            }
-            finally
-            {
-                if (!conectado)
-                {
-                    DB2.Desconectar();
-                }
-            }
-        }
+        //        actreservSql = new StringBuilder();
+        //        actreservSql.Append("CALL INCAOBJ.ACTRESPP(");  //GMA003PP 20151130 PRUEBAS USUARIO
+        //        actreservSql.Append("'").Append(TipRsrva).Append("', ");
+        //        actreservSql.Append("'").Append(NoFolio).Append("', ");
+        //        actreservSql.Append("'").Append(Secuencia).Append("', ");
+        //        actreservSql.Append("'").Append(Articulo).Append("', ");
+        //        actreservSql.Append("'").Append(Partida).Append("', ");
+        //        actreservSql.Append("'").Append(Almacen).Append("', ");
+        //        actreservSql.Append("'").Append(Destino).Append("', ");
+        //        actreservSql.Append("'").Append(TpDest).Append("', ");
+        //        actreservSql.Append("'").Append(SecDest).Append("', ");
+        //        actreservSql.Append("'").Append(ScPrdDst).Append("', ");
+        //        actreservSql.Append("'").Append(ScPrdAtn).Append("', ");
+        //        actreservSql.Append("'").Append(Cantidad).Append("', ");
+        //        actreservSql.Append("'").Append(TipAcci).Append("') ");
+
+        //        //xselec = "call GEMAPRG.GMA003PP('"+cia +"','"+ allt(tcomp) +"','"+ allt(comprob) +"','"+ allt(fecha) +"','"+ m->articulo +"','"+ allt(m->almacen) +"','"+ allt(partida) +"','"+ allt(cantidad) +"','"+ total +"','"+ m->signo +"','"+ orides +"','"+ destino +"','"+ unidad +"','"+ item +"','" + estado +"')"
+
+        //        DB2.CrearComando(actreservSql.ToString(), CommandType.Text);
+        //        //PRUEBAS 
+        //        DB2.EjecutarComando();
+        //    }
+        //    finally
+        //    {
+        //        if (!conectado)
+        //        {
+        //            DB2.Desconectar();
+        //        }
+        //    }
+        //}
+
+
+        ///descomentar
 
         /// <summary>
         /// 
@@ -593,53 +607,57 @@ namespace appLogica
             }
         }
 
-        //
-        public void actualizaPROSAS(string folio, decimal secuencia, decimal pesoentregado, string estado)
-        {
-            try
-            {
-                DB2.Conectar();
-                DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_OSA", CommandType.StoredProcedure);
-                DB2.AsignarParamProcAlmac("@POSASFOLI", iDB2DbType.iDB2Char, folio);
-                DB2.AsignarParamProcAlmac("@POSASSECU", iDB2DbType.iDB2Numeric, secuencia);
-                DB2.AsignarParamProcAlmac("@POSASCAEN", iDB2DbType.iDB2Decimal, pesoentregado); //-1 para no actualizar el campo y si actualizar estado
-                DB2.AsignarParamProcAlmac("@POSASSTOS", iDB2DbType.iDB2Char, estado); //vacio cuando se envía pesoentregado
-                DB2.EjecutarComando();
-            }
-            catch (Exception ex)
-            {
-                Util.EscribeLog(ex.Message);
-            }
-            finally
-            {
-                DB2.Desconectar();
-            }
-        }
+        ////descomentar
 
-        public void actualizaGMDEEM(string empaque, decimal secuencia, decimal cantidadrestante, decimal pesorestante, decimal stockcerobolsa, decimal estadobolsa)
-        {
-            try
-            {
-                DB2.Conectar();
 
-                DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_GMDEEM", CommandType.StoredProcedure);
-                DB2.AsignarParamProcAlmac("@PDEEMCOEM", iDB2DbType.iDB2Char, empaque);
-                DB2.AsignarParamProcAlmac("@PDEEMSECU", iDB2DbType.iDB2Numeric, secuencia);
-                DB2.AsignarParamProcAlmac("@PDEEMCAST", iDB2DbType.iDB2Decimal, cantidadrestante);
-                DB2.AsignarParamProcAlmac("@PDEEMPEST", iDB2DbType.iDB2Decimal, pesorestante);
-                DB2.AsignarParamProcAlmac("@PDEEMSTCE", iDB2DbType.iDB2Numeric, stockcerobolsa); //-1 si no se actualizará EL CAMPO 
-                DB2.AsignarParamProcAlmac("@PDEEMESBO", iDB2DbType.iDB2Numeric, estadobolsa);
-                DB2.EjecutarComando();
-            }
-            catch (Exception ex)
-            {
-                Util.EscribeLog(ex.Message);
-            }
-            finally
-            {
-                DB2.Desconectar();
-            }
-        }
+        //public void actualizaPROSAS(string folio, decimal secuencia, decimal pesoentregado, string estado)
+        //{
+        //    try
+        //    {
+        //        DB2.Conectar();
+        //        DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_OSA", CommandType.StoredProcedure);
+        //        DB2.AsignarParamProcAlmac("@POSASFOLI", iDB2DbType.iDB2Char, folio);
+        //        DB2.AsignarParamProcAlmac("@POSASSECU", iDB2DbType.iDB2Numeric, secuencia);
+        //        DB2.AsignarParamProcAlmac("@POSASCAEN", iDB2DbType.iDB2Decimal, pesoentregado); //-1 para no actualizar el campo y si actualizar estado
+        //        DB2.AsignarParamProcAlmac("@POSASSTOS", iDB2DbType.iDB2Char, estado); //vacio cuando se envía pesoentregado
+        //        DB2.EjecutarComando();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Util.EscribeLog(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        DB2.Desconectar();
+        //    }
+        //}
+
+        //public void actualizaGMDEEM(string empaque, decimal secuencia, decimal cantidadrestante, decimal pesorestante, decimal stockcerobolsa, decimal estadobolsa)
+        //{
+        //    try
+        //    {
+        //        DB2.Conectar();
+
+        //        DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_GMDEEM", CommandType.StoredProcedure);
+        //        DB2.AsignarParamProcAlmac("@PDEEMCOEM", iDB2DbType.iDB2Char, empaque);
+        //        DB2.AsignarParamProcAlmac("@PDEEMSECU", iDB2DbType.iDB2Numeric, secuencia);
+        //        DB2.AsignarParamProcAlmac("@PDEEMCAST", iDB2DbType.iDB2Decimal, cantidadrestante);
+        //        DB2.AsignarParamProcAlmac("@PDEEMPEST", iDB2DbType.iDB2Decimal, pesorestante);
+        //        DB2.AsignarParamProcAlmac("@PDEEMSTCE", iDB2DbType.iDB2Numeric, stockcerobolsa); //-1 si no se actualizará EL CAMPO 
+        //        DB2.AsignarParamProcAlmac("@PDEEMESBO", iDB2DbType.iDB2Numeric, estadobolsa);
+        //        DB2.EjecutarComando();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Util.EscribeLog(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        DB2.Desconectar();
+        //    }
+        //}
+
+        ///descomentar
 
         private string ErrorGenerico(string exception)
         {
@@ -2281,7 +2299,11 @@ namespace appLogica
             foreach (var item in listdet)
             {
                 //  DMA, SE SOLICITO REALIZAR LA RESERVA CON EL ID DEL DETALLE DEL PEDIDO PARA EVITAR RESERVAS DUPLICADAS, (det.DEPEIDDP)
+
+                ///descomentar
                 //_appDB2.generaReserva(false, "X", Convert.ToInt32(item.DEPEIDDP).ToString(), Convert.ToString(item.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
+                ///descomentar
+
                 //_appDB2.generaReserva(false, "X", Convert.ToInt32(pedido.CAPEIDCP).ToString(), Convert.ToString(item.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
             }
         }
@@ -2429,7 +2451,9 @@ namespace appLogica
                 {
                     usuariopedido = usuario;
                 }
+                ///descomentar
                 //vpar = _appDB2.GeneraPreguia(lista, serieguiadefault, usuariopedido.Trim(), codprovtrans, estabpart, estadest);
+                ///descomentar
 
                 if (vpar.ESTOPE == true)
                 {
@@ -2568,7 +2592,7 @@ namespace appLogica
                         cas.CASIUSMO = Casillero.CASIUSMO;
                         cas.CASIFEMO = DateTime.Now;
                         context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA ,  pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
-                                pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
+                                pCASICAPA: cas.CASICAPA, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH , pCASIUSMO: cas.CASIUSMO, pCASIFEMO: cas.CASIFEMO
                                 , pCASILARG: cas.CASILARG);
                         //context.SaveChanges();
                         vpar.ESTOPE = true;
@@ -2610,8 +2634,8 @@ namespace appLogica
                             cas.CASIUSMO = usuario;
                             cas.CASIFEMO = DateTime.Now;
                             context.PECASI_UPDATE(cas.CASICOCA, pCASIIDPA: cas.CASIIDPA, pCASIESTA: cas.CASIESTA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
-                                pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
-                                , pCASILARG: cas.CASILARG, pCASIUSMO: cas.CASIUSMO, pCASIFEMO: cas.CASIFEMO);
+                                pCASICAPA: cas.CASICAPA, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
+                                , pCASILARG: cas.CASILARG, pCASIUSMO: cas.CASIUSMO, pCASIFEMO: cas.CASIFEMO);//pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, 
                             //context.SaveChanges();
                             vpar.ESTOPE = true;
                         }
@@ -2670,8 +2694,8 @@ namespace appLogica
                                 cas.CASIUSMO = usuario;
                                 cas.CASIFEMO = DateTime.Now;
                                 context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
-                                pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
-                                , pCASILARG: cas.CASILARG);
+                                pCASICAPA: cas.CASICAPA, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
+                                , pCASILARG: cas.CASILARG);// pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR,
                             }
                         }
                     }
@@ -2686,7 +2710,7 @@ namespace appLogica
                         colu.COLUUSMO = usuario;
                         colu.COLUFEMO = DateTime.Now;
                         vpar.ESTOPE = true;
-                        context.PECOLU_UPDATE(pCOLUIDCO: colu.COLUIDCO, pCOLUIDPA: colu.COLUIDPA, pCOLUESTA: colu.COLUESTA, pCOLUUSCR: colu.COLUUSCR, pCOLUFECR: colu.COLUFECR, pCOLUUSMO: colu.COLUUSMO, pCOLUFEMO: colu.COLUFEMO);
+                        context.PECOLU_UPDATE(pCOLUIDCO: colu.COLUIDCO, pCOLUIDPA: colu.COLUIDPA, pCOLUESTA: colu.COLUESTA, pCOLUUSMO: colu.COLUUSMO, pCOLUFEMO: colu.COLUFEMO);//, pCOLUUSCR: colu.COLUUSCR, pCOLUFECR: colu.COLUFECR
                     }
                     else
                     {
@@ -2743,8 +2767,8 @@ namespace appLogica
                                 cas.CASIUSMO = usuario;
                                 cas.CASIFEMO = DateTime.Now;
                                 context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
-                                pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
-                                , pCASILARG: cas.CASILARG);
+                                pCASICAPA: cas.CASICAPA, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
+                                , pCASILARG: cas.CASILARG, pCASIUSMO: cas.CASIUSMO, pCASIFEMO: cas.CASIFEMO);//, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR
                             }
                         }
                     }
@@ -2758,7 +2782,7 @@ namespace appLogica
                         else nive.NIVEESTA = 0;
                         nive.NIVEUSMO = usuario;
                         nive.NIVEFEMO = DateTime.Now;
-                        context.PENIVE_UPDATE(pNIVEIDNI: nive.NIVEIDNI, pNIVEIDPA: nive.NIVEIDPA, pNIVEESTA: nive.NIVEESTA, pNIVEUSCR: nive.NIVEUSCR, pNIVEFECR: nive.NIVEFECR, pNIVEUSMO: nive.NIVEUSMO, pNIVEFEMO: nive.NIVEFEMO);
+                        context.PENIVE_UPDATE(pNIVEIDNI: nive.NIVEIDNI, pNIVEIDPA: nive.NIVEIDPA, pNIVEESTA: nive.NIVEESTA, pNIVEUSMO: nive.NIVEUSMO, pNIVEFEMO: nive.NIVEFEMO);//, pNIVEUSCR: nive.NIVEUSCR, pNIVEFECR: nive.NIVEFECR
                         vpar.ESTOPE = true;
                     }
                     else
@@ -2816,8 +2840,8 @@ namespace appLogica
                                 cas.CASIUSMO = usuario;
                                 cas.CASIFEMO = DateTime.Now;
                                 context.PECASI_UPDATE(cas.CASICOCA, pCASIESTA: cas.CASIESTA, pCASIIDPA: cas.CASIIDPA, pCASIIDNI: cas.CASIIDNI, pCASIIDCO: cas.CASIIDCO,
-                                pCASICAPA: cas.CASICAPA, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
-                                , pCASILARG: cas.CASILARG);
+                                pCASICAPA: cas.CASICAPA, pCASIALTU: cas.CASIALTU, pCASIANCH: cas.CASIANCH
+                                , pCASILARG: cas.CASILARG, pCASIUSMO: cas.CASIUSMO, pCASIFEMO: cas.CASIFEMO);//, pCASIUSCR: cas.CASIUSCR, pCASIFECR: cas.CASIFECR
                             }
                         }
                     }
@@ -2835,7 +2859,7 @@ namespace appLogica
                                 else nive.NIVEESTA = 0;
                                 nive.NIVEUSMO = usuario;
                                 nive.NIVEFEMO = DateTime.Now;
-                                context.PENIVE_UPDATE(pNIVEIDNI: nive.NIVEIDNI,pNIVEIDPA: nive.NIVEIDPA, pNIVEESTA: nive.NIVEESTA, pNIVEUSCR: nive.NIVEUSCR, pNIVEFECR: nive.NIVEFECR, pNIVEUSMO: nive.NIVEUSMO, pNIVEFEMO: nive.NIVEFEMO);
+                                context.PENIVE_UPDATE(pNIVEIDNI: nive.NIVEIDNI,pNIVEIDPA: nive.NIVEIDPA, pNIVEESTA: nive.NIVEESTA, pNIVEUSMO: nive.NIVEUSMO, pNIVEFEMO: nive.NIVEFEMO);//, pNIVEUSCR: nive.NIVEUSCR, pNIVEFECR: nive.NIVEFECR
                             }
                         }
                     }
@@ -2853,7 +2877,7 @@ namespace appLogica
                                 else colu.COLUESTA = 0;
                                 colu.COLUUSMO = usuario;
                                 colu.COLUFEMO = DateTime.Now;
-                                context.PECOLU_UPDATE(pCOLUIDCO: colu.COLUIDCO, pCOLUIDPA: colu.COLUIDPA, pCOLUESTA: colu.COLUESTA, pCOLUUSCR: colu.COLUUSCR, pCOLUFECR: colu.COLUFECR, pCOLUUSMO: colu.COLUUSMO, pCOLUFEMO: colu.COLUFEMO);
+                                context.PECOLU_UPDATE(pCOLUIDCO: colu.COLUIDCO, pCOLUIDPA: colu.COLUIDPA, pCOLUESTA: colu.COLUESTA, pCOLUUSMO: colu.COLUUSMO, pCOLUFEMO: colu.COLUFEMO);//, pCOLUUSCR: colu.COLUUSCR, pCOLUFECR: colu.COLUFECR
                             }
                         }
                     }
@@ -2867,7 +2891,7 @@ namespace appLogica
                         else pasi.PASIESTA = 0;
                         pasi.PASIUSMO = usuario;
                         pasi.PASIFEMO = DateTime.Now;
-                        context.PEPASI_UPDATE(pasi.PASIIDPA, pPASIESTA: pasi.PASIESTA, pPASIUSMO: pasi.PASIUSMO, pPASIFEMO: pasi.PASIFEMO, pPASIUSCR: pasi.PASIUSCR, pPASIFECR: pasi.PASIFECR);
+                        context.PEPASI_UPDATE(pasi.PASIIDPA, pPASIESTA: pasi.PASIESTA, pPASIUSMO: pasi.PASIUSMO, pPASIFEMO: pasi.PASIFEMO);//, pPASIUSCR: pasi.PASIUSCR, pPASIFECR: pasi.PASIFECR);
                     }
                     vpar.ESTOPE = true;
                     //context.SaveChanges();
@@ -3192,15 +3216,15 @@ namespace appLogica
                         if (casillero.CASIESTA == 0)
                         {
                             casillero.CASIESTA = 1;
-                            casillero.CASIUSCR = usuario;
-                            casillero.CASIFECR = DateTime.Now;
+                            casillero.CASIUSMO = usuario;
+                            casillero.CASIFEMO = DateTime.Now;
                             casillero.CASICAPA = 0;
                             casillero.CASIALTU = 0;
                             casillero.CASIANCH = 0;
                             casillero.CASILARG = 0;
                             context.PECASI_UPDATE(casillero.CASICOCA, pCASIESTA: casillero.CASIESTA, pCASIIDPA: casillero.CASIIDPA, pCASIIDNI: casillero.CASIIDNI, pCASIIDCO: casillero.CASIIDCO,
-                                pCASICAPA: casillero.CASICAPA, pCASIUSCR: casillero.CASIUSCR, pCASIFECR: casillero.CASIFECR, pCASIALTU: casillero.CASIALTU, pCASIANCH: casillero.CASIANCH
-                                , pCASILARG: casillero.CASILARG);
+                                pCASICAPA: casillero.CASICAPA, pCASIALTU: casillero.CASIALTU, pCASIANCH: casillero.CASIANCH
+                                , pCASILARG: casillero.CASILARG,pCASIFEMO:casillero.CASIFEMO,pCASIUSMO:casillero.CASIUSMO);//, pCASIUSCR: casillero.CASIUSCR, pCASIFECR: casillero.CASIFECR,
                         }
                         else
                         {
@@ -3328,7 +3352,7 @@ namespace appLogica
                     ///2018-12-29 añadiendo o actualizando
                     if (tipo == 1)
                     {
-                        context.PECAPE_INSERT( pCAPESERI: ped.CAPESERI, pCAPEUSCR: ped.CAPEUSCR, pCAPEFECR: ped.CAPEFECR,
+                        idpedido = context.PECAPE_INSERT( pCAPESERI: ped.CAPESERI, pCAPEUSCR: ped.CAPEUSCR, pCAPEFECR: ped.CAPEFECR,
                             pCAPENUME: ped.CAPENUME, pCAPEIDCL: ped.CAPEIDCL, pCAPEFECH: ped.CAPEFECH, pCAPEDIRE: ped.CAPEDIRE, pCAPEIDES: ped.CAPEIDES,
                             pCAPEEMAI: ped.CAPEEMAI, pCAPENOTI: ped.CAPENOTI, pCAPENOTG: ped.CAPENOTG, pCAPETIPO: ped.CAPETIPO, pCAPEIDTD: ped.CAPEIDTD, pCAPEDEST: ped.CAPEDEST);
                     }
@@ -3341,8 +3365,8 @@ namespace appLogica
                     }
 
 
-                    idpedido = ped.CAPEIDCP;
-                    //2018-12-29
+                    ped.CAPEIDCP = idpedido;//REV
+                    //2019-02-28
                     tipo = 0; //reinicializando para usarlo en detalles 1 - anadir 2 - actulizar
                     //
                     secuencia = 0;
@@ -3380,7 +3404,9 @@ namespace appLogica
                             if (det.DEPEPESO != item.DEPEPESO || det.DEPECOAR.Trim() != item.DEPECOAR.Trim() || det.DEPEPART != item.DEPEPART)
                             {
                                 //  DMA, SE SOLICITO REALIZAR LA RESERVA CON EL ID DEL DETALLE DEL PEDIDO PARA EVITAR RESERVAS DUPLICADAS, (det.DEPEIDDP)
+                                ///descomentar
                                 //_appDB2.generaReserva(false, "X", Convert.ToInt32(det.DEPEIDDP).ToString(), Convert.ToString(det.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
+                                ///descomentar
                                 //_appDB2.generaReserva(false, "X", Convert.ToInt32(ped.CAPEIDCP).ToString(), Convert.ToString(det.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
 
                                 generarres = true;
@@ -3404,14 +3430,14 @@ namespace appLogica
                         ///2018-12-29 añadiendo o actualizando
                         if (tipo == 1)
                         {
-                            context.PEDEPE_INSERT(det.DEPEIDDP, pDEPEIDCP: det.DEPEIDCP, pDEPEFECR: det.DEPEFECR, pDEPEUSCR: det.DEPEUSCR
+                            det.DEPEIDDP = context.PEDEPE_INSERT( pDEPEIDCP: det.DEPEIDCP, pDEPEFECR: det.DEPEFECR, pDEPEUSCR: det.DEPEUSCR
                                 , pDEPEESTA: det.DEPEESTA, pDEPEALMA: det.DEPEALMA, pDEPECASO: det.DEPECASO, pDEPEPESO: det.DEPEPESO,
                                 pDEPECOAR: det.DEPECOAR, pDEPEPART: det.DEPEPART, pDEPECONT: det.DEPECONT, pDEPEDISP: det.DEPEDISP,
                                 pDEPEDSAR: det.DEPEDSAR, pDEPESERS: det.DEPESERS, pDEPESECU: det.DEPESECU);//.PEDEPE.Add(det);
                         }
                         else
                         {
-                            context.PEDEPE_UPDATE(det.DEPEIDDP, pDEPEIDCP: det.DEPEIDCP, pDEPEESTA: det.DEPEESTA, pDEPEALMA: det.DEPEALMA, 
+                            context.PEDEPE_UPDATE_GUARDA_PED(det.DEPEIDDP, pDEPEIDCP: det.DEPEIDCP, pDEPEALMA: det.DEPEALMA, 
                                 pDEPECASO: det.DEPECASO, pDEPEPESO: det.DEPEPESO,
                                pDEPECOAR: det.DEPECOAR, pDEPEPART: det.DEPEPART, pDEPECONT: det.DEPECONT, pDEPEDISP: det.DEPEDISP,
                                pDEPEDSAR: det.DEPEDSAR, pDEPESERS: det.DEPESERS, pDEPESECU: det.DEPESECU, pDEPEFEMO: det.DEPEFEMO, pDEPEUSMO: det.DEPEUSMO);
@@ -3419,7 +3445,9 @@ namespace appLogica
                         if (generarres)
                         {
                             //  DMA, SE SOLICITO REALIZAR LA RESERVA CON EL ID DEL DETALLE DEL PEDIDO PARA EVITAR RESERVAS DUPLICADAS, (det.DEPEIDDP)
+                            ///descomentar
                             //_appDB2.generaReserva(false, "X", Convert.ToInt32(det.DEPEIDDP).ToString(), Convert.ToString(secuencia), det.DEPECOAR, det.DEPEPART, Convert.ToString(det.DEPEALMA), det.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(det.DEPEPESO * 100)), "A");
+                            ///descomentar
                             //_appDB2.generaReserva(false, "X", Convert.ToInt32(ped.CAPEIDCP).ToString(), Convert.ToString(secuencia), det.DEPECOAR, det.DEPEPART, Convert.ToString(det.DEPEALMA), det.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(det.DEPEPESO * 100)), "A");
                         }
 
@@ -3589,8 +3617,8 @@ namespace appLogica
                             //inserta tipo 2 kardex reingreso
                             //context.bodp
                             //context.SaveChanges();
-                            context.PEDEPE_UPDATE(pDEPEIDDP: detpednac.DEPEIDDP, pDEPEIDCP: detpednac.DEPEIDCP, pDEPECAAT: detpednac.DEPECAAT, pDEPEPEAT: detpednac.DEPEPEAT, pDEPEPERE: detpednac.DEPEPERE,
-                                pDEPETADE: detpednac.DEPETADE, pDEPEPEBR: detpednac.DEPEPEBR);
+                            context.PEDEPE_UPDATE_GUARDA_ELIMINA_BOLSA(pDEPEIDDP: detpednac.DEPEIDDP, pDEPEIDCP: detpednac.DEPEIDCP, pDEPECAAT: detpednac.DEPECAAT, pDEPEPEAT: detpednac.DEPEPEAT, pDEPEPERE: detpednac.DEPEPERE,
+                                pDEPETADE: detpednac.DEPETADE, pDEPEPEBR: detpednac.DEPEPEBR,pDEPEUSMO: usuario, pDEPEFEMO:DateTime.Now);
                         }
                         else if (iddetpedidoint.HasValue)
                         {
@@ -3615,7 +3643,9 @@ namespace appLogica
                             if (osa != null)
                             {
                                 osa.OSASCAEN = pesoatendido;
+                                ///descomentar
                                 //actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, osa.OSASCAEN, ""); //Validar AS
+                                ///descomentar
                             }
                             //context.SaveChanges();
                             context.PEDEOS_UPDATE(pDEOSIDDO: detpedint.DEOSIDDO, pDEOSIDCO: detpedint.DEOSIDCO, pDEOSCAAT: detpedint.DEOSCAAT,
@@ -3661,20 +3691,21 @@ namespace appLogica
                                     detemp.DEEMESBO = 1;
                                 }
                                 //context.SaveChanges();
-
+                                ///descomentar
                                 //actualizaGMDEEM(detemp.DEEMCOEM, detemp.DEEMSECU, detemp.DEEMCAST, detemp.DEEMPEST, detemp.DEEMSTCE, detemp.DEEMESBO); //Validar AS
+                                ///descomentar
                                                                                                                                                        //buscar una partida en la bolsa que no este vacia, si no hay ninguna actualizar a 9 anulado
                                 detemp = context.GMDEEM_Find_DEEMESBO( 1 , bol.BOLSCOEM , "N" , 9);
                                     //.GMDEEM.FirstOrDefault(det => det.DEEMCIA == 1 && det.DEEMCOEM == bol.BOLSCOEM && det.DEEMTIPE == "N" && det.DEEMESBO != 9);//PRPEDAT.USP_EP_GMDEEM_FIND_DEEMESBO
                                 if (detemp == null)
                                 {
                                     bol.BOLSESTA = 9; //ya no se usa la bolsa
-                                    context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA);
+                                    context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA, PBOLSUSMO: usuario, PBOLSFEMO: DateTime.Now);
                                 }
                                 else
                                 {
                                     bol.BOLSESTA = 1; //ya no se usa la bolsa - si se modifica la cant o kilos de la bolsa o si se le quito el stock cero desmarcar la bolsa
-                                    context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA);
+                                    context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA, PBOLSUSMO: usuario, PBOLSFEMO: DateTime.Now);
                                 }
                                 //context.SaveChanges();
                             }
@@ -3745,7 +3776,7 @@ namespace appLogica
                         if (emp != null || sinempaque)
                         {
                             appWcfService.PEBOLS bol = null;
-                            appWcfService.PEBOLS bolcreada = null;//  objeto para obtener el idbo creado
+                            //appWcfService.PEBOLS bolcreada = null;//  objeto para obtener el idbo creado
                             if (!sinempaque)
                             {
                                 bol = context.PEBOLS_Find_first(detallebolsa.PEBOLS.BOLSCOEM);
@@ -3765,15 +3796,15 @@ namespace appLogica
                                     Util.EscribeLog("3");
 
                                     //context.PEBOLS.Add(bol);
-                                    context.PEBOLS_INSERT(PBOLSCOAR: bol.BOLSCOAR, PBOLSCOEM: bol.BOLSCOEM, PBOLSCOCA: bol.BOLSCOCA, PBOLSALMA: bol.BOLSALMA,
+                                    detallebolsa.BODPIDBO = context.PEBOLS_INSERT(PBOLSCOAR: bol.BOLSCOAR, PBOLSCOEM: bol.BOLSCOEM, PBOLSCOCA: bol.BOLSCOCA, PBOLSALMA: bol.BOLSALMA,
                                         PBOLSESTA: bol.BOLSESTA, PBOLSUSCR: bol.BOLSUSCR, PBOLSFECR: bol.BOLSFECR);
                                     Util.EscribeLog("4");
 
                                     //context.SaveChanges();
                                     Util.EscribeLog("5");
                                     //2019-02-15
-                                    bolcreada = context.PEBOLS_Find_first(detallebolsa.PEBOLS.BOLSCOEM);
-                                    detallebolsa.BODPIDBO = bolcreada.BOLSIDBO;
+                                    //bolcreada = context.PEBOLS_Find_first(detallebolsa.PEBOLS.BOLSCOEM);
+                                    //detallebolsa.BODPIDBO = bolcreada.BOLSIDBO;
                                 }
                                 else
                                 {
@@ -3822,7 +3853,7 @@ namespace appLogica
                                 if (!sinempaque)
                                 {
                                     //inserta tipo 1 SALIDA
-                                    insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bolcreada.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
+                                    insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bol.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
                                 }
                             }
                             else
@@ -3838,8 +3869,8 @@ namespace appLogica
                                     //inserta tipo 1 salida
                                     if (detallebolsa.BODPCANT != ent.BODPCANT || detallebolsa.BODPPESO != ent.BODPPESO)
                                     {
-                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_MODIFICA_SALIDA_PREP_PED, bolcreada.BOLSALMA, partida, articulo, ent.BODPCANT, ent.BODPPESO, ent.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
-                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bolcreada.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
+                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_MODIFICA_SALIDA_PREP_PED, bol.BOLSALMA, partida, articulo, ent.BODPCANT, ent.BODPPESO, ent.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
+                                        insertaMovimientoKardex(context, detallebolsa.BODPIDBO, TIPO_MOV_SALIDA_PREP_PED, bol.BOLSALMA, partida, articulo, detallebolsa.BODPCANT, detallebolsa.BODPPESO, detallebolsa.BODPPEBR - detallebolsa.BODPTADE, detallebolsa.BODPUSCR, detallebolsa.BODPIDDP, detallebolsa.BODPIDDO);
                                     }
                                 }
                             }
@@ -3892,7 +3923,7 @@ namespace appLogica
                                     PBODPINBO: ent.BODPINBO, PBODPTADE: ent.BODPTADE, PBODPPEBR: ent.BODPPEBR, PBODPESTA: ent.BODPESTA,
                                     PBODPUSMO: ent.BODPUSMO, PBODPFEMO: ent.BODPFEMO, PBODPSECR: ent.BODPSECR, PBODPTAUN: ent.BODPTAUN,
                                     PBODPAPOR: "D");
-                            }
+                            }//BODPSECR
 
                             decimal cantatendida, pesoatendido, pesoreal, tade, pebr;
                             if (detallebolsa.BODPIDDP.HasValue)
@@ -3922,8 +3953,8 @@ namespace appLogica
 
                                 //context.SaveChanges();
 
-                                context.PEDEPE_UPDATE(detpednac.DEPEIDDP, pDEPECAAT: detpednac.DEPECAAT, pDEPEPEAT: detpednac.DEPEPEAT,
-                                    pDEPEPERE: detpednac.DEPEPERE, pDEPESTOC: detpednac.DEPESTOC, pDEPETADE: detpednac.DEPETADE, pDEPEPEBR: detpednac.DEPEPEBR);
+                                context.PEDEPE_UPDATE_GUARDA_ELIMINA_BOLSA(detpednac.DEPEIDDP, pDEPECAAT: detpednac.DEPECAAT, pDEPEPEAT: detpednac.DEPEPEAT,
+                                    pDEPEPERE: detpednac.DEPEPERE, pDEPESTOC: detpednac.DEPESTOC, pDEPETADE: detpednac.DEPETADE, pDEPEPEBR: detpednac.DEPEPEBR,pDEPEUSMO: detallebolsa.BODPUSCR,pDEPEFEMO:DateTime.Now);
                             }
                             else if (detallebolsa.BODPIDDO.HasValue)
                             {
@@ -3955,7 +3986,9 @@ namespace appLogica
                                 if (osa != null)
                                 {
                                     osa.OSASCAEN = pesoatendido;
+                                    ///descomentar
                                     //actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, osa.OSASCAEN, ""); //Validar si es correcto
+                                    ///descomentar
                                 }
                                 //context.SaveChanges();
                                 context.PEDEOS_UPDATE(detpedint.DEOSIDDO, pDEOSCAAT: detpedint.DEOSCAAT, pDEOSPEAT: detpedint.DEOSPEAT, pDEOSPERE: detpedint.DEOSPERE,
@@ -3964,7 +3997,7 @@ namespace appLogica
                             if (!sinempaque)
                             {
                                 //actualiza el stock de la bolsa
-                                var todasbolsasprep = context.PEBODP_Find_IDBO_ALMA_PART_COAR(bolcreada.BOLSIDBO, bolcreada.BOLSALMA, partida, articulo);
+                                var todasbolsasprep = context.PEBODP_Find_IDBO_ALMA_PART_COAR(bol.BOLSIDBO, bol.BOLSALMA, partida, articulo);
                                     //.PEBODP.Where(prep => prep.BODPIDBO == bol.BOLSIDBO && prep.BODPALMA == bol.BOLSALMA && prep.BODPPART == partida && prep.BODPCOAR == articulo).ToList();
                                 //decimal cantatendida, pesoatendido, pesoreal, tade, pebr;
                                 cantatendida = pesoatendido = pesoreal = tade = pebr = 0;
@@ -4006,20 +4039,22 @@ namespace appLogica
                                     {
                                         detemp.DEEMESBO = 1;
                                     }
+                                    ///descomentar
                                     //actualizaGMDEEM(detemp.DEEMCOEM, detemp.DEEMSECU, detemp.DEEMCAST, detemp.DEEMPEST, detemp.DEEMSTCE, detemp.DEEMESBO);
+                                    ///descomentar
                                     //context.SaveChanges();
                                     //buscar una partida en la bolsa que no este vacia, si no hay ninguna actualizar a 9 anulado
-                                    detemp = context.GMDEEM_Find_DEEMESBO(1, bolcreada.BOLSCOEM, "N", 9);
+                                    detemp = context.GMDEEM_Find_DEEMESBO(1, bol.BOLSCOEM, "N", 9);
                                         //.GMDEEM.FirstOrDefault(det => det.DEEMCIA == 1 && det.DEEMCOEM == bol.BOLSCOEM && det.DEEMTIPE == "N" && det.DEEMESBO != 9);
                                     if (detemp == null)
                                     {
-                                        bolcreada.BOLSESTA = 9; //ya no se usa la bolsa
-                                        context.PEBOLS_UPDATE(bolcreada.BOLSIDBO, PBOLSESTA: bolcreada.BOLSESTA);
+                                        bol.BOLSESTA = 9; //ya no se usa la bolsa
+                                        context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA, PBOLSUSMO: detallebolsa.BODPUSCR, PBOLSFEMO: DateTime.Now);
                                     }
                                     else
                                     {
-                                        bolcreada.BOLSESTA = 1; //ya no se usa la bolsa - si se modifica la cant o kilos de la bolsa o si se le quito el stock cero desmarcar la bolsa
-                                        context.PEBOLS_UPDATE(bolcreada.BOLSIDBO, PBOLSESTA: bolcreada.BOLSESTA);
+                                        bol.BOLSESTA = 1; //ya no se usa la bolsa - si se modifica la cant o kilos de la bolsa o si se le quito el stock cero desmarcar la bolsa
+                                        context.PEBOLS_UPDATE(bol.BOLSIDBO, PBOLSESTA: bol.BOLSESTA, PBOLSUSMO: detallebolsa.BODPUSCR, PBOLSFEMO: DateTime.Now);
                                     }
                                     //context.SaveChanges();
                                 }
@@ -4049,6 +4084,324 @@ namespace appLogica
             return vpar;
         }
 
+        public bool PreparaCorreoNotificacionPedido(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> pedidodet, out string cc, out string asunto, out string body, out string mensaje)
+        {
+            bool resultado = false;
+            string detallehtm;
+            string idseguimiento, estado, accionestado;
+            appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result pedcab;
+
+            cc = asunto = body = mensaje = null;
+            //cc = ConfigurationManager.AppSettings["ControlCalidadCopia"];
+            pedcab = pedidodet[0];
+
+            idseguimiento = pedcab.CAPEIDCP.ToString() + pedcab.CAPENUME.ToString().PadLeft(8, '0').Substring(6) + pedcab.CAPESERI.Substring(2) + pedcab.CAPEFECH.Day.ToString().PadLeft(2, '0');
+            //2   Emitido
+            //3   En preparación
+            //4   En aprobación
+            //5   Completado
+            estado = accionestado = "";
+            if (pedcab.CAPEIDES == 2)
+            {
+                accionestado = "ha sido emitido";
+                estado = "Emitido";
+            }
+            else if (pedcab.CAPEIDES == 3)
+            {
+                accionestado = "esta siendo preparado";
+                estado = "En preparación";
+            }
+            else if (pedcab.CAPEIDES == 4)
+            {
+                accionestado = "ha sido preparado";
+                estado = "Preparado";
+            }
+            else if (pedcab.CAPEIDES == 5)
+            {
+                accionestado = "ha sido despachado";
+                estado = "Despachado";
+            }
+            else if (pedcab.CAPEIDES == 9)
+            {
+                accionestado = "ha sido anulado";
+                estado = "Anulado";
+            }
+            else
+            {
+                mensaje = "El estado para la notificacion del pedido no es válido";
+                return false;
+            }
+
+            detallehtm = getHtmlDetallePed(pedidodet);
+
+            asunto = string.Format(Mensajes.TEXTO_ASUNTO_NOTIFICACION_PEDIDO, idseguimiento, accionestado);
+            body = "<p>" + "Estimados Señores:" + "<b>" + "</b>" + "</p>" + "<p>" + "A continuación se detalla la información relacionada a su pedido </p>";
+            body += "<p>" + "<b>" + "Identificador Pedido: " + "</b>" + idseguimiento + "</p>";
+            body += "<b>" + "Fecha Emisión: " + "</b>" + pedcab.CAPEFHEM.Value.ToString(Constantes.FORMATO_FECHA) + "";
+
+            body += "<p>" + "<b>" + "Inicio Preparación: " + "</b>" + (pedcab.CAPEFHIP.HasValue ? pedcab.CAPEFHIP.Value.ToString(Constantes.FORMATO_FECHA) : "</p>") + "";
+            body += "<p>" + "<b>" + "Preparación Completada: " + "</b>" + (pedcab.CAPEFHFP.HasValue ? pedcab.CAPEFHFP.Value.ToString(Constantes.FORMATO_FECHA) : "</p>") + "";
+            body += "<p>" + "<b>" + "Fecha de Despacho: " + "</b>" + (pedcab.CAPEFEAP.HasValue ? pedcab.CAPEFEAP.Value.ToString(Constantes.FORMATO_FECHA) : "</p>") + "";
+            body += "<p>" + "<b>" + "Estado: " + "</b>" + estado + "</p>";
+
+            body += "<br>";
+            body += "<p>" + "Puede visualizar el estado de su pedido ingresando a la siguiente dirección y usando el identificador de su pedido" + "</p>";
+            body += "<p>" + "http://localhost:52998/default.aspx" + "</p>";
+            body += "<br>";
+
+            body += detallehtm + "<br>";
+            body += "<p>" + "<b>" + "Observación pedido: " + "</b>" + pedcab.CAPENOTG + "</p>";
+            body += "<br>Atentamente<br><p>" + "</p>" + "<br>" + "<p>" + "<b>" + Mensajes.TEXTO_NOTIFICACION_PIE + "</b>" + "</p>";
+            body = body.Replace("\\n", "<br>");
+            body = "<style>   body {font-family:Verdana; font-size: x-small } p {font-family:Verdana; font-size: x-small } </style>" + body;
+            resultado = true;
+
+            return resultado;
+        }
+
+        public string getHtmlDetallePed(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> pedidodet)
+        {
+            int fil;
+            string encabezado;
+            string[] aux;
+            string messageBody = ""; //"<font>The following are the records: </font><br><br>";
+
+            string htmlTableStart = "<table style=\"border-collapse:collapse; text-align:center; \" >";
+            string htmlTableEnd = "</table>";
+            string htmlHeaderRowStart = "<tr style =\"background-color:#6B696B; color:White; font-weight:bold;\">";
+            string htmlHeaderRowEnd = "</tr>";
+            string htmlTrStart = "<tr style =\"background-color:#E3E3E3; color:Black;\">";
+            string htmlTrEnd = "</tr>";
+            string htmlTrStart2 = "<tr style =\"background-color:#F3F3F3; color:Black;\">";
+            string htmlTrEnd2 = "</tr>";
+
+            string htmlTdStart = "<td style=\" border-color:#5c87b2; border-style:none; border-width:thin; padding: 5px; text-align:left; \">";
+            string htmlTdEnd = "</td>";
+
+            string htmlTdAlgRStart = "<td style=\" border-color:#5c87b2; border-style:none; border-width:thin; padding: 5px; text-align:right; \">";
+            string htmlTdAlgREnd = "</td>";
+
+            string htmlFooterRowStart = "<tr style =\"background-color:#a33; color:White; font-weight:bold;\">";
+            string htmlFooterRowEnd = "</tr>";
+
+
+            //decimal SumaBlanco = 0;
+
+            int pos = 0;
+            messageBody += htmlTableStart;
+            messageBody += htmlHeaderRowStart;
+
+            encabezado = "#,Código,Lote,Kg Solicitados,Kg Atendidos";
+
+            aux = encabezado.Split(new char[] { ',' });
+            foreach (string _encabezado in aux)
+            {
+                if (pos >= 3 && pos <= 4)
+                {
+                    messageBody += htmlTdAlgRStart + _encabezado + htmlTdEnd;
+                }
+                else
+                {
+                    messageBody += htmlTdStart + _encabezado + htmlTdEnd;
+                }
+                pos++;
+            }
+
+            messageBody += htmlHeaderRowEnd;
+
+            fil = 0;
+            foreach (var Row in pedidodet)
+            {
+                if ((fil % 2 != 0))
+                {
+                    messageBody = messageBody + htmlTrStart;
+                }
+                else
+                {
+                    messageBody = messageBody + htmlTrStart2;
+                }
+                //#,Código,Lote,Kg Solicitados,Kg Atendidos
+                messageBody = messageBody + htmlTdStart + Convert.ToString(fil + 1) + htmlTdEnd;
+                messageBody = messageBody + htmlTdStart + Convert.ToString(Row.DEPECOAR.Trim()) + htmlTdAlgREnd;
+                messageBody = messageBody + htmlTdStart + Convert.ToString(Row.DEPEPART.Trim()) + htmlTdAlgREnd;
+
+                messageBody = messageBody + htmlTdAlgRStart + Convert.ToDecimal(Row.DEPEPESO).ToString(Constantes.FORMATO_IMPORTE) + htmlTdAlgREnd;
+                messageBody = messageBody + htmlTdAlgRStart + Convert.ToDecimal(Row.DEPEPEAT).ToString(Constantes.FORMATO_IMPORTE) + htmlTdAlgREnd;
+
+                if ((fil % 2 != 0))
+                {
+                    messageBody = messageBody + htmlTrEnd;
+                }
+                else
+                {
+                    messageBody = messageBody + htmlTrEnd2;
+                }
+                fil++;
+            }
+
+            messageBody += htmlFooterRowStart;
+            //messageBody = messageBody + htmlTdStart + "TOTAL" + htmlTdEnd;
+            messageBody = messageBody + htmlTdStart + "" + htmlTdEnd;
+            messageBody = messageBody + htmlTdStart + "" + htmlTdAlgREnd;
+            messageBody = messageBody + htmlTdStart + "" + htmlTdAlgREnd;
+
+            //messageBody = messageBody + htmlTdAlgRStart + SumaBlanco.ToString(Constantes.FORMATO_IMPORTE) + htmlTdAlgREnd;
+            messageBody = messageBody + htmlTdStart + "" + htmlTdAlgREnd;
+            messageBody = messageBody + htmlTdStart + "" + htmlTdAlgREnd;
+
+            messageBody += htmlFooterRowEnd;
+
+            messageBody = messageBody + htmlTableEnd;
+            messageBody += "<br>";
+
+            return messageBody;
+        }
+
+        public bool EnvioCorreo(string destinatario, string cc, string bcc, string asunto, string body)
+        {
+            bool resultado = false;
+            try
+            {
+                System.Net.Mail.MailMessage mailMessage = default(System.Net.Mail.MailMessage);
+                mailMessage = new System.Net.Mail.MailMessage();
+                //mailMessage.From = new System.Net.Mail.MailAddress(CuentaDe); // , CuentaDescripcion);
+                mailMessage.From = new System.Net.Mail.MailAddress(CuentaDe, CuentaDescripcion); //prueba 20160201
+                mailMessage.To.Add(destinatario);
+                if (!string.IsNullOrEmpty(cc))
+                {
+                    mailMessage.CC.Add(cc);
+                }
+                if (!string.IsNullOrEmpty(bcc))
+                {
+                    mailMessage.Bcc.Add(bcc);
+                }
+                //asunto = AsuntoCorreo;
+                mailMessage.Subject = asunto;
+                mailMessage.IsBodyHtml = true;
+                mailMessage.Body = body;
+
+                System.Net.Mail.SmtpClient o = new System.Net.Mail.SmtpClient(ServidorSMTP);
+                o.UseDefaultCredentials = false;
+                o.Credentials = new System.Net.NetworkCredential(CuentaDe, ClaveCuenta, DominioCuenta);
+                //o.EnableSsl = True 'gmail
+                o.Port = Convert.ToInt32(PuertoSMTP);
+                o.Send(mailMessage);
+                resultado = true;
+            }
+            catch (Exception ex)
+            {
+                Util.EscribeLog(ex.Message);
+                //throw ex;
+            }
+            return resultado;
+        }
+
+        public RESOPE ActualizaNotificaciones(PAROPE paramOperacion)
+        {
+            RESOPE vpar;
+            vpar = new RESOPE() { ESTOPE = false };
+
+            string emitir, iprepa, fprepa, despa;
+            try
+            {
+                emitir = paramOperacion.VALENT[0];
+                iprepa = paramOperacion.VALENT[1];
+                fprepa = paramOperacion.VALENT[2];
+                despa = paramOperacion.VALENT[3];
+
+                using (var context = new PEDIDOSEntitiesDB2())
+                {
+                    var aleemi = context.Parametros_find(21);//.PEPARM.Find(21);
+                    if (aleemi != null)
+                    {
+                        aleemi.PARMVAPA = emitir;
+                    }
+                    var aleipr = context.Parametros_find(22);// PEPARM.Find(22);
+                    if (aleipr != null)
+                    {
+                        aleipr.PARMVAPA = iprepa;
+                    }
+                    var alefpr = context.Parametros_find(23);//.PEPARM.Find(23);
+                    if (alefpr != null)
+                    {
+                        alefpr.PARMVAPA = fprepa;
+                    }
+                    var aledes = context.Parametros_find(24);// .PEPARM.Find(24);
+                    if (aledes != null)
+                    {
+                        aledes.PARMVAPA = despa;
+                    }
+                    context.PEPARM_UPDATE(aleemi.PARMIDPA,aleemi.PARMVAPA);// .SaveChanges();
+                }
+                vpar.ESTOPE = true;
+            }
+
+            catch (Exception ex)
+            {
+                Util.EscribeLog(ex.Message);
+                vpar.MENERR = ErrorGenerico(ex.Message);
+            }
+            finally
+            {
+            }
+            return vpar;
+        }
+
+        public RESOPE BuscaArticulo(PAROPE paramOperacion)
+        {
+            RESOPE vpar;
+            vpar = new RESOPE() { ESTOPE = false };
+
+            //List<object> listaeo = null;
+            //List<appWcfService.USP_OBTIENE_ARTICULOS_Result> lista = null;
+            List<appWcfService.USP_OBTIENE_ARTICULOS_Result> lista = null;
+            try
+            {
+                string contrato, articulo, partida, selec;
+                contrato = paramOperacion.VALENT[0];
+                articulo = paramOperacion.VALENT[1];
+                partida = paramOperacion.VALENT[2];
+                selec = paramOperacion.VALENT[3];
+
+                partida = String.IsNullOrWhiteSpace(partida) ? null : partida;
+                contrato = string.IsNullOrWhiteSpace(contrato) ? null : contrato;
+                //articulo = String.IsNullOrWhiteSpace(partida) ? null : articulo;
+                using (var context = new PEDIDOSEntitiesDB2())
+                {
+                    //if (contrato.Length == 0)
+                    //{
+                    lista = context.ObtieneArticulos(contrato, partida, articulo, selec);//.USP_OBTIENE_ARTICULOS(contrato, partida, articulo, selec).ToList<object>();
+                    //}
+                    //else
+                    //{
+                    //    //completar
+                    //}
+                }
+                //lista = Util.ParseEntityObject<appWcfService.USP_OBTIENE_ARTICULOS_Result>(listaeo);
+                vpar.VALSAL = new List<string>();
+                if (lista.Count > 0)
+                {
+                    vpar.VALSAL.Add("1");
+                    vpar.VALSAL.Add(Util.Serialize(lista));
+                }
+                else
+                {
+                    vpar.VALSAL.Add("0");
+
+                }
+                vpar.ESTOPE = true;
+
+            }
+            catch (Exception ex)
+            {
+                Util.EscribeLog(ex.Message);
+                vpar.MENERR = ErrorGenerico(ex.Message);
+            }
+            finally
+            {
+            }
+            return vpar;
+        }//COMPLICADO AL FINAL NO ESTA MIGRADO AUN
 
         #endregion
 

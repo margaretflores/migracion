@@ -247,78 +247,78 @@ namespace appLogica
         //    return target;
         //}
 
-        public static List<T> ParseEntityObject<T>(List<object> data)
-        {
-            List<T> lista = new List<T>();
+        //public static List<T> ParseEntityObject<T>(List<object> data)
+        //{
+        //    List<T> lista = new List<T>();
 
-            // iterando por cada fila de registro
-            foreach (var source in data)
-            {
-                Object target = Activator.CreateInstance(typeof(T));
+        //    // iterando por cada fila de registro
+        //    foreach (var source in data)
+        //    {
+        //        Object target = Activator.CreateInstance(typeof(T));
 
-                Type sourceType = source.GetType();
-                IList<PropertyInfo> sourcePropertyList = new List<PropertyInfo>(sourceType.GetProperties());
+        //        Type sourceType = source.GetType();
+        //        IList<PropertyInfo> sourcePropertyList = new List<PropertyInfo>(sourceType.GetProperties());
 
-                Type targetType = target.GetType();
-                IList<PropertyInfo> targetPropertyList = new List<PropertyInfo>(targetType.GetProperties());
+        //        Type targetType = target.GetType();
+        //        IList<PropertyInfo> targetPropertyList = new List<PropertyInfo>(targetType.GetProperties());
 
-                foreach (PropertyInfo propertyTarget in targetPropertyList)
-                {
+        //        foreach (PropertyInfo propertyTarget in targetPropertyList)
+        //        {
 
-                    PropertyInfo prop = null;
-                    //find the property which is present in the target object.
+        //            PropertyInfo prop = null;
+        //            //find the property which is present in the target object.
 
-                    foreach (PropertyInfo propertySource in sourcePropertyList)
-                    {
-                        //if find the property store it
-                        if (propertySource.Name == propertyTarget.Name)
-                        {
-                            prop = propertySource;
-                            break;
-                        }
-                    }
+        //            foreach (PropertyInfo propertySource in sourcePropertyList)
+        //            {
+        //                //if find the property store it
+        //                if (propertySource.Name == propertyTarget.Name)
+        //                {
+        //                    prop = propertySource;
+        //                    break;
+        //                }
+        //            }
 
-                    if (prop != null) //20151130 parche por si existen campos que no estan en la clase
-                    {
-                        // take value of source
-                        object value = prop.GetValue(source, null);
-                        if (value is EFModelo.TCLIE)
-                        {
-                            value = ParseEntityObject<appWcfService.TCLIE>(value);
-                            propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
-                        }
-                        else if (value is EFModelo.I1DD20A)
-                        {
-                            value = ParseEntityObject<appWcfService.I1DD20A>(value);
-                            propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
-                        }
-                        else if (value is EFModelo.PEBOLS)
-                        {
-                            value = ParseEntityObject<appWcfService.PEBOLS>(value);
-                            propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
-                        }
-                        else if (value is EFModelo.PEDEPE)
-                        {
-                            value = ParseEntityObject<appWcfService.PEDEPE>(value);
-                            propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
-                        }
-                        else
-                        {
-                            propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
-                        }
-                    }
-                    else
-                    {
-                        //mlr 20151223
-                        //throw new Exception("No se encuentra la propiedad: " + col + " en la entidad: " + t.FullName);
-                    }
-                }
+        //            if (prop != null) //20151130 parche por si existen campos que no estan en la clase
+        //            {
+        //                // take value of source
+        //                object value = prop.GetValue(source, null);
+        //                if (value is EFModelo.TCLIE)
+        //                {
+        //                    value = ParseEntityObject<appWcfService.TCLIE>(value);
+        //                    propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
+        //                }
+        //                else if (value is EFModelo.I1DD20A)
+        //                {
+        //                    value = ParseEntityObject<appWcfService.I1DD20A>(value);
+        //                    propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
+        //                }
+        //                else if (value is EFModelo.PEBOLS)
+        //                {
+        //                    value = ParseEntityObject<appWcfService.PEBOLS>(value);
+        //                    propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
+        //                }
+        //                else if (value is EFModelo.PEDEPE)
+        //                {
+        //                    value = ParseEntityObject<appWcfService.PEDEPE>(value);
+        //                    propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
+        //                }
+        //                else
+        //                {
+        //                    propertyTarget.SetValue(target, ParseObject(value, propertyTarget.PropertyType), null);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                //mlr 20151223
+        //                //throw new Exception("No se encuentra la propiedad: " + col + " en la entidad: " + t.FullName);
+        //            }
+        //        }
 
-                lista.Add((T)target);
-            }
+        //        lista.Add((T)target);
+        //    }
 
-            return lista;
-        }
+        //    return lista;
+        //}
 
         public static T ParseEntityObject<T>(object source)
         {

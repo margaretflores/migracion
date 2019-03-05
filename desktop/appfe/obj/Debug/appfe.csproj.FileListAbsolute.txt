@@ -256,11 +256,8 @@ C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appfe\obj\Debug\RdlCompile
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appfe\obj\Debug\RdlCompile.compiled
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appfe\obj\Debug\spnd004.exe
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appfe\obj\Debug\spnd004.pdb
-D:\mar\migracion\desktop\appfe\bin\Debug\spnd004.exe.config
-D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csproj.ResolveComReference.cache
-D:\mar\migracion\desktop\appfe\obj\Debug\spnd004.exe
-D:\mar\migracion\desktop\appfe\obj\Debug\spnd004.pdb
 D:\mar\migracion\desktop\appfe\bin\Debug\Formatos\MARCANAC.txt
+D:\mar\migracion\desktop\appfe\bin\Debug\spnd004.exe.config
 D:\mar\migracion\desktop\appfe\bin\Debug\spnd004.exe
 D:\mar\migracion\desktop\appfe\bin\Debug\spnd004.pdb
 D:\mar\migracion\desktop\appfe\bin\Debug\appConstantes.dll
@@ -295,7 +292,7 @@ D:\mar\migracion\desktop\appfe\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
 D:\mar\migracion\desktop\appfe\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\mar\migracion\desktop\appfe\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\mar\migracion\desktop\appfe\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csproj.ResolveComReference.cache
 D:\mar\migracion\desktop\appfe\obj\Debug\Agregar_Item.baml
 D:\mar\migracion\desktop\appfe\obj\Debug\Atender_Pedido.baml
 D:\mar\migracion\desktop\appfe\obj\Debug\Buscar_Cliente.baml
@@ -340,3 +337,6 @@ D:\mar\migracion\desktop\appfe\obj\Debug\appfe.Properties.Resources.resources
 D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csproj.GenerateResource.Cache
 D:\mar\migracion\desktop\appfe\obj\Debug\RdlCompile.cache
 D:\mar\migracion\desktop\appfe\obj\Debug\RdlCompile.compiled
+D:\mar\migracion\desktop\appfe\obj\Debug\spnd004.exe
+D:\mar\migracion\desktop\appfe\obj\Debug\spnd004.pdb
+D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csprojResolveAssemblyReference.cache

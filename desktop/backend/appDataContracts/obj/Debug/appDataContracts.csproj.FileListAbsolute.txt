@@ -10,3 +10,9 @@ C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appDataContracts\b
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appDataContracts\obj\Debug\appDataContracts.csprojResolveAssemblyReference.cache
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appDataContracts\obj\Debug\appDataContracts.dll
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\backend\appDataContracts\obj\Debug\appDataContracts.pdb
+D:\mar\migracion\desktop\backend\appDataContracts\bin\Debug\appDataContracts.dll.config
+D:\mar\migracion\desktop\backend\appDataContracts\bin\Debug\appDataContracts.dll
+D:\mar\migracion\desktop\backend\appDataContracts\bin\Debug\appDataContracts.pdb
+D:\mar\migracion\desktop\backend\appDataContracts\obj\Debug\appDataContracts.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\backend\appDataContracts\obj\Debug\appDataContracts.dll
+D:\mar\migracion\desktop\backend\appDataContracts\obj\Debug\appDataContracts.pdb

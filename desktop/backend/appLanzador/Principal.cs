@@ -22,7 +22,7 @@ namespace appLanzador
       
         public RESOPE EjecutaOperacion(PAROPE paramOperacion)
         {
-            appLogica.MKT _spn;
+            //appLogica.MKT _spn;
             appLogica.Principal _principal;
             //
             appLogica.appDB2 _appDB2;
@@ -30,7 +30,7 @@ namespace appLanzador
 
             RESOPE vpar;
 
-            _spn = null;
+            //_spn = null;
             vpar = new RESOPE();
             vpar.ESTOPE = false;
             try
@@ -51,8 +51,9 @@ namespace appLanzador
                         vpar = _appDB2.BuscaCliente(paramOperacion);
                         break;
                     case CodigoOperacion.BUSCA_ARTICULO:
-                        _spn = new appLogica.MKT();
-                        vpar = _spn.BuscaArticulo(paramOperacion);
+                        //_spn = new appLogica.MKT();
+                        _appDB2 = new appLogica.appDB2();
+                        vpar = _appDB2.BuscaArticulo(paramOperacion);
                         break;
                     //
                     case CodigoOperacion.CARGA_SERIE_CLIENTE:
@@ -70,7 +71,7 @@ namespace appLanzador
                         vpar = _appDB2.MuestraPedidos(paramOperacion);
                         break;
                     case CodigoOperacion.BUSCA_PEDIDOS:
-                        _spn = new appLogica.MKT();
+                        //_spn = new appLogica.MKT();
                         //vpar = _spn.BuscaPedidos(paramOperacion);
                         break;
                     case CodigoOperacion.MUESTRA_PEDIDOS_ALMACEN:
@@ -79,7 +80,7 @@ namespace appLanzador
                         vpar = _appDB2.MuestraPedidosAlmacen(paramOperacion);
                         break;
                     case CodigoOperacion.MUESTRA_PEDIDOS_PENDIENTES:
-                        _spn = new appLogica.MKT();
+                        //_spn = new appLogica.MKT();
                         //vpar = _spn.MuestraPedidosPendientes(paramOperacion);
                         break;
                     case CodigoOperacion.MUESTRA_DETALLE_PEDIDO:
@@ -279,8 +280,9 @@ namespace appLanzador
                         vpar = _appDB2.ObtieneParametros(paramOperacion);
                         break;
                     case CodigoOperacion.ACTUALIZA_NOTIFICACIONES:
-                        _spn = new appLogica.MKT();
-                        vpar = _spn.ActualizaNotificaciones(paramOperacion);
+                        //_spn = new appLogica.MKT();
+                        _appDB2 = new appLogica.appDB2();
+                        vpar = _appDB2.ActualizaNotificaciones(paramOperacion);
                         break;
                     case CodigoOperacion.VALIDA_ITEMS_EXCEL:
                         //_spn = new appLogica.MKT();
@@ -321,11 +323,11 @@ namespace appLanzador
             }
             finally
             {
-                if (_spn != null)
-                {
-                    _spn.Finaliza();
-                    _spn = null;
-                }
+                //if (_spn != null)
+                //{
+                //    //_spn.Finaliza();
+                //    _spn = null;
+                //}
                 if (_appDB2 != null)
                 {
                     _appDB2.Finaliza();

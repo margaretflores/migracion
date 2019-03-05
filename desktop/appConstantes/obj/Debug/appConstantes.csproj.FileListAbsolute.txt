@@ -10,3 +10,9 @@ C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appConstantes\bin\Debug\ap
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appConstantes\obj\Debug\appConstantes.csprojResolveAssemblyReference.cache
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appConstantes\obj\Debug\appConstantes.dll
 C:\Users\help desk\Desktop\Pedidos_Nacionales_Desktop\appConstantes\obj\Debug\appConstantes.pdb
+D:\mar\migracion\desktop\appConstantes\bin\Debug\appConstantes.dll.config
+D:\mar\migracion\desktop\appConstantes\bin\Debug\appConstantes.dll
+D:\mar\migracion\desktop\appConstantes\bin\Debug\appConstantes.pdb
+D:\mar\migracion\desktop\appConstantes\obj\Debug\appConstantes.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\appConstantes\obj\Debug\appConstantes.dll
+D:\mar\migracion\desktop\appConstantes\obj\Debug\appConstantes.pdb

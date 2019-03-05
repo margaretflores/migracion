@@ -94,7 +94,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="app.cs" />
     <Compile Include="appDB2.cs" />
     <Compile Include="PEDIDOSEntities.cs" />
     <Compile Include="Principal.cs" />
@@ -114,10 +113,6 @@
     <ProjectReference Include="..\..\appDTO\appDTO.csproj">
       <Project>{FD42A590-C395-42C1-8C8B-A520D6A637E1}</Project>
       <Name>appDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\EFModelo\EFModelo.csproj">
-      <Project>{5b019229-e897-471e-8850-832c07a8b635}</Project>
-      <Name>EFModelo</Name>
     </ProjectReference>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
       <Project>{ae2b81e2-27ca-45d2-9021-60b1fac3ad95}</Project>

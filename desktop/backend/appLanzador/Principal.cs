@@ -70,19 +70,19 @@ namespace appLanzador
                         _appDB2 = new appLogica.appDB2();
                         vpar = _appDB2.MuestraPedidos(paramOperacion);
                         break;
-                    case CodigoOperacion.BUSCA_PEDIDOS:
+                    //case CodigoOperacion.BUSCA_PEDIDOS:
                         //_spn = new appLogica.MKT();
                         //vpar = _spn.BuscaPedidos(paramOperacion);
-                        break;
+                      //  break;
                     case CodigoOperacion.MUESTRA_PEDIDOS_ALMACEN:
                         //_spn = new appLogica.MKT();
                         _appDB2 = new appLogica.appDB2();
                         vpar = _appDB2.MuestraPedidosAlmacen(paramOperacion);
                         break;
-                    case CodigoOperacion.MUESTRA_PEDIDOS_PENDIENTES:
+                    //case CodigoOperacion.MUESTRA_PEDIDOS_PENDIENTES:
                         //_spn = new appLogica.MKT();
                         //vpar = _spn.MuestraPedidosPendientes(paramOperacion);
-                        break;
+                        //break;
                     case CodigoOperacion.MUESTRA_DETALLE_PEDIDO:
                         //_spn = new appLogica.MKT();
                         _appDB2 = new appLogica.appDB2();
@@ -93,19 +93,19 @@ namespace appLanzador
                         _appDB2 = new appLogica.appDB2();
                         vpar = _appDB2.BuscaPedidosFechas(paramOperacion);
                         break;
-                    case CodigoOperacion.ANULA_PEDIDO:
+                    //case CodigoOperacion.ANULA_PEDIDO:
                         //_spn = new appLogica.MKT();
                         //vpar = _spn.AnulaPedidos(paramOperacion);
-                        break;
+                      //  break;
                     case CodigoOperacion.BUSCA_PEDIDOS_ALMACEN:
                         //_spn = new appLogica.MKT();
                         _appDB2 = new appLogica.appDB2();
                         vpar = _appDB2.BuscaPedidosAlmacen(paramOperacion);
                         break;
-                    case CodigoOperacion.CAMBIA_ESTADO_PEDIDO:
+                    //case CodigoOperacion.CAMBIA_ESTADO_PEDIDO:
                         //_spn = new appLogica.MKT();
                         //vpar = _spn.CambiaEstadoPedido(paramOperacion);
-                        break;
+                      //  break;
                     case CodigoOperacion.BUSCA_SOLICITUD:
                         //_spn = new appLogica.MKT();
                         _appDB2 = new appLogica.appDB2();
@@ -116,10 +116,10 @@ namespace appLanzador
                         _appDB2 = new appLogica.appDB2();
                         vpar = _appDB2.CambiaEstaList(paramOperacion);
                         break;
-                    case CodigoOperacion.GUARDA_DETALLE:
+                    //case CodigoOperacion.GUARDA_DETALLE:
                         //_spn = new appLogica.MKT();
                         //vpar = _spn.GuardaDetalle(paramOperacion);
-                        break;
+                      //  break;
                     case CodigoOperacion.ELIMINA_DETALLE:
                         //_spn = new appLogica.MKT();
                         _appDB2 = new appLogica.appDB2();

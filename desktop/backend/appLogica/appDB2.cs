@@ -2164,7 +2164,7 @@ namespace appLogica
             List<appWcfService.PECAPE> lista = null;
             List<appWcfService.PEPARM> listapar = new List<appWcfService.PEPARM>();
             appWcfService.PEPARM par = new appWcfService.PEPARM();
-            appLogica.appDB2 _appDB2 = null;
+           // appLogica.appDB2 _appDB2 = null;
             try
             {
                 decimal estado = 0;
@@ -2191,12 +2191,12 @@ namespace appLogica
                             case "2": //Emitido
                                 ped.CAPEUSEM = usuario;
                                 ped.CAPEFHEM = DateTime.Now;
-                                context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPEUSEM: ped.CAPEUSEM, pCAPEFHEM: ped.CAPEFHEM, pCAPEIDES: ped.CAPEIDES);
+                                context.PECAPE_UPDATE_ESTADO_EMITIDO(ped.CAPEIDCP, pCAPEUSEM: ped.CAPEUSEM, pCAPEFHEM: ped.CAPEFHEM, pCAPEIDES: ped.CAPEIDES);
                                 break;
                             case "3": //En preparacion
                                 ped.CAPEUSIP = usuario;
                                 ped.CAPEFHIP = DateTime.Now;
-                                context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPEUSIP: ped.CAPEUSIP, pCAPEFHIP: ped.CAPEFHIP, pCAPEIDES: ped.CAPEIDES);
+                                context.PECAPE_UPDATE_ESTADO_ENPREPARACION(ped.CAPEIDCP, pCAPEUSIP: ped.CAPEUSIP, pCAPEFHIP: ped.CAPEFHIP, pCAPEIDES: ped.CAPEIDES);
                                 break;
                             case "4": //En espera de aprobacion
                                 if (ped.CAPEUSAP != null) //Si viene de reabrir completado almacen
@@ -2205,7 +2205,7 @@ namespace appLogica
                                     ped.CAPEFEMO = DateTime.Now;
                                     ped.CAPEUSAP = null;
                                     ped.CAPEFEAP = null;
-                                    context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPEUSMO: ped.CAPEUSMO, pCAPEFEMO: ped.CAPEFEMO, pCAPEUSAP: ped.CAPEUSAP, pCAPEFEAP: ped.CAPEFEAP, pCAPEIDES: ped.CAPEIDES);
+                                    context.PECAPE_UPDATE_ESTADO_ESP_APROB_REABIERTO(ped.CAPEIDCP, ped.CAPEUSMO, ped.CAPEFEMO, ped.CAPEUSAP,  ped.CAPEFEAP,  ped.CAPEIDES);
                                 }
                                 else
                                 {
@@ -2213,20 +2213,20 @@ namespace appLogica
                                     ped.CAPEFHFP = DateTime.Now;
                                     ped.CAPENUBU = bultos;
                                     ped.CAPETADE = tade;
-                                    context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPEUSFP: ped.CAPEUSFP, pCAPEFHFP: ped.CAPEFHFP, pCAPENUBU: ped.CAPENUBU, pCAPETADE: ped.CAPETADE, pCAPEIDES: ped.CAPEIDES);
+                                    context.PECAPE_UPDATE_ESTADO_ESP_APROBACION(ped.CAPEIDCP, pCAPEUSFP: ped.CAPEUSFP, pCAPEFHFP: ped.CAPEFHFP, pCAPENUBU: ped.CAPENUBU, pCAPETADE: ped.CAPETADE, pCAPEIDES: ped.CAPEIDES);
                                 }
                                 break;
 
-                            case "5":
+                            case "5":// APROBADO 
                                 ped.CAPEUSAP = usuario;
                                 ped.CAPEFEAP = DateTime.Now;
-                                context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPEUSAP: ped.CAPEUSAP, pCAPEFEAP: ped.CAPEFEAP, pCAPEIDES: ped.CAPEIDES);
+                                context.PECAPE_UPDATE_ESTADO_APROBADO(ped.CAPEIDCP, pCAPEUSAP: ped.CAPEUSAP, pCAPEFEAP: ped.CAPEFEAP, pCAPEIDES: ped.CAPEIDES);
                                 break;
-                            case "9":
+                            case "9"://ANULADOS
                                 ped.CAPEUSMO = usuario;
                                 ped.CAPEFEMO = DateTime.Now;
                                 anularReservasPedidoAnulado(context, item);
-                                context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPEUSMO: ped.CAPEUSMO, pCAPEFEMO: ped.CAPEFEMO,  pCAPEIDES: ped.CAPEIDES);
+                                context.PECAPE_UPDATE_ESTADO_ANULADO(ped.CAPEIDCP, pCAPEUSMO: ped.CAPEUSMO, pCAPEFEMO: ped.CAPEFEMO,  pCAPEIDES: ped.CAPEIDES);
                                 break;
                         }
                         //context.SaveChanges();
@@ -2268,7 +2268,7 @@ namespace appLogica
                     {
                         foreach (var item in lista)
                         {
-                            if (!_appDB2.EnviaCorreoNotificacionPedido(item.CAPEIDCP, out mensajecorreo))
+                            if (!EnviaCorreoNotificacionPedido(item.CAPEIDCP, out mensajecorreo)) //if (!_appDB2.EnviaCorreoNotificacionPedido(item.CAPEIDCP, out mensajecorreo))
                             {
                                 Util.EscribeLog(mensajecorreo);
                             }
@@ -2292,8 +2292,8 @@ namespace appLogica
 
         private void anularReservasPedidoAnulado(PEDIDOSEntitiesDB2 context, appWcfService.PECAPE pedido)
         {
-            appLogica.appDB2 _appDB2 = null;
-            _appDB2 = new appLogica.appDB2();
+            //appLogica.appDB2 _appDB2 = null;
+            //_appDB2 = new appLogica.appDB2();
 
             var listdet = context.DetallexCabe(pedido.CAPEIDCP);//.PEDEPE.Where(x => x.DEPEIDCP == pedido.CAPEIDCP).ToList();
             foreach (var item in listdet)
@@ -2317,7 +2317,7 @@ namespace appLogica
             List<appWcfService.PEPARM> listapar = null; //Revisar si es APPWCFSERVICE O EFMODELO
             appWcfService.PEPARM par; //Revisar si es APPWCFSERVICE O EFMODELO
             List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> lista = null;
-            appLogica.appDB2 _appDB2 = null;
+            //appLogica.appDB2 _appDB2 = null;
             string codprovtrans, estabpart, serieguiadefault;
             string mensajecorreo;
             decimal tped = 0; //TIPO DE PEDIDO PARA LA GUIA
@@ -2341,7 +2341,7 @@ namespace appLogica
                 }
 
                 usuariopedido = "";
-                _appDB2 = new appLogica.appDB2();
+                //_appDB2 = new appLogica.appDB2();
 
                 using (var context = new PEDIDOSEntitiesDB2())
                 {
@@ -2352,7 +2352,8 @@ namespace appLogica
                         String descripcionitem;
                         var detPed = context.PEDEPE_Find(item.DEPEIDDP);//.PEDEPE.Find(item.DEPEIDDP);
                         secuemcia++;
-                        descripcionitem = _appDB2.descripcionItem(false, item.DEPECOAR, "", item.DEPECONT, "N", Convert.ToString(secuemcia), Convert.ToInt32(item.DEPECAAT).ToString(), "3");
+                        descripcionitem = descripcionItem(false, item.DEPECOAR, "", item.DEPECONT, "N", Convert.ToString(secuemcia), Convert.ToInt32(item.DEPECAAT).ToString(), "3");
+                        //_appDB2.descripcionItem(false, item.DEPECOAR, "", item.DEPECONT, "N", Convert.ToString(secuemcia), Convert.ToInt32(item.DEPECAAT).ToString(), "3");
                         item.DEPEDSAR = descripcionitem;
                         detPed.DEPEDSAR = descripcionitem;
 
@@ -2368,7 +2369,7 @@ namespace appLogica
                             item.CAPEIDTD = idtipdoc; //20180418
 
                             //2018/15/12
-                            context.PECAPE_UPDATE(item.CAPEIDCP, pCAPENUBU: item.CAPENUBU, pCAPETIPO: item.CAPETIPO, pCAPETADE: item.CAPETADE, pCAPEIDTD: item.CAPEIDTD);
+                            context.PECAPE_UPDATE_GENERA_PRE_GUIA_1(item.CAPEIDCP, pCAPENUBU: item.CAPENUBU, pCAPETIPO: item.CAPETIPO, pCAPETADE: item.CAPETADE, pCAPEIDTD: item.CAPEIDTD);
                         }
                         else
                         {
@@ -2471,14 +2472,15 @@ namespace appLogica
                         ped.CAPEDOCO = Convert.ToDecimal(vpar.VALSAL[0]);
 
                         //2018-15-12
-                        context.PECAPE_UPDATE(idpedido, pCAPEIDES: ped.CAPEIDES, pCAPEUSAP: ped.CAPEUSAP, pCAPEFEAP: ped.CAPEFEAP, pCAPENUBU: ped.CAPENUBU, pCAPETADE: ped.CAPETADE, pCAPETIPO: ped.CAPETIPO, pCAPEIDTD: ped.CAPEIDTD, pCAPEDOCO: ped.CAPEDOCO);
+                        context.PECAPE_UPDATE_GENERA_PRE_GUIA_2(idpedido, pCAPEIDES: ped.CAPEIDES, pCAPEUSAP: ped.CAPEUSAP, pCAPEFEAP: ped.CAPEFEAP, pCAPENUBU: ped.CAPENUBU, 
+                            pCAPETADE: ped.CAPETADE, pCAPETIPO: ped.CAPETIPO, pCAPEIDTD: ped.CAPEIDTD, pCAPEDOCO: ped.CAPEDOCO);
                         //context.SaveChanges();
                         if (tped == Constantes.VENTA)
                         {
                             par = listapar.Find(x => x.PARMIDPA == Constantes.NOTIFICACION_AL_DESPACHAR_PEDIDO);
                             if (par != null && par.PARMVAPA.Equals("1"))
                             {
-                                if (!_appDB2.EnviaCorreoNotificacionPedido(idpedido, out mensajecorreo))
+                                if (!EnviaCorreoNotificacionPedido(idpedido, out mensajecorreo))//if (!_appDB2.EnviaCorreoNotificacionPedido(idpedido, out mensajecorreo))
                                 {
                                     Util.EscribeLog(mensajecorreo);
                                 }
@@ -2507,11 +2509,11 @@ namespace appLogica
             }
             finally
             {
-                if (_appDB2 != null)
-                {
-                    _appDB2.Finaliza();
-                    _appDB2 = null;
-                }
+                //if (_appDB2 != null)
+                //{
+                    Finaliza();// _appDB2.Finaliza();
+                                       //   _appDB2 = null;
+                                       // }
             }
             return vpar;
         }
@@ -2533,13 +2535,13 @@ namespace appLogica
                         var ped = context.PECAPE_Find(item.CAPEIDCP);//.PECAPE.Find(item.CAPEIDCP);
 
                         ped.CAPEPRIO = item.CAPEPRIO;
-                        context.PECAPE_UPDATE(item.CAPEIDCP, pCAPEPRIO: ped.CAPEPRIO);
+                        context.PECAPE_UPDATE_NUM_PRIO(item.CAPEIDCP, pCAPEPRIO: ped.CAPEPRIO);
                         if (item.CAPEEPRI == 1 && (item.CAPEUSPR == null || usuario == item.CAPEUSEM))
                         {
                             ped.CAPEEPRI = item.CAPEEPRI;
                             ped.CAPEFEPR = DateTime.Now;
                             ped.CAPEUSPR = usuario;
-                            context.PECAPE_UPDATE(item.CAPEIDCP, pCAPEEPRI: ped.CAPEEPRI, pCAPEFEPR: ped.CAPEFEPR, pCAPEUSPR: ped.CAPEUSPR);
+                            context.PECAPE_UPDATE_ES_PRIO(item.CAPEIDCP, pCAPEEPRI: ped.CAPEEPRI, pCAPEFEPR: ped.CAPEFEPR, pCAPEUSPR: ped.CAPEUSPR);
                         }
                         //context.SaveChanges();
                     }
@@ -3291,11 +3293,11 @@ namespace appLogica
             List<appWcfService.PEDEPE> lista = null;
             List<appWcfService.PEDEPE> listaborrados = null;
 
-            appLogica.appDB2 _appDB2 = null;
+            //appLogica.appDB2 _appDB2 = null;
             try
             {
                 int secuencia;
-                _appDB2 = new appLogica.appDB2();
+               // _appDB2 = new appLogica.appDB2();
                 pedido = Util.Deserialize<appWcfService.PECAPE>(paramOperacion.VALENT[0]);
                 lista = Util.Deserialize<List<appWcfService.PEDEPE>>(paramOperacion.VALENT[1]);
 
@@ -3358,9 +3360,9 @@ namespace appLogica
                     }
                     else
                     {
-                        context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPESERI: ped.CAPESERI, pCAPENUME: ped.CAPENUME, pCAPEIDCL: ped.CAPEIDCL, pCAPEFECH: ped.CAPEFECH,
+                        context.PECAPE_UPDATE_GUARDA_PED(ped.CAPEIDCP, pCAPEIDCL: ped.CAPEIDCL, pCAPEFECH: ped.CAPEFECH,
                             pCAPEDIRE: ped.CAPEDIRE, pCAPEIDES: ped.CAPEIDES, pCAPEEMAI: ped.CAPEEMAI, pCAPENOTI: ped.CAPENOTI, pCAPENOTG: ped.CAPENOTG,
-                            pCAPETIPO: ped.CAPETIPO, pCAPEUSCR: ped.CAPEUSCR, pCAPEFECR: ped.CAPEFECR, pCAPEUSMO: ped.CAPEUSMO, pCAPEFEMO: ped.CAPEFEMO,
+                            pCAPETIPO: ped.CAPETIPO, pCAPEUSMO: ped.CAPEUSMO, pCAPEFEMO: ped.CAPEFEMO,
                             pCAPEIDTD: ped.CAPEIDTD, pCAPEDEST: ped.CAPEDEST);
                     }
 
@@ -3464,10 +3466,7 @@ namespace appLogica
                     idestado = ped.CAPEIDES;
                     idcabpedido = ped.CAPEIDCP;
                     //context.SaveChanges();
-                    context.PECAPE_UPDATE(ped.CAPEIDCP, pCAPESERI: ped.CAPESERI, pCAPENUME: ped.CAPENUME, pCAPEIDCL: ped.CAPEIDCL, pCAPEFECH: ped.CAPEFECH,
-                            pCAPEDIRE: ped.CAPEDIRE, pCAPEIDES: ped.CAPEIDES, pCAPEEMAI: ped.CAPEEMAI, pCAPENOTI: ped.CAPENOTI, pCAPENOTG: ped.CAPENOTG,
-                            pCAPETIPO: ped.CAPETIPO, pCAPEUSCR: ped.CAPEUSCR, pCAPEFECR: ped.CAPEFECR, pCAPEUSMO: ped.CAPEUSMO, pCAPEFEMO: ped.CAPEFEMO,
-                            pCAPEIDTD: ped.CAPEIDTD, pCAPEDEST: ped.CAPEDEST);
+                    context.PECAPE_UPDATE_NUME(ped.CAPEIDCP, ped.CAPENUME);
 
                 }
                 vpar.VALSAL = new List<string>();

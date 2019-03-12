@@ -81,6 +81,51 @@ namespace appLogica
             return Util.ParsePECAPE<appWcfService.PECAPE>(cabeceraDataTable);
         }
 
+        public List<appWcfService.PECAPE> MuestraPedidosXSerie(string serie)
+        {
+            DataTable cabeceraDataTable = null;
+            DB2.CrearComando("PRPEDAT.USP_EP_BUSCAPEDIDOSFECHASCAPESERI", CommandType.StoredProcedure);
+            DB2.AsignarParamProcAlmac("PCAPESERI", iDB2DbType.iDB2Char, serie);
+            cabeceraDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+            return Util.ParsePECAPE<appWcfService.PECAPE>(cabeceraDataTable);
+        }
+
+        public List<appWcfService.PECAPE> MuestraPedidosXEstado(decimal estado)
+        {
+            DataTable cabeceraDataTable = null;
+            DB2.CrearComando("PRPEDAT.USP_EP_BUSCAPEDIDOSFECHASCAPEIDES", CommandType.StoredProcedure);
+            DB2.AsignarParamProcAlmac("PCAPEIDES", iDB2DbType.iDB2Numeric, estado);
+            cabeceraDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+            return Util.ParsePECAPE<appWcfService.PECAPE>(cabeceraDataTable);
+        }
+        public List<appWcfService.PECAPE> MuestraPedidosXEstadoXSerie(decimal estado, string serie)
+        {
+            DataTable cabeceraDataTable = null;
+            DB2.CrearComando("PRPEDAT.USP_EP_BUSCAPEDIDOSFECHASCAPEIDES_CAPESERI", CommandType.StoredProcedure);
+            DB2.AsignarParamProcAlmac("PCAPEIDES", iDB2DbType.iDB2Numeric, estado);
+            DB2.AsignarParamProcAlmac("PCAPESERI", iDB2DbType.iDB2Char, serie);
+            cabeceraDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+            return Util.ParsePECAPE<appWcfService.PECAPE>(cabeceraDataTable);
+        }
+
+        public List<appWcfService.PECAPE> MuestraPedidosEntreFechas(DateTime feini, DateTime fefin)
+        {
+            DataTable cabeceraDataTable = null;
+            DB2.CrearComando("PRPEDAT.USP_EP_BUSCAPEDIDOSENTREFECHAS", CommandType.StoredProcedure);
+            DB2.AsignarParamProcAlmac("PCAPEFECHINI", iDB2DbType.iDB2Date, feini);
+            DB2.AsignarParamProcAlmac("PCAPEFECHFIN", iDB2DbType.iDB2Date, fefin);
+            cabeceraDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+            return Util.ParsePECAPE<appWcfService.PECAPE>(cabeceraDataTable);
+        }
+
+        public List<appWcfService.PECAPE> MuestraPedidosEtados_2_3()
+        {
+            DataTable cabeceraDataTable = null;
+            DB2.CrearComando("PRPEDAT.USP_EP_BUSCAPEDIDOSFECHASCAPEIDES2O3", CommandType.StoredProcedure);
+            cabeceraDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+            return Util.ParsePECAPE<appWcfService.PECAPE>(cabeceraDataTable);
+        }
+
         public List<appWcfService.USP_OBTIENE_DETALLE_PEDIDOS_Result> MuestraDetallePedidos(decimal CAPEIDCP)
         {
             DataTable cabeceraDataTable = null;
@@ -385,7 +430,6 @@ namespace appLogica
         }
 
         public void PECAPE_UPDATE_GENERA_PRE_GUIA_1(decimal pCAPEIDCP,
-         decimal? pCAPEIDES = null,
          decimal? pCAPENUBU = null,
          decimal? pCAPETIPO = null,
          decimal? pCAPETADE = null,
@@ -394,7 +438,6 @@ namespace appLogica
             DB2.CrearComando("PRPEDAT.USP_PECAPE_UPDATE_GENERA_PRE_GUIA_1", CommandType.StoredProcedure);
 
             DB2.AsignarParamProcAlmac("PCAPEIDCP", iDB2DbType.iDB2Numeric, pCAPEIDCP);
-            DB2.AsignarParamProcAlmac("CAPEIDES", iDB2DbType.iDB2Numeric, pCAPEIDES);
             DB2.AsignarParamProcAlmac("CAPENUBU", iDB2DbType.iDB2Numeric, pCAPENUBU);
             DB2.AsignarParamProcAlmac("CAPETIPO", iDB2DbType.iDB2Numeric, pCAPETIPO);
             DB2.AsignarParamProcAlmac("CAPETADE", iDB2DbType.iDB2Numeric, pCAPETADE);
@@ -751,183 +794,33 @@ namespace appLogica
         {
             DB2.CrearComando("PRPEDAT.USP_PEDEPE_UPDATE_GUARDA_PED", CommandType.StoredProcedure);
             DB2.AsignarParamProcAlmac("PDEPEIDDP", iDB2DbType.iDB2Numeric, pDEPEIDDP);
-            if (pDEPEIDCP == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEIDCP", iDB2DbType.iDB2Numeric, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEIDCP", iDB2DbType.iDB2Numeric, pDEPEIDCP);
-            }
-            if (pDEPECOAR == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPECOAR", iDB2DbType.iDB2Char, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPECOAR", iDB2DbType.iDB2Char, pDEPECOAR);
-            }
-            if (pDEPEPART == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEPART", iDB2DbType.iDB2Char, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEPART", iDB2DbType.iDB2Char, pDEPEPART);
-            }
-            if (pDEPECONT == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPECONT", iDB2DbType.iDB2Char, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPECONT", iDB2DbType.iDB2Char, pDEPECONT);
-            }
-            if (pDEPEALMA == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEALMA", iDB2DbType.iDB2Numeric, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEALMA", iDB2DbType.iDB2Numeric, pDEPEALMA);
-            }
-            if (pDEPECASO == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPECASO", iDB2DbType.iDB2Numeric, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPECASO", iDB2DbType.iDB2Numeric, pDEPECASO);
-            }
-            if (pDEPEPESO == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEPESO", iDB2DbType.iDB2Numeric, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEPESO", iDB2DbType.iDB2Numeric, pDEPEPESO);
-            }
-            //if (pDEPECAAT == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPECAAT", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPECAAT", iDB2DbType.iDB2Numeric, pDEPECAAT);
-            //}
-            //if (pDEPEPEAT == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEPEAT", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEPEAT", iDB2DbType.iDB2Numeric, pDEPEPEAT);
-            //}
-            //if (pDEPEPERE == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEPERE", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEPERE", iDB2DbType.iDB2Numeric, pDEPEPERE);
-            //}
-            //if (pDEPETADE == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPETADE", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPETADE", iDB2DbType.iDB2Numeric, pDEPETADE);
-            //}
-            //if (pDEPEPEBR == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEPEBR", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEPEBR", iDB2DbType.iDB2Numeric, pDEPEPEBR);
-            //}
-            //if (pDEPESTOC == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPESTOC", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPESTOC", iDB2DbType.iDB2Numeric, pDEPESTOC);
-            //}
-            //if (pDEPEESTA == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEESTA", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPEESTA", iDB2DbType.iDB2Numeric, pDEPEESTA);
-            //}
-            if (pDEPEDISP == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEDISP", iDB2DbType.iDB2Numeric, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEDISP", iDB2DbType.iDB2Numeric, pDEPEDISP);
-            }
-            if (pDEPEDSAR == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEDSAR", iDB2DbType.iDB2VarChar, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEDSAR", iDB2DbType.iDB2VarChar, pDEPEDSAR);
-            }
-            //if (pDEPENUBU == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPENUBU", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPENUBU", iDB2DbType.iDB2Numeric, pDEPENUBU);
-            //}
 
-            if (pDEPEUSMO == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEUSMO", iDB2DbType.iDB2Char, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEUSMO", iDB2DbType.iDB2Char, pDEPEUSMO);
-            }
-            if (pDEPEFEMO == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPEFEMO", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPEFEMO", iDB2DbType.iDB2TimeStamp, pDEPEFEMO);
-            }
-            if (pDEPESERS == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPESERS", iDB2DbType.iDB2Numeric, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPESERS", iDB2DbType.iDB2Numeric, pDEPESERS);
-            }
-            //if (pDEPESECR == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPESECR", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("DEPESECR", iDB2DbType.iDB2Numeric, pDEPESECR);
-            //}
-            if (pDEPESECU == null)
-            {
-                DB2.AsignarParamProcAlmac("DEPESECU", iDB2DbType.iDB2Numeric, DBNull.Value);
-            }
-            else
-            {
-                DB2.AsignarParamProcAlmac("DEPESECU", iDB2DbType.iDB2Numeric, pDEPESECU);
-            }
+            DB2.AsignarParamProcAlmac("DEPEIDCP", iDB2DbType.iDB2Numeric, pDEPEIDCP);
+
+            DB2.AsignarParamProcAlmac("DEPECOAR", iDB2DbType.iDB2Char, pDEPECOAR);
+
+            DB2.AsignarParamProcAlmac("DEPEPART", iDB2DbType.iDB2Char, pDEPEPART);
+
+            DB2.AsignarParamProcAlmac("DEPECONT", iDB2DbType.iDB2Char, pDEPECONT);
+
+            DB2.AsignarParamProcAlmac("DEPEALMA", iDB2DbType.iDB2Numeric, pDEPEALMA);
+
+            DB2.AsignarParamProcAlmac("DEPECASO", iDB2DbType.iDB2Numeric, pDEPECASO);
+
+            DB2.AsignarParamProcAlmac("DEPEPESO", iDB2DbType.iDB2Numeric, pDEPEPESO);
+
+            DB2.AsignarParamProcAlmac("DEPEDISP", iDB2DbType.iDB2Numeric, pDEPEDISP);
+
+            DB2.AsignarParamProcAlmac("DEPEDSAR", iDB2DbType.iDB2VarChar, pDEPEDSAR);
+
+            DB2.AsignarParamProcAlmac("DEPEUSMO", iDB2DbType.iDB2Char, pDEPEUSMO);
+
+            DB2.AsignarParamProcAlmac("DEPEFEMO", iDB2DbType.iDB2TimeStamp, pDEPEFEMO);
+
+            DB2.AsignarParamProcAlmac("DEPESERS", iDB2DbType.iDB2Numeric, pDEPESERS);
+
+            DB2.AsignarParamProcAlmac("DEPESECU", iDB2DbType.iDB2Numeric, pDEPESECU);
+
             DB2.EjecutarProcedimientoAlmacenado();
         }
 
@@ -963,7 +856,7 @@ namespace appLogica
 
             DB2.AsignarParamProcAlmac("DEPEFEMO", iDB2DbType.iDB2TimeStamp, pDEPEFEMO);
 
-            
+
             DB2.EjecutarProcedimientoAlmacenado();
         }
 
@@ -1551,29 +1444,12 @@ namespace appLogica
            DateTime? pCAPEFECH = null,
            string pCAPEDIRE = null,
            decimal? pCAPEIDES = null,
-           //decimal? pCAPEEPRI = null,
-           //decimal? pCAPEPRIO = null,
-           //DateTime? pCAPEFEPR = null,
-           //string pCAPEUSPR = null,
            string pCAPEEMAI = null,
            string pCAPENOTI = null,
            string pCAPENOTG = null,
-           //decimal? pCAPENUBU = null,
            decimal? pCAPETIPO = null,
            string pCAPEUSCR = null,
            DateTime? pCAPEFECR = null,
-           //string pCAPEUSMO = null,
-           //DateTime? pCAPEFEMO = null,
-           //string pCAPEUSEM = null,
-           //DateTime? pCAPEFHEM = null,
-           //string pCAPEUSFP = null,
-           //DateTime? pCAPEFHFP = null,
-           //string pCAPEUSIP = null,
-           //DateTime? pCAPEFHIP = null,
-           //string pCAPEUSAP = null,
-           //DateTime? pCAPEFEAP = null,
-           //decimal? pCAPEDOCO = null,
-           //decimal? pCAPETADE = null,
            decimal? pCAPEIDTD = null,
            string pCAPEDEST = null)
         {
@@ -1626,38 +1502,6 @@ namespace appLogica
             {
                 DB2.AsignarParamProcAlmac("CAPEIDES", iDB2DbType.iDB2Numeric, pCAPEIDES);
             }
-            //if (pCAPEEPRI == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEEPRI", iDB2DbType.iDB2Numeric, 0);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEEPRI", iDB2DbType.iDB2Numeric, pCAPEEPRI);
-            //}
-            //if (pCAPEPRIO == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEPRIO", iDB2DbType.iDB2Numeric, 0);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEPRIO", iDB2DbType.iDB2Numeric, pCAPEPRIO);
-            //}
-            //if (pCAPEFEPR == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFEPR", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFEPR", iDB2DbType.iDB2TimeStamp, pCAPEFEPR);
-            //}
-            //if (pCAPEUSPR == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSPR", iDB2DbType.iDB2Char, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSPR", iDB2DbType.iDB2Char, pCAPEUSPR);
-            //}
             if (pCAPEEMAI == null)
             {
                 DB2.AsignarParamProcAlmac("CAPEEMAI", iDB2DbType.iDB2VarChar, DBNull.Value);
@@ -1682,14 +1526,6 @@ namespace appLogica
             {
                 DB2.AsignarParamProcAlmac("CAPENOTG", iDB2DbType.iDB2VarChar, pCAPENOTG);
             }
-            //if (pCAPENUBU == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPENUBU", iDB2DbType.iDB2Numeric, 0);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPENUBU", iDB2DbType.iDB2Numeric, pCAPENUBU);
-            //}
             if (pCAPETIPO == null)
             {
                 DB2.AsignarParamProcAlmac("CAPETIPO", iDB2DbType.iDB2Numeric, DBNull.Value);
@@ -1714,102 +1550,6 @@ namespace appLogica
             {
                 DB2.AsignarParamProcAlmac("CAPEFECR", iDB2DbType.iDB2TimeStamp, pCAPEFECR);
             }
-            //if (pCAPEUSMO == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSMO", iDB2DbType.iDB2Char, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSMO", iDB2DbType.iDB2Char, pCAPEUSMO);
-            //}
-            //if (pCAPEFEMO == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFEMO", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFEMO", iDB2DbType.iDB2TimeStamp, pCAPEFEMO);
-            //}
-            //if (pCAPEUSEM == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSEM", iDB2DbType.iDB2Char, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSEM", iDB2DbType.iDB2Char, pCAPEUSEM);
-            //}
-            //if (pCAPEFHEM == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFHEM", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFHEM", iDB2DbType.iDB2TimeStamp, pCAPEFHEM);
-            //}
-            //if (pCAPEUSFP == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSFP", iDB2DbType.iDB2Char, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSFP", iDB2DbType.iDB2Char, pCAPEUSFP);
-            //}
-            //if (pCAPEFHFP == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFHFP", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFHFP", iDB2DbType.iDB2TimeStamp, pCAPEFHFP);
-            //}
-            //if (pCAPEUSIP == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSIP", iDB2DbType.iDB2Char, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSIP", iDB2DbType.iDB2Char, pCAPEUSIP);
-            //}
-            //if (pCAPEFHIP == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFHIP", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFHIP", iDB2DbType.iDB2TimeStamp, pCAPEFHIP);
-            //}
-            //if (pCAPEUSAP == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSAP", iDB2DbType.iDB2Char, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEUSAP", iDB2DbType.iDB2Char, pCAPEUSAP);
-            //}
-            //if (pCAPEFEAP == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFEAP", iDB2DbType.iDB2TimeStamp, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEFEAP", iDB2DbType.iDB2TimeStamp, pCAPEFEAP);
-            //}
-            //if (pCAPEDOCO == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEDOCO", iDB2DbType.iDB2Numeric, DBNull.Value);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPEDOCO", iDB2DbType.iDB2Numeric, pCAPEDOCO);
-            //}
-            //if (pCAPETADE == null)
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPETADE", iDB2DbType.iDB2Numeric, 0);
-            //}
-            //else
-            //{
-            //    DB2.AsignarParamProcAlmac("CAPETADE", iDB2DbType.iDB2Numeric, pCAPETADE);
-            //}
             if (pCAPEIDTD == null)
             {
                 DB2.AsignarParamProcAlmac("CAPEIDTD", iDB2DbType.iDB2Numeric, DBNull.Value);
@@ -2680,11 +2420,11 @@ namespace appLogica
             DB2.AsignarParamProcAlmac("PBOLSIDBO", iDB2DbType.iDB2Numeric, PBOLSIDBO);
 
             DB2.AsignarParamProcAlmac("PBOLSESTA", iDB2DbType.iDB2Numeric, DBNull.Value);
- 
+
             DB2.AsignarParamProcAlmac("PBOLSUSMO", iDB2DbType.iDB2Char, PBOLSUSMO);
-           
+
             DB2.AsignarParamProcAlmac("PBOLSFEMO", iDB2DbType.iDB2TimeStamp, PBOLSFEMO);
-            
+
             DB2.EjecutarProcedimientoAlmacenado();
         }
 

@@ -1,0 +1,24 @@
+10:34:29 > SQL0204 USP_PECAPE_UPDATE_GUARDA_PED en PRPEDAT de tipo *N no encontrado.
+10:43:39 > SQL0204 USP_PECAPE_UPDATE_GUARDA_PED en PRPEDAT de tipo *N no encontrado.
+10:54:12 > SQL0204 USP_PECAPE_UPDATE_GUARDA_PED en PRPEDAT de tipo *N no encontrado.
+10:56:36 > SQL0204 USP_PECAPE_UPDATE_GUARDA_PED en PRPEDAT de tipo *N no encontrado.
+11:07:44 > SQL0204 USP_PECAPE_UPDATE_GUARDA_PED en PRPEDAT de tipo *N no encontrado.
+11:30:54 > Inconsistencia de datos, ID de pedido no coincide con Id de detalle
+11:35:57 > Inconsistencia de datos, ID de pedido no coincide con Id de detalle
+11:54:12 > SQL0440 La rutina USP_PEBODP_INSERT de PRPEDAT no se ha encontrado con los parámetros especificados.
+12:05:14 > Error al generar el documento XML.
+12:05:48 > Error al generar el documento XML.
+12:08:16 > Error al generar el documento XML.
+12:08:50 > Error al generar el documento XML.
+12:09:19 > Error al generar el documento XML.
+12:10:47 > Error al generar el documento XML.
+12:11:01 > Error al generar el documento XML.
+12:11:13 > Error al generar el documento XML.
+12:11:25 > Error al generar el documento XML.
+12:11:36 > Error al generar el documento XML.
+12:11:45 > Error al generar el documento XML.
+12:12:14 > Error al generar el documento XML.
+12:45:08 > SQL0181 El valor en la serie de fecha, hora o indicación de la hora no es válido.
+12:47:19 > SQL0181 El valor en la serie de fecha, hora o indicación de la hora no es válido.
+12:48:09 > SQL0407 Valores nulos no permitidos en la columna o variable CAPEIDES.
+12:56:15 > SQL0407 Valores nulos no permitidos en la columna o variable CAPEIDES.

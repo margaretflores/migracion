@@ -225,143 +225,146 @@ namespace appLogica
             return vpar;
         }
 
-        ///descomentar
+        ///comentar
 
-        //public RESOPE GeneraPreguia(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> cabdetpedido, string serie, string usuario, string codprovtrans, string estabpart, decimal estadest)
-        //{
-        //    DataTable otrosDataTable;
-        //    RESOPE vpar;
-        //    vpar = new RESOPE() { ESTOPE = false };
-        //    try
-        //    {
-        //        StringBuilder comandoSql;
-        //        string ptopartida = "";
-        //        decimal idpreguia;
-        //        DB2.Conectar();
+        public RESOPE GeneraPreguia(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> cabdetpedido, string serie, string usuario, string codprovtrans, string estabpart, decimal estadest)
+        {
+            DataTable otrosDataTable;
+            RESOPE vpar;
+            vpar = new RESOPE() { ESTOPE = false };
+            try
+            {
+                StringBuilder comandoSql;
+                string ptopartida = "";
+                decimal idpreguia;
+                DB2.Conectar();
 
-        //        //stock
-        //        vpar.VALSAL = new List<string>();
+                //stock
+                vpar.VALSAL = new List<string>();
 
-        //        comandoSql = new StringBuilder();
-        //        comandoSql.Append("COSTDAT.USP_OBTIENE_ESTABLECIMIENTO"); //COSTDAT
-        //        DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
-        //        DB2.AsignarParamProcAlmac("@PESTAESTA", iDB2DbType.iDB2Char, estabpart); //032
-        //        otrosDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
-        //        if (!Util.TablaVacia(otrosDataTable))
-        //        {
-        //            DataRow row = otrosDataTable.Rows[0];
-        //            ptopartida = Convert.ToString(row["ESTADIR1"]).Trim() + Convert.ToString(row["ESTADIR2"]).Trim() + " - " + Convert.ToString(row["ESTADIST"]).Trim() + " - " + Convert.ToString(row["ESTAPROV"]).Trim() + " - " + Convert.ToString(row["ESTADEPA"]).Trim();
-        //        }
-        //        //por tipo usar el tipodoc y motivo en guia
+                comandoSql = new StringBuilder();
+                comandoSql.Append("COSTDAT.USP_OBTIENE_ESTABLECIMIENTO"); //COSTDAT
+                DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
+                DB2.AsignarParamProcAlmac("@PESTAESTA", iDB2DbType.iDB2Char, estabpart); //032
+                otrosDataTable = DB2.EjecutarProcedimientoAlmacenado().Tables[0];
+                if (!Util.TablaVacia(otrosDataTable))
+                {
+                    DataRow row = otrosDataTable.Rows[0];
+                    ptopartida = Convert.ToString(row["ESTADIR1"]).Trim() + Convert.ToString(row["ESTADIR2"]).Trim() + " - " + Convert.ToString(row["ESTADIST"]).Trim() + " - " + Convert.ToString(row["ESTAPROV"]).Trim() + " - " + Convert.ToString(row["ESTADEPA"]).Trim();
+                }
+                //por tipo usar el tipodoc y motivo en guia
 
-        //        comandoSql = new StringBuilder();
-        //        comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_CAB"); //FAELDAT
-        //        DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
-        //        //20181123
-        //        if (cabdetpedido[0].CAPETIPO == Constantes.VENTA || cabdetpedido[0].CAPETIPO == Constantes.CONSIGNACION)
-        //        {
-        //            //20180418
-        //            Decimal idtipdoc = cabdetpedido[0].CAPEIDTD;
-        //            if (idtipdoc != Constantes.ID_TIPO_DOC_GUIA && idtipdoc != Constantes.ID_TIPO_DOC_NE)
-        //            {
-        //                idtipdoc = Constantes.ID_TIPO_DOC_GUIA;
-        //            }
-        //            if (idtipdoc == Constantes.ID_TIPO_DOC_NE)
-        //            {
-        //                codprovtrans = "";
-        //                DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_NE); //7 creado
-        //            }
-        //            else
-        //            {
-        //                DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
-        //            }
+                comandoSql = new StringBuilder();
+                comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_CAB"); //FAELDAT
+                DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
+                //20181123
+                if (cabdetpedido[0].CAPETIPO == Constantes.VENTA || cabdetpedido[0].CAPETIPO == Constantes.CONSIGNACION)
+                {
+                    //20180418
+                    Decimal idtipdoc = cabdetpedido[0].CAPEIDTD;
+                    if (idtipdoc != Constantes.ID_TIPO_DOC_GUIA && idtipdoc != Constantes.ID_TIPO_DOC_NE)
+                    {
+                        idtipdoc = Constantes.ID_TIPO_DOC_GUIA;
+                    }
+                    if (idtipdoc == Constantes.ID_TIPO_DOC_NE)
+                    {
+                        codprovtrans = "";
+                        DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_NE); //7 creado
+                    }
+                    else
+                    {
+                        DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
+                    }
 
-        //            DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, idtipdoc); //3 TIPO GUIA o 5 NOTA ENTR
-        //        }
-        //        else if (cabdetpedido[0].CAPETIPO == Constantes.TRANSF_ALMACENES)
-        //        {
-        //            DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
-        //            DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_GUIA); //3 TIPO GUIA
-        //        }
-        //        else
-        //        {
-        //            DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_TI); //7 creado
-        //            DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_TI); //ERA 14 NO 11 TIPO TI
-        //        }
-        //        decimal totalbruto = cabdetpedido.Sum(X => X.DEPEPEBR) + cabdetpedido[0].CAPETADE;
-        //        DB2.AsignarParamProcAlmac("@PDOCOSRIE", iDB2DbType.iDB2Char, serie); //R007 o T001
-        //        DB2.AsignarParamProcAlmac("@PDOCOEMIS", iDB2DbType.iDB2Date, DateTime.Today); // new DateTime(2016, 12, 1)); // DateTime.Today);
-        //        DB2.AsignarParamProcAlmac("@PDOCOPBRU", iDB2DbType.iDB2Numeric, totalbruto);
-        //        DB2.AsignarParamProcAlmac("@PDOCONBTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU);
-        //        DB2.AsignarParamProcAlmac("@PDOCOOBSE", iDB2DbType.iDB2VarChar, cabdetpedido[0].CAPENOTG);
-        //        DB2.AsignarParamProcAlmac("@PDOCODIRC", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEDIRE);
-        //        DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
-        //        DB2.AsignarParamProcAlmac("@PENTICUID", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEIDCL);
-        //        DB2.AsignarParamProcAlmac("@PDCENTRAN", iDB2DbType.iDB2Char, codprovtrans);
-        //        DB2.AsignarParamProcAlmac("@PDCENPUPATR", iDB2DbType.iDB2VarChar, ptopartida);
-        //        DB2.AsignarParamProcAlmac("@PFECHTRAS", iDB2DbType.iDB2TimeStamp, DateTime.Now); //new DateTime(2016, 12, 1));  //DateTime.Today); //---TEMPORAL PARA PRUEBAS
-        //        DB2.AsignarParamProcAlmac("@PTIPOPEDI", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPETIPO); //20180221 MOTIVO DEL PEDIDO
-        //        DB2.AsignarParamProcAlmac("@PESTADEST", iDB2DbType.iDB2Numeric, estadest); //20180221 MOTIVO DEL PEDIDO
+                    DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, idtipdoc); //3 TIPO GUIA o 5 NOTA ENTR
+                }
+                else if (cabdetpedido[0].CAPETIPO == Constantes.TRANSF_ALMACENES)
+                {
+                    DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_PREGUIA); //7 creado
+                    DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_GUIA); //3 TIPO GUIA
+                }
+                else
+                {
+                    DB2.AsignarParamProcAlmac("@PDOCOIDES", iDB2DbType.iDB2Numeric, Constantes.ID_ESTADO_CREADO_TI); //7 creado
+                    DB2.AsignarParamProcAlmac("@PDOCOIDTD", iDB2DbType.iDB2Numeric, Constantes.ID_TIPO_DOC_TI); //ERA 14 NO 11 TIPO TI
+                }
+                decimal totalbruto = cabdetpedido.Sum(X => X.DEPEPEBR) + cabdetpedido[0].CAPETADE;
+                DB2.AsignarParamProcAlmac("@PDOCOSRIE", iDB2DbType.iDB2Char, serie); //R007 o T001
+                DB2.AsignarParamProcAlmac("@PDOCOEMIS", iDB2DbType.iDB2Date, DateTime.Today); // new DateTime(2016, 12, 1)); // DateTime.Today);
+                DB2.AsignarParamProcAlmac("@PDOCOPBRU", iDB2DbType.iDB2Numeric, totalbruto);
+                DB2.AsignarParamProcAlmac("@PDOCONBTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU);
+                DB2.AsignarParamProcAlmac("@PDOCOOBSE", iDB2DbType.iDB2VarChar, cabdetpedido[0].CAPENOTG);
+                DB2.AsignarParamProcAlmac("@PDOCODIRC", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEDIRE);
+                DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
+                DB2.AsignarParamProcAlmac("@PENTICUID", iDB2DbType.iDB2Char, cabdetpedido[0].CAPEIDCL);
+                DB2.AsignarParamProcAlmac("@PDCENTRAN", iDB2DbType.iDB2Char, codprovtrans);
+                DB2.AsignarParamProcAlmac("@PDCENPUPATR", iDB2DbType.iDB2VarChar, ptopartida);
+                DB2.AsignarParamProcAlmac("@PFECHTRAS", iDB2DbType.iDB2TimeStamp, DateTime.Now); //new DateTime(2016, 12, 1));  //DateTime.Today); //---TEMPORAL PARA PRUEBAS
+                DB2.AsignarParamProcAlmac("@PTIPOPEDI", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPETIPO); //20180221 MOTIVO DEL PEDIDO
+                DB2.AsignarParamProcAlmac("@PESTADEST", iDB2DbType.iDB2Numeric, estadest); //20180221 MOTIVO DEL PEDIDO
 
-        //        DB2.AsignarParamSalidaProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, 19);
-        //        DB2.EjecutarProcedimientoAlmacenado();
-        //        idpreguia = Convert.ToDecimal(DB2.ObtieneParametro("@PDOCOCUID"));
+                DB2.AsignarParamSalidaProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, 19);
+                DB2.EjecutarProcedimientoAlmacenado();
+                idpreguia = Convert.ToDecimal(DB2.ObtieneParametro("@PDOCOCUID"));
 
-        //        int numitemdet = 0;
-                    
-        //        foreach (var item in cabdetpedido)
-        //        {
-        //            numitemdet++;
-        //            comandoSql = new StringBuilder();
-        //            comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_DET"); //FAELDAT
-        //            DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
-        //            DB2.AsignarParamProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, idpreguia);
-        //            DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
-        //            DB2.AsignarParamProcAlmac("@PDDCOESAF", iDB2DbType.iDB2Numeric, 2); //2
-        //            DB2.AsignarParamProcAlmac("@PDDCODESC", iDB2DbType.iDB2VarChar, item.DEPEDSAR); //INVOCAR CL ANTES O DESPUES
-        //            if (numitemdet == 1)
-        //            {
-        //                DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU); //ES BULTOS NO CONOS DE DONDE SALE
-        //                DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
-        //                DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR + cabdetpedido[0].CAPETADE);
-        //            }
-        //            else
-        //            {
-        //                DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, 0); //ES BULTOS NO CONOS DE DONDE SALE
-        //                DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
-        //                DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR);
-        //            }
-        //            DB2.AsignarParamProcAlmac("@PDDCOPNET", iDB2DbType.iDB2Numeric, item.DEPEPEAT);
-        //            DB2.AsignarParamProcAlmac("@PDDCOFACN", iDB2DbType.iDB2Numeric, 0);
-        //            DB2.AsignarParamProcAlmac("@PPDDCIDPI", iDB2DbType.iDB2Char, item.DEPECOAR);
-        //            DB2.AsignarParamProcAlmac("@PPDDCCANT", iDB2DbType.iDB2Numeric, item.DEPECAAT);
-        //            DB2.AsignarParamProcAlmac("@PPDDCPEDI", iDB2DbType.iDB2Char, item.DEPECONT);
-        //            DB2.AsignarParamProcAlmac("@PPRALIDAL", iDB2DbType.iDB2Numeric, item.DEPEALMA);
-        //            DB2.AsignarParamProcAlmac("@PPRALIDPA", iDB2DbType.iDB2Char, item.DEPEPART);
+                int numitemdet = 0;
 
-        //            DB2.AsignarParamProcAlmac("@PCVTDSECU", iDB2DbType.iDB2Numeric, item.DEPESECU);
+                foreach (var item in cabdetpedido)
+                {
+                    numitemdet++;
+                    comandoSql = new StringBuilder();
+                    comandoSql.Append("FAELDAT.USP_PED_INSERTA_GUIA_DET"); //FAELDAT
+                    DB2.CrearComando(comandoSql.ToString(), CommandType.StoredProcedure);
+                    DB2.AsignarParamProcAlmac("@PDOCOCUID", iDB2DbType.iDB2Numeric, idpreguia);
+                    DB2.AsignarParamProcAlmac("@PDOCOUSCR", iDB2DbType.iDB2VarChar, usuario);
+                    DB2.AsignarParamProcAlmac("@PDDCOESAF", iDB2DbType.iDB2Numeric, 2); //2
+                    DB2.AsignarParamProcAlmac("@PDDCODESC", iDB2DbType.iDB2VarChar, item.DEPEDSAR); //INVOCAR CL ANTES O DESPUES
+                    if (numitemdet == 1)
+                    {
+                        DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, cabdetpedido[0].CAPENUBU); //ES BULTOS NO CONOS DE DONDE SALE
+                        DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
+                        DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR + cabdetpedido[0].CAPETADE);
+                    }
+                    else
+                    {
+                        DB2.AsignarParamProcAlmac("@PDDCOBLTS", iDB2DbType.iDB2Numeric, 0); //ES BULTOS NO CONOS DE DONDE SALE
+                        DB2.AsignarParamProcAlmac("@PDDCOPACN", iDB2DbType.iDB2Numeric, item.DEPEPEAT); //--EL MISMO neto, NO SE HA ESPECIFICADO acond
+                        DB2.AsignarParamProcAlmac("@PDDCOPBRU", iDB2DbType.iDB2Numeric, item.DEPEPEBR);
+                    }
+                    DB2.AsignarParamProcAlmac("@PDDCOPNET", iDB2DbType.iDB2Numeric, item.DEPEPEAT);
+                    DB2.AsignarParamProcAlmac("@PDDCOFACN", iDB2DbType.iDB2Numeric, 0);
+                    DB2.AsignarParamProcAlmac("@PPDDCIDPI", iDB2DbType.iDB2Char, item.DEPECOAR);
+                    DB2.AsignarParamProcAlmac("@PPDDCCANT", iDB2DbType.iDB2Numeric, item.DEPECAAT);
+                    DB2.AsignarParamProcAlmac("@PPDDCPEDI", iDB2DbType.iDB2Char, item.DEPECONT);
+                    DB2.AsignarParamProcAlmac("@PPRALIDAL", iDB2DbType.iDB2Numeric, item.DEPEALMA);
+                    DB2.AsignarParamProcAlmac("@PPRALIDPA", iDB2DbType.iDB2Char, item.DEPEPART);
 
-        //            DB2.AsignarParamSalidaProcAlmac("@PDDCOCUID", iDB2DbType.iDB2Numeric, 19);
-        //            DB2.EjecutarProcedimientoAlmacenado();
+                    DB2.AsignarParamProcAlmac("@PCVTDSECU", iDB2DbType.iDB2Numeric, item.DEPESECU);
 
-        //        }
-        //        vpar.VALSAL.Add(Convert.ToString(idpreguia));
-        //        vpar.ESTOPE = true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Util.EscribeLog(ex.Message);
-        //        vpar.MENERR = ErrorGenerico(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        DB2.Desconectar();
-        //    }
-        //    return vpar;
-        //}
+                    DB2.AsignarParamSalidaProcAlmac("@PDDCOCUID", iDB2DbType.iDB2Numeric, 19);
+                    DB2.EjecutarProcedimientoAlmacenado();
 
-        ///descomentar
+                }
+                vpar.VALSAL.Add(Convert.ToString(idpreguia));
+                vpar.ESTOPE = true;
+            }
+            catch (Exception ex)
+            {
+                Util.EscribeLog(ex.Message);
+                vpar.MENERR = ErrorGenerico(ex.Message);
+            }
+            finally
+            {
+                DB2.Desconectar();
+            }
+            return vpar;
+        }
 
+        //comentar
+
+
+
+        /////////////////////
         //public RESOPE GeneraPreguia(List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> cabdetpedido, string serie, string usuario, string codprovtrans, string estabpart)
         //{
         //    DataTable otrosDataTable;
@@ -482,67 +485,67 @@ namespace appLogica
         /// 
 
 
-        ///descomentar
-        //public void generaReserva(bool conectado, string TipRsrva, string NoFolio, string Secuencia, string Articulo, string Partida, string Almacen, string Destino, string TpDest, string SecDest, string ScPrdDst, string ScPrdAtn, string Cantidad, string TipAcci)
-        //{
-        //    try
-        //    {
+        ///comentar
+        public void generaReserva(bool conectado, string TipRsrva, string NoFolio, string Secuencia, string Articulo, string Partida, string Almacen, string Destino, string TpDest, string SecDest, string ScPrdDst, string ScPrdAtn, string Cantidad, string TipAcci)
+        {
+            try
+            {
 
-        //        if (!conectado)
-        //        {
-        //            DB2.Conectar();
-        //        }
-        //        StringBuilder comandoSql = new StringBuilder();
-        //        StringBuilder actreservSql; // = new StringBuilder();
+                if (!conectado)
+                {
+                    DB2.Conectar();
+                }
+                StringBuilder comandoSql = new StringBuilder();
+                StringBuilder actreservSql; // = new StringBuilder();
 
-        //        TipRsrva = TipRsrva.PadRight(1, ' ');
-        //        NoFolio = NoFolio.PadLeft(5, '0').Substring(0,5);
-        //        Secuencia = Secuencia.PadLeft(2, '0');
-        //        Articulo = Articulo.PadRight(15, ' ');
-        //        Partida = Partida.PadRight(6, ' ');
-        //        Almacen = Almacen.PadLeft(3, '0');
-        //        Destino = Destino.PadRight(6, ' ').Substring(0,6);
-        //        TpDest = TpDest.PadRight(1, ' ');
+                TipRsrva = TipRsrva.PadRight(1, ' ');
+                NoFolio = NoFolio.PadLeft(5, '0').Substring(0, 5);
+                Secuencia = Secuencia.PadLeft(2, '0');
+                Articulo = Articulo.PadRight(15, ' ');
+                Partida = Partida.PadRight(6, ' ');
+                Almacen = Almacen.PadLeft(3, '0');
+                Destino = Destino.PadRight(6, ' ').Substring(0, 6);
+                TpDest = TpDest.PadRight(1, ' ');
 
-        //        SecDest = SecDest.PadLeft(2, '0');
-        //        ScPrdDst = ScPrdDst.PadLeft(3, '0');
-        //        ScPrdAtn = ScPrdAtn.PadLeft(3, '0');
-        //        Cantidad = Cantidad.PadLeft(9, '0');
-        //        TipAcci = TipAcci.PadRight(1, ' ');
+                SecDest = SecDest.PadLeft(2, '0');
+                ScPrdDst = ScPrdDst.PadLeft(3, '0');
+                ScPrdAtn = ScPrdAtn.PadLeft(3, '0');
+                Cantidad = Cantidad.PadLeft(9, '0');
+                TipAcci = TipAcci.PadRight(1, ' ');
 
-        //        actreservSql = new StringBuilder();
-        //        actreservSql.Append("CALL INCAOBJ.ACTRESPP(");  //GMA003PP 20151130 PRUEBAS USUARIO
-        //        actreservSql.Append("'").Append(TipRsrva).Append("', ");
-        //        actreservSql.Append("'").Append(NoFolio).Append("', ");
-        //        actreservSql.Append("'").Append(Secuencia).Append("', ");
-        //        actreservSql.Append("'").Append(Articulo).Append("', ");
-        //        actreservSql.Append("'").Append(Partida).Append("', ");
-        //        actreservSql.Append("'").Append(Almacen).Append("', ");
-        //        actreservSql.Append("'").Append(Destino).Append("', ");
-        //        actreservSql.Append("'").Append(TpDest).Append("', ");
-        //        actreservSql.Append("'").Append(SecDest).Append("', ");
-        //        actreservSql.Append("'").Append(ScPrdDst).Append("', ");
-        //        actreservSql.Append("'").Append(ScPrdAtn).Append("', ");
-        //        actreservSql.Append("'").Append(Cantidad).Append("', ");
-        //        actreservSql.Append("'").Append(TipAcci).Append("') ");
+                actreservSql = new StringBuilder();
+                actreservSql.Append("CALL INCAOBJ.ACTRESPP(");  //GMA003PP 20151130 PRUEBAS USUARIO
+                actreservSql.Append("'").Append(TipRsrva).Append("', ");
+                actreservSql.Append("'").Append(NoFolio).Append("', ");
+                actreservSql.Append("'").Append(Secuencia).Append("', ");
+                actreservSql.Append("'").Append(Articulo).Append("', ");
+                actreservSql.Append("'").Append(Partida).Append("', ");
+                actreservSql.Append("'").Append(Almacen).Append("', ");
+                actreservSql.Append("'").Append(Destino).Append("', ");
+                actreservSql.Append("'").Append(TpDest).Append("', ");
+                actreservSql.Append("'").Append(SecDest).Append("', ");
+                actreservSql.Append("'").Append(ScPrdDst).Append("', ");
+                actreservSql.Append("'").Append(ScPrdAtn).Append("', ");
+                actreservSql.Append("'").Append(Cantidad).Append("', ");
+                actreservSql.Append("'").Append(TipAcci).Append("') ");
 
-        //        //xselec = "call GEMAPRG.GMA003PP('"+cia +"','"+ allt(tcomp) +"','"+ allt(comprob) +"','"+ allt(fecha) +"','"+ m->articulo +"','"+ allt(m->almacen) +"','"+ allt(partida) +"','"+ allt(cantidad) +"','"+ total +"','"+ m->signo +"','"+ orides +"','"+ destino +"','"+ unidad +"','"+ item +"','" + estado +"')"
+                //xselec = "call GEMAPRG.GMA003PP('"+cia +"','"+ allt(tcomp) +"','"+ allt(comprob) +"','"+ allt(fecha) +"','"+ m->articulo +"','"+ allt(m->almacen) +"','"+ allt(partida) +"','"+ allt(cantidad) +"','"+ total +"','"+ m->signo +"','"+ orides +"','"+ destino +"','"+ unidad +"','"+ item +"','" + estado +"')"
 
-        //        DB2.CrearComando(actreservSql.ToString(), CommandType.Text);
-        //        //PRUEBAS 
-        //        DB2.EjecutarComando();
-        //    }
-        //    finally
-        //    {
-        //        if (!conectado)
-        //        {
-        //            DB2.Desconectar();
-        //        }
-        //    }
-        //}
+                DB2.CrearComando(actreservSql.ToString(), CommandType.Text);
+                //PRUEBAS 
+                DB2.EjecutarComando();
+            }
+            finally
+            {
+                if (!conectado)
+                {
+                    DB2.Desconectar();
+                }
+            }
+        }
 
 
-        ///descomentar
+        ///comentar
 
         /// <summary>
         /// 
@@ -607,57 +610,57 @@ namespace appLogica
             }
         }
 
-        ////descomentar
+        ///comentar
 
 
-        //public void actualizaPROSAS(string folio, decimal secuencia, decimal pesoentregado, string estado)
-        //{
-        //    try
-        //    {
-        //        DB2.Conectar();
-        //        DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_OSA", CommandType.StoredProcedure);
-        //        DB2.AsignarParamProcAlmac("@POSASFOLI", iDB2DbType.iDB2Char, folio);
-        //        DB2.AsignarParamProcAlmac("@POSASSECU", iDB2DbType.iDB2Numeric, secuencia);
-        //        DB2.AsignarParamProcAlmac("@POSASCAEN", iDB2DbType.iDB2Decimal, pesoentregado); //-1 para no actualizar el campo y si actualizar estado
-        //        DB2.AsignarParamProcAlmac("@POSASSTOS", iDB2DbType.iDB2Char, estado); //vacio cuando se envía pesoentregado
-        //        DB2.EjecutarComando();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Util.EscribeLog(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        DB2.Desconectar();
-        //    }
-        //}
+        public void actualizaPROSAS(string folio, decimal secuencia, decimal pesoentregado, string estado)
+        {
+            try
+            {
+                DB2.Conectar();
+                DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_OSA", CommandType.StoredProcedure);
+                DB2.AsignarParamProcAlmac("@POSASFOLI", iDB2DbType.iDB2Char, folio);
+                DB2.AsignarParamProcAlmac("@POSASSECU", iDB2DbType.iDB2Numeric, secuencia);
+                DB2.AsignarParamProcAlmac("@POSASCAEN", iDB2DbType.iDB2Decimal, pesoentregado); //-1 para no actualizar el campo y si actualizar estado
+                DB2.AsignarParamProcAlmac("@POSASSTOS", iDB2DbType.iDB2Char, estado); //vacio cuando se envía pesoentregado
+                DB2.EjecutarComando();
+            }
+            catch (Exception ex)
+            {
+                Util.EscribeLog(ex.Message);
+            }
+            finally
+            {
+                DB2.Desconectar();
+            }
+        }
 
-        //public void actualizaGMDEEM(string empaque, decimal secuencia, decimal cantidadrestante, decimal pesorestante, decimal stockcerobolsa, decimal estadobolsa)
-        //{
-        //    try
-        //    {
-        //        DB2.Conectar();
+        public void actualizaGMDEEM(string empaque, decimal secuencia, decimal cantidadrestante, decimal pesorestante, decimal stockcerobolsa, decimal estadobolsa)
+        {
+            try
+            {
+                DB2.Conectar();
 
-        //        DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_GMDEEM", CommandType.StoredProcedure);
-        //        DB2.AsignarParamProcAlmac("@PDEEMCOEM", iDB2DbType.iDB2Char, empaque);
-        //        DB2.AsignarParamProcAlmac("@PDEEMSECU", iDB2DbType.iDB2Numeric, secuencia);
-        //        DB2.AsignarParamProcAlmac("@PDEEMCAST", iDB2DbType.iDB2Decimal, cantidadrestante);
-        //        DB2.AsignarParamProcAlmac("@PDEEMPEST", iDB2DbType.iDB2Decimal, pesorestante);
-        //        DB2.AsignarParamProcAlmac("@PDEEMSTCE", iDB2DbType.iDB2Numeric, stockcerobolsa); //-1 si no se actualizará EL CAMPO 
-        //        DB2.AsignarParamProcAlmac("@PDEEMESBO", iDB2DbType.iDB2Numeric, estadobolsa);
-        //        DB2.EjecutarComando();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Util.EscribeLog(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        DB2.Desconectar();
-        //    }
-        //}
+                DB2.CrearComando("PRODDAT.USP_PED_ACTUALIZA_GMDEEM", CommandType.StoredProcedure);
+                DB2.AsignarParamProcAlmac("@PDEEMCOEM", iDB2DbType.iDB2Char, empaque);
+                DB2.AsignarParamProcAlmac("@PDEEMSECU", iDB2DbType.iDB2Numeric, secuencia);
+                DB2.AsignarParamProcAlmac("@PDEEMCAST", iDB2DbType.iDB2Decimal, cantidadrestante);
+                DB2.AsignarParamProcAlmac("@PDEEMPEST", iDB2DbType.iDB2Decimal, pesorestante);
+                DB2.AsignarParamProcAlmac("@PDEEMSTCE", iDB2DbType.iDB2Numeric, stockcerobolsa); //-1 si no se actualizará EL CAMPO 
+                DB2.AsignarParamProcAlmac("@PDEEMESBO", iDB2DbType.iDB2Numeric, estadobolsa);
+                DB2.EjecutarComando();
+            }
+            catch (Exception ex)
+            {
+                Util.EscribeLog(ex.Message);
+            }
+            finally
+            {
+                DB2.Desconectar();
+            }
+        }
 
-        ///descomentar
+        ///comentar
 
         private string ErrorGenerico(string exception)
         {
@@ -736,8 +739,9 @@ namespace appLogica
                     }
                     else
                     {
-                        lista = context.MuestraPedidos();
-                        lista = lista.Where(ped => ped.CAPEIDES == valbus).ToList<appWcfService.PECAPE>();
+                        //lista = context.MuestraPedidos();
+                        lista = context.MuestraPedidosXEstado(valbus);
+                        //lista = lista.Where(ped => ped.CAPEIDES == valbus).ToList<appWcfService.PECAPE>();
                     }
                 }
 
@@ -808,31 +812,41 @@ namespace appLogica
                         }
                         else if (estado == 0 & serie != "") //Todos los estados, sin parametro de busqueda pero con serie
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && ped.CAPESERI.Contains(serie)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosXSerie(serie);
+                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && ped.CAPESERI.Contains(serie)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                         }
                         //filtro segun estado indicado
                         else if (valbus != "" && serie.Equals("")) //Mostrara todos con el estado indicado y sin serie
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
-                       && ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosXEstado(estado);
+                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
+                            //&& ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                         }
                         else if (valbus.Equals("") && serie != "") // busca con serie indicada y sin valor de busqueda
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => ped.CAPEIDES == estado && ped.CAPESERI.Contains(serie)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosXEstadoXSerie(estado, serie);
+                            lista = lista.OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => ped.CAPEIDES == estado && ped.CAPESERI.Contains(serie)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                         }
                         else if (valbus != "" && serie != "") //busca con serie inidicada y con valor de busqueda
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
-                       && ped.CAPEIDES == estado && serie.Contains(serie)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosXEstadoXSerie(estado, serie);
+                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
+                            //&& ped.CAPEIDES == estado && serie.Contains(serie)).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                         }
                         else //Solo busca por el estado
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosXEstado(estado);
+                            lista = lista.OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO == 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                         }
                     }
                     //Busqueda por fechas
@@ -844,49 +858,66 @@ namespace appLogica
                         //Busqueda sin estado
                         if (estado == 0 && serie.Equals("") && valbus.Equals("")) //toma en cuenta solo el rango de fechas
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                            //lista = lista.Where(ped => ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin).ToList<appWcfService.PECAPE>();
                         }
                         else if (estado == 0 && serie.Equals("") && valbus != "") // toma en cuenta el rango y valor de busqueda
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
-                            && ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                            lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
+                            //&& ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin).ToList<appWcfService.PECAPE>();
                         }
                         else if (estado == 0 && serie != "" && valbus.Equals("")) //toma en cuenta el rango de fechas mas la serie
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                            lista = lista.Where(ped => ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
                         }
                         else if (estado == 0 && serie != "" && valbus != "") //toma en cuenta el rango de fechas, serie y valor de busqueda
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
-                          && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin)) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                            lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            //  lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
+                            //&& (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin)) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
                         }
 
                         // Busqueda con estado
                         else if (estado != 0 && serie.Equals("") && valbus.Equals("")) //toma en cuenta el rango de fechas y el estado
                         {
                             lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado).ToList<appWcfService.PECAPE>();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                            lista = lista.Where(ped => ped.CAPEIDES == estado).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado).ToList<appWcfService.PECAPE>();
                         }
                         else if (estado != 0 && serie != "" && valbus.Equals("")) //toma en cuenta el rango de fechas, la serie y el estado
                         {
-                            lista = context.MuestraPedidos();
-                            lista = lista.Where(ped => ((ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                            lista = lista.Where(ped => (ped.CAPEIDES == estado) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => ((ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
                         }
                         else if (estado != 0 && serie.Equals("") && valbus != "") //toma en cuenta el rango de fechas, el estado, y el valor de busqueda
                         {
-                            lista = context.MuestraPedidos();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
                             lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
-                            && ((ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado)).ToList<appWcfService.PECAPE>();
+                            && (ped.CAPEIDES == estado)).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
+                            //&& ((ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado)).ToList<appWcfService.PECAPE>();
                         }
                         else if (estado != 0 && serie != "" && valbus != "") // toma en cuenta el rango de fechas, estado, serie y valor de busqueda
                         {
-                            lista = context.MuestraPedidos();
+                            //lista = context.MuestraPedidos();
+                            lista = context.MuestraPedidosEntreFechas(feini, fefin);
                             lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
-                            && ((ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            && (ped.CAPEIDES == estado) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
+                            //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)
+                            //&& ((ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado) && ped.CAPESERI.Contains(serie)).ToList<appWcfService.PECAPE>();
                         }
                     }
                 }
@@ -1051,47 +1082,63 @@ namespace appLogica
                         {
                             if (estado == 0 && serie.Equals("") && valbus.Equals("")) //Muestra todos los pedidos 2 y 3
                             {
-                                lista = context.MuestraPedidos(); 
-                                lista = lista.Where(ped => ped.CAPEIDES == 2 || ped.CAPEIDES == 3)
-                                    .OrderByDescending(ped => ped.CAPEIDES).ThenByDescending(ped => ped.CAPEPRIO > 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFHEM).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEtados_2_3();
+                                lista = lista.OrderByDescending(ped => ped.CAPEIDES).ThenByDescending(ped => ped.CAPEPRIO > 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFHEM).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ped.CAPEIDES == 2 || ped.CAPEIDES == 3)
+                                //    .OrderByDescending(ped => ped.CAPEIDES).ThenByDescending(ped => ped.CAPEPRIO > 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFHEM).ToList<appWcfService.PECAPE>();
                             }
                             else if (estado == 0 && serie.Equals("") && valbus != "") //Toma en cuenta el valor de busqueda
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEtados_2_3();
+                                lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (estado == 0 && serie != "" && valbus.Equals("")) //toma en cuenta solo la serie
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && ped.CAPESERI.Contains(serie)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEtados_2_3();
+                                lista = lista.Where(ped => ped.CAPESERI.Contains(serie)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && ped.CAPESERI.Contains(serie)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (estado == 0 && serie != "" && valbus != "") // toma en cuenta serie y valor de busqueda
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)) && ped.CAPESERI.Contains(serie)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEtados_2_3();
+                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)) && ped.CAPESERI.Contains(serie)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)) && ped.CAPESERI.Contains(serie)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                         }
                         else if (estado != 0) //Busqueda por estado
                         {
                             if (serie.Equals("") && valbus.Equals("")) // busca solo por el estado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEIDES).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosXEstado(estado);
+                                lista = lista.OrderBy(ped => ped.CAPEIDES).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEIDES).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (serie != "" && valbus.Equals("")) //busca solo por la serie con el estado indicado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => ped.CAPEIDES == estado && ped.CAPESERI.Contains(serie)).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                               // lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosXEstadoXSerie(estado, serie);
+                                lista = lista.OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ped.CAPEIDES == estado && ped.CAPESERI.Contains(serie)).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (serie.Equals("") && valbus != "") // busca solo por el valor de busqueda con el estado indicado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosXEstado(estado);
+                                lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (serie != "" && valbus != "") // busca por serie, valor de busqueda y estado indicado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPESERI.Contains(serie)) && ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosXEstadoXSerie(estado, serie);
+                                lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume)).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPESERI.Contains(serie)) && ped.CAPEIDES == estado).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                         }
                     }
@@ -1106,54 +1153,78 @@ namespace appLogica
                         {
                             if (estado == 0 && serie.Equals("") && valbus.Equals("")) //Muestra todos los pedidos 2 y 3 
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3))
                                     .OrderByDescending(ped => ped.CAPEIDES).OrderByDescending(ped => ped.CAPEIDES).ThenByDescending(ped => ped.CAPEPRIO > 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFHEM).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //    .OrderByDescending(ped => ped.CAPEIDES).OrderByDescending(ped => ped.CAPEIDES).ThenByDescending(ped => ped.CAPEPRIO > 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFHEM).ToList<appWcfService.PECAPE>();
                             }
                             else if (estado == 0 && serie.Equals("") && valbus != "") //Toma en cuenta el valor de busqueda
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)))
                                     .OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //    .OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (estado == 0 && serie != "" && valbus.Equals("")) //toma en cuenta solo la serie
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => ((ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && ped.CAPESERI.Contains(serie)) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => ((ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && ped.CAPESERI.Contains(serie)))
                                     .OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ((ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && ped.CAPESERI.Contains(serie)) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //    .OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (estado == 0 && serie != "" && valbus != "") // toma en cuenta serie y valor de busqueda
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)) && ped.CAPESERI.Contains(serie))
-                                && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => (((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)) 
+                                && ped.CAPESERI.Contains(serie))).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPEIDES == 2 || ped.CAPEIDES == 3)) && ped.CAPESERI.Contains(serie))
+                                //&& (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin)).OrderByDescending(ped => ped.CAPEIDES).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                         }
                         else if (estado != 0) //Busqueda por estado
                         {
                             if (serie.Equals("") && valbus.Equals("")) // busca solo por el estado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (ped.CAPEIDES == estado) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => (ped.CAPEIDES == estado))
                                         .OrderBy(ped => ped.CAPEIDES).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (ped.CAPEIDES == estado) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //        .OrderBy(ped => ped.CAPEIDES).OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (serie != "" && valbus.Equals("")) //busca solo por la serie con el estado indicado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => (ped.CAPEIDES == estado && ped.CAPESERI.Contains(serie)) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => (ped.CAPEIDES == estado && ped.CAPESERI.Contains(serie)))
                                         .OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => (ped.CAPEIDES == estado && ped.CAPESERI.Contains(serie)) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //        .OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (serie.Equals("") && valbus != "") // busca solo por el valor de busqueda con el estado indicado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && ped.CAPEIDES == estado) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && ped.CAPEIDES == estado))
                                         .OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && ped.CAPEIDES == estado) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //        .OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                             else if (serie != "" && valbus != "") // busca por serie, valor de busqueda y estado indicado
                             {
-                                lista = context.MuestraPedidos();
-                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPESERI.Contains(serie)) && ped.CAPEIDES == estado) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //lista = context.MuestraPedidos();
+                                lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                                lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPESERI.Contains(serie)) && ped.CAPEIDES == estado))
                                         .OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
+                                //lista = lista.Where(ped => ((ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSCR.Contains(valbus) || ped.CAPENUME == nume) && (ped.CAPESERI.Contains(serie)) && ped.CAPEIDES == estado) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                                //        .OrderBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFECH).ToList<appWcfService.PECAPE>();
                             }
                         }
                     }
@@ -2199,7 +2270,7 @@ namespace appLogica
                                 context.PECAPE_UPDATE_ESTADO_ENPREPARACION(ped.CAPEIDCP, pCAPEUSIP: ped.CAPEUSIP, pCAPEFHIP: ped.CAPEFHIP, pCAPEIDES: ped.CAPEIDES);
                                 break;
                             case "4": //En espera de aprobacion
-                                if (ped.CAPEUSAP != null) //Si viene de reabrir completado almacen
+                                if(!string.IsNullOrEmpty(ped.CAPEUSAP))//if(ped.CAPEUSAP != null) //Si viene de reabrir completado almacen
                                 {
                                     ped.CAPEUSMO = usuario;
                                     ped.CAPEFEMO = DateTime.Now;
@@ -2264,16 +2335,18 @@ namespace appLogica
                             break;
                     }
 
-                    if (par != null && par.PARMVAPA.Equals("1"))
-                    {
-                        foreach (var item in lista)
-                        {
-                            if (!EnviaCorreoNotificacionPedido(item.CAPEIDCP, out mensajecorreo)) //if (!_appDB2.EnviaCorreoNotificacionPedido(item.CAPEIDCP, out mensajecorreo))
-                            {
-                                Util.EscribeLog(mensajecorreo);
-                            }
-                        }
-                    }
+                    // comentado 12/03/2019
+
+                    //if (par != null && par.PARMVAPA.Equals("1"))
+                    //{
+                    //    foreach (var item in lista)
+                    //    {
+                    //        if (!EnviaCorreoNotificacionPedido(item.CAPEIDCP, out mensajecorreo)) //if (!_appDB2.EnviaCorreoNotificacionPedido(item.CAPEIDCP, out mensajecorreo))
+                    //        {
+                    //            Util.EscribeLog(mensajecorreo);
+                    //        }
+                    //    }
+                    //}
 
                 }
             }
@@ -2300,9 +2373,9 @@ namespace appLogica
             {
                 //  DMA, SE SOLICITO REALIZAR LA RESERVA CON EL ID DEL DETALLE DEL PEDIDO PARA EVITAR RESERVAS DUPLICADAS, (det.DEPEIDDP)
 
-                ///descomentar
-                //_appDB2.generaReserva(false, "X", Convert.ToInt32(item.DEPEIDDP).ToString(), Convert.ToString(item.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
-                ///descomentar
+                //comentar
+                generaReserva(false, "X", Convert.ToInt32(item.DEPEIDDP).ToString(), Convert.ToString(item.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
+                ///comentar
 
                 //_appDB2.generaReserva(false, "X", Convert.ToInt32(pedido.CAPEIDCP).ToString(), Convert.ToString(item.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
             }
@@ -2319,7 +2392,7 @@ namespace appLogica
             List<appWcfService.USP_OBTIENE_PEDIDO_CONSULTA_Result> lista = null;
             //appLogica.appDB2 _appDB2 = null;
             string codprovtrans, estabpart, serieguiadefault;
-            string mensajecorreo;
+            //string mensajecorreo;
             decimal tped = 0; //TIPO DE PEDIDO PARA LA GUIA
             decimal nubu = 0;// numero de bultos;
             decimal tade = 0;
@@ -2452,9 +2525,9 @@ namespace appLogica
                 {
                     usuariopedido = usuario;
                 }
-                ///descomentar
-                //vpar = _appDB2.GeneraPreguia(lista, serieguiadefault, usuariopedido.Trim(), codprovtrans, estabpart, estadest);
-                ///descomentar
+                ///comentar
+                vpar = GeneraPreguia(lista, serieguiadefault, usuariopedido.Trim(), codprovtrans, estabpart, estadest);
+                ///comentar
 
                 if (vpar.ESTOPE == true)
                 {
@@ -2469,7 +2542,7 @@ namespace appLogica
                         ped.CAPETIPO = tped;
                         ped.CAPEIDTD = idtipdoc; //20180418
                         //20180220
-                        ped.CAPEDOCO = Convert.ToDecimal(vpar.VALSAL[0]);
+                        ped.CAPEDOCO = Convert.ToDecimal(41820);//vpar.VALSAL[0]);
 
                         //2018-15-12
                         context.PECAPE_UPDATE_GENERA_PRE_GUIA_2(idpedido, pCAPEIDES: ped.CAPEIDES, pCAPEUSAP: ped.CAPEUSAP, pCAPEFEAP: ped.CAPEFEAP, pCAPENUBU: ped.CAPENUBU, 
@@ -2478,13 +2551,14 @@ namespace appLogica
                         if (tped == Constantes.VENTA)
                         {
                             par = listapar.Find(x => x.PARMIDPA == Constantes.NOTIFICACION_AL_DESPACHAR_PEDIDO);
-                            if (par != null && par.PARMVAPA.Equals("1"))
-                            {
-                                if (!EnviaCorreoNotificacionPedido(idpedido, out mensajecorreo))//if (!_appDB2.EnviaCorreoNotificacionPedido(idpedido, out mensajecorreo))
-                                {
-                                    Util.EscribeLog(mensajecorreo);
-                                }
-                            }
+                            // comentado 12/03/2019
+                            //if (par != null && par.PARMVAPA.Equals("1"))
+                            //{
+                            //    if (!EnviaCorreoNotificacionPedido(idpedido, out mensajecorreo))//if (!_appDB2.EnviaCorreoNotificacionPedido(idpedido, out mensajecorreo))
+                            //    {
+                            //        Util.EscribeLog(mensajecorreo);
+                            //    }
+                            //}
                         }
                     }
                 }
@@ -2499,7 +2573,7 @@ namespace appLogica
                 //    vpar.VALSAL.Add("0");
 
                 //}
-                //vpar.ESTOPE = true;
+                vpar.ESTOPE = true;
 
             }
             catch (Exception ex)
@@ -3357,6 +3431,7 @@ namespace appLogica
                         idpedido = context.PECAPE_INSERT( pCAPESERI: ped.CAPESERI, pCAPEUSCR: ped.CAPEUSCR, pCAPEFECR: ped.CAPEFECR,
                             pCAPENUME: ped.CAPENUME, pCAPEIDCL: ped.CAPEIDCL, pCAPEFECH: ped.CAPEFECH, pCAPEDIRE: ped.CAPEDIRE, pCAPEIDES: ped.CAPEIDES,
                             pCAPEEMAI: ped.CAPEEMAI, pCAPENOTI: ped.CAPENOTI, pCAPENOTG: ped.CAPENOTG, pCAPETIPO: ped.CAPETIPO, pCAPEIDTD: ped.CAPEIDTD, pCAPEDEST: ped.CAPEDEST);
+                        ped.CAPEIDCP = idpedido;//REV
                     }
                     else
                     {
@@ -3367,7 +3442,7 @@ namespace appLogica
                     }
 
 
-                    ped.CAPEIDCP = idpedido;//REV
+                    
                     //2019-02-28
                     tipo = 0; //reinicializando para usarlo en detalles 1 - anadir 2 - actulizar
                     //
@@ -3406,9 +3481,9 @@ namespace appLogica
                             if (det.DEPEPESO != item.DEPEPESO || det.DEPECOAR.Trim() != item.DEPECOAR.Trim() || det.DEPEPART != item.DEPEPART)
                             {
                                 //  DMA, SE SOLICITO REALIZAR LA RESERVA CON EL ID DEL DETALLE DEL PEDIDO PARA EVITAR RESERVAS DUPLICADAS, (det.DEPEIDDP)
-                                ///descomentar
-                                //_appDB2.generaReserva(false, "X", Convert.ToInt32(det.DEPEIDDP).ToString(), Convert.ToString(det.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
-                                ///descomentar
+                                ///comentar
+                                generaReserva(false, "X", Convert.ToInt32(det.DEPEIDDP).ToString(), Convert.ToString(det.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
+                                ///comentar
                                 //_appDB2.generaReserva(false, "X", Convert.ToInt32(ped.CAPEIDCP).ToString(), Convert.ToString(det.DEPESERS), item.DEPECOAR, item.DEPEPART, Convert.ToInt32(item.DEPEALMA).ToString(), item.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(item.DEPEPESO * 100)), "L");
 
                                 generarres = true;
@@ -3447,9 +3522,9 @@ namespace appLogica
                         if (generarres)
                         {
                             //  DMA, SE SOLICITO REALIZAR LA RESERVA CON EL ID DEL DETALLE DEL PEDIDO PARA EVITAR RESERVAS DUPLICADAS, (det.DEPEIDDP)
-                            ///descomentar
-                            //_appDB2.generaReserva(false, "X", Convert.ToInt32(det.DEPEIDDP).ToString(), Convert.ToString(secuencia), det.DEPECOAR, det.DEPEPART, Convert.ToString(det.DEPEALMA), det.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(det.DEPEPESO * 100)), "A");
-                            ///descomentar
+                            ///comentar
+                            generaReserva(false, "X", Convert.ToInt32(det.DEPEIDDP).ToString(), Convert.ToString(secuencia), det.DEPECOAR, det.DEPEPART, Convert.ToString(det.DEPEALMA), det.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(det.DEPEPESO * 100)), "A");
+                            ///comentar
                             //_appDB2.generaReserva(false, "X", Convert.ToInt32(ped.CAPEIDCP).ToString(), Convert.ToString(secuencia), det.DEPECOAR, det.DEPEPART, Convert.ToString(det.DEPEALMA), det.DEPECONT, "Z", "0", "0", "0", Convert.ToString(Convert.ToInt32(det.DEPEPESO * 100)), "A");
                         }
 
@@ -3642,9 +3717,9 @@ namespace appLogica
                             if (osa != null)
                             {
                                 osa.OSASCAEN = pesoatendido;
-                                ///descomentar
-                                //actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, osa.OSASCAEN, ""); //Validar AS
-                                ///descomentar
+                                ///comentar
+                                actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, osa.OSASCAEN, ""); //Validar AS
+                                ///comentar
                             }
                             //context.SaveChanges();
                             context.PEDEOS_UPDATE(pDEOSIDDO: detpedint.DEOSIDDO, pDEOSIDCO: detpedint.DEOSIDCO, pDEOSCAAT: detpedint.DEOSCAAT,
@@ -3690,9 +3765,9 @@ namespace appLogica
                                     detemp.DEEMESBO = 1;
                                 }
                                 //context.SaveChanges();
-                                ///descomentar
-                                //actualizaGMDEEM(detemp.DEEMCOEM, detemp.DEEMSECU, detemp.DEEMCAST, detemp.DEEMPEST, detemp.DEEMSTCE, detemp.DEEMESBO); //Validar AS
-                                ///descomentar
+                                ///comentar
+                                actualizaGMDEEM(detemp.DEEMCOEM, detemp.DEEMSECU, detemp.DEEMCAST, detemp.DEEMPEST, detemp.DEEMSTCE, detemp.DEEMESBO); //Validar AS
+                                ///comentar
                                                                                                                                                        //buscar una partida en la bolsa que no este vacia, si no hay ninguna actualizar a 9 anulado
                                 detemp = context.GMDEEM_Find_DEEMESBO( 1 , bol.BOLSCOEM , "N" , 9);
                                     //.GMDEEM.FirstOrDefault(det => det.DEEMCIA == 1 && det.DEEMCOEM == bol.BOLSCOEM && det.DEEMTIPE == "N" && det.DEEMESBO != 9);//PRPEDAT.USP_EP_GMDEEM_FIND_DEEMESBO
@@ -3985,9 +4060,9 @@ namespace appLogica
                                 if (osa != null)
                                 {
                                     osa.OSASCAEN = pesoatendido;
-                                    ///descomentar
-                                    //actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, osa.OSASCAEN, ""); //Validar si es correcto
-                                    ///descomentar
+                                    ///comentar
+                                    actualizaPROSAS(osa.OSASFOLI, osa.OSASSECU, osa.OSASCAEN, ""); //Validar si es correcto
+                                    ///comentar
                                 }
                                 //context.SaveChanges();
                                 context.PEDEOS_UPDATE(detpedint.DEOSIDDO, pDEOSCAAT: detpedint.DEOSCAAT, pDEOSPEAT: detpedint.DEOSPEAT, pDEOSPERE: detpedint.DEOSPERE,
@@ -4038,9 +4113,9 @@ namespace appLogica
                                     {
                                         detemp.DEEMESBO = 1;
                                     }
-                                    ///descomentar
-                                    //actualizaGMDEEM(detemp.DEEMCOEM, detemp.DEEMSECU, detemp.DEEMCAST, detemp.DEEMPEST, detemp.DEEMSTCE, detemp.DEEMESBO);
-                                    ///descomentar
+                                    ///comentar
+                                    actualizaGMDEEM(detemp.DEEMCOEM, detemp.DEEMSECU, detemp.DEEMCAST, detemp.DEEMPEST, detemp.DEEMSTCE, detemp.DEEMESBO);
+                                    ///comentar
                                     //context.SaveChanges();
                                     //buscar una partida en la bolsa que no este vacia, si no hay ninguna actualizar a 9 anulado
                                     detemp = context.GMDEEM_Find_DEEMESBO(1, bol.BOLSCOEM, "N", 9);

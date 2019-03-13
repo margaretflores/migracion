@@ -889,7 +889,7 @@ namespace appLogica
                         // Busqueda con estado
                         else if (estado != 0 && serie.Equals("") && valbus.Equals("")) //toma en cuenta el rango de fechas y el estado
                         {
-                            lista = context.MuestraPedidos();
+                            //lista = context.MuestraPedidos();
                             lista = context.MuestraPedidosEntreFechas(feini, fefin);
                             lista = lista.Where(ped => ped.CAPEIDES == estado).ToList<appWcfService.PECAPE>();
                             //lista = lista.Where(ped => (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin) && ped.CAPEIDES == estado).ToList<appWcfService.PECAPE>();
@@ -1014,9 +1014,12 @@ namespace appLogica
 
                 using (var context = new PEDIDOSEntitiesDB2())
                 {
-                    lista = context.MuestraPedidos();
-                    lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                    //lista = context.MuestraPedidos();
+                    lista = context.MuestraPedidosEntreFechas(feini, fefin);
+                    lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3))
                         .OrderByDescending(ped => ped.CAPEIDES).ThenByDescending(ped => ped.CAPEPRIO > 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFHEM).ToList<appWcfService.PECAPE>();
+                    //lista = lista.Where(ped => (ped.CAPEIDES == 2 || ped.CAPEIDES == 3) && (ped.CAPEFECH >= feini && ped.CAPEFECH <= fefin))
+                    //    .OrderByDescending(ped => ped.CAPEIDES).ThenByDescending(ped => ped.CAPEPRIO > 0).ThenBy(ped => ped.CAPEPRIO).ThenBy(ped => ped.CAPEFHEM).ToList<appWcfService.PECAPE>();
                 }
                 //lista = Util.ParseEntityObject<appWcfService.PECAPE>(listaeo);
                 vpar.VALSAL = new List<string>();
@@ -1288,14 +1291,17 @@ namespace appLogica
                 {
                     if (valbus == "") //Supone mostrar todos
                     {
-                        lista = context.MuestraPedidos();
-                        lista = lista.Where(ped => ped.CAPEIDES == 4).ToList<appWcfService.PECAPE>();
+                        //lista = context.MuestraPedidos();
+                        lista = context.MuestraPedidosXEstado(4);
+                        //lista = lista.Where(ped => ped.CAPEIDES == 4).ToList<appWcfService.PECAPE>();
                     }
                     else
                     {
                         //Orden para filtrar??
-                        lista = context.MuestraPedidos();
-                        lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSMO.Contains(valbus) || ped.CAPENUME == nume || ped.CAPESERI.Contains(valbus) || ped.CAPEUSFP.Contains(valbus)) && ped.CAPEIDES == 4).ToList<appWcfService.PECAPE>();
+                        //lista = context.MuestraPedidos();
+                        lista = context.MuestraPedidosXEstado(4);
+                        lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSMO.Contains(valbus) || ped.CAPENUME == nume || ped.CAPESERI.Contains(valbus) || ped.CAPEUSFP.Contains(valbus))).ToList<appWcfService.PECAPE>();
+                        //lista = lista.Where(ped => (ped.TCLIE.CLINOM.Contains(valbus) || ped.CAPEUSMO.Contains(valbus) || ped.CAPENUME == nume || ped.CAPESERI.Contains(valbus) || ped.CAPEUSFP.Contains(valbus)) && ped.CAPEIDES == 4).ToList<appWcfService.PECAPE>();
                     }
                 }
                 //lista = Util.ParseEntityObject<appWcfService.PECAPE>(listaeo);

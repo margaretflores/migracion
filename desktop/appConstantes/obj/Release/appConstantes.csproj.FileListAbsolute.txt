@@ -4,3 +4,9 @@ D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\obj\Release\appConstantes.dll
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\obj\Release\appConstantes.pdb
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appConstantes\obj\Release\appConstantes.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\appConstantes\bin\Release\appConstantes.dll.config
+D:\mar\migracion\desktop\appConstantes\bin\Release\appConstantes.dll
+D:\mar\migracion\desktop\appConstantes\bin\Release\appConstantes.pdb
+D:\mar\migracion\desktop\appConstantes\obj\Release\appConstantes.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\appConstantes\obj\Release\appConstantes.dll
+D:\mar\migracion\desktop\appConstantes\obj\Release\appConstantes.pdb

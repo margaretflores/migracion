@@ -42,3 +42,23 @@ D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appLog
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appLogica\obj\Release\appLogica.csprojResolveAssemblyReference.cache
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appLogica\obj\Release\appLogica.dll
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\appLogica\obj\Release\appLogica.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appLogica.dll.config
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appLogica.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appLogica.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\AccesoDatos.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appConstantes.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appDataContracts.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appDTO.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\EntityFramework.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\EntityFramework.SqlServer.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appConstantes.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appDTO.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\AccesoDatos.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\appDataContracts.pdb
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\EntityFramework.xml
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\EntityFramework.SqlServer.xml
+D:\mar\migracion\desktop\backend\appLogica\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\mar\migracion\desktop\backend\appLogica\obj\Release\appLogica.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\backend\appLogica\obj\Release\appLogica.dll
+D:\mar\migracion\desktop\backend\appLogica\obj\Release\appLogica.pdb

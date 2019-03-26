@@ -4,3 +4,10 @@ D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\Acceso
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.xml
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\AccesoDatos\obj\Release\AccesoDatos.dll
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\backend\AccesoDatos\obj\Release\AccesoDatos.pdb
+D:\mar\migracion\desktop\backend\AccesoDatos\bin\Release\AccesoDatos.dll
+D:\mar\migracion\desktop\backend\AccesoDatos\bin\Release\AccesoDatos.pdb
+D:\mar\migracion\desktop\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.dll
+D:\mar\migracion\desktop\backend\AccesoDatos\bin\Release\IBM.Data.DB2.iSeries.xml
+D:\mar\migracion\desktop\backend\AccesoDatos\obj\Release\AccesoDatos.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\backend\AccesoDatos\obj\Release\AccesoDatos.dll
+D:\mar\migracion\desktop\backend\AccesoDatos\obj\Release\AccesoDatos.pdb

@@ -7,3 +7,9 @@ D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\bin\Rel
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\obj\Release\appDTO.dll
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\obj\Release\appDTO.pdb
 D:\Proyectos\Pedidos Nacionales\Fuente\Pedidos_Nacionales_Desktop\appDTO\obj\Release\appDTO.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\appDTO\bin\Release\appDTO.dll.config
+D:\mar\migracion\desktop\appDTO\bin\Release\appDTO.dll
+D:\mar\migracion\desktop\appDTO\bin\Release\appDTO.pdb
+D:\mar\migracion\desktop\appDTO\obj\Release\appDTO.csprojResolveAssemblyReference.cache
+D:\mar\migracion\desktop\appDTO\obj\Release\appDTO.dll
+D:\mar\migracion\desktop\appDTO\obj\Release\appDTO.pdb

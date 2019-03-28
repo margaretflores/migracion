@@ -529,7 +529,7 @@ namespace appLogica
             DB2.AsignarParamProcAlmac("CAPEDIRE", iDB2DbType.iDB2VarChar, pCAPEDIRE);
             DB2.AsignarParamProcAlmac("CAPEIDES", iDB2DbType.iDB2Numeric, pCAPEIDES);
             DB2.AsignarParamProcAlmac("CAPEEMAI", iDB2DbType.iDB2VarChar, pCAPEEMAI);
-            DB2.AsignarParamProcAlmac("CAPENOTI", iDB2DbType.iDB2VarChar, pCAPENOTI);
+            DB2.AsignarParamProcAlmac("CAPENOTI", iDB2DbType.iDB2Char, pCAPENOTI);
             DB2.AsignarParamProcAlmac("CAPENOTG", iDB2DbType.iDB2VarChar, pCAPENOTG);
             DB2.AsignarParamProcAlmac("CAPETIPO", iDB2DbType.iDB2Numeric, pCAPETIPO);
             DB2.AsignarParamProcAlmac("CAPEUSMO", iDB2DbType.iDB2Char, pCAPEUSMO);

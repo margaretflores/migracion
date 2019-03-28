@@ -292,6 +292,7 @@ D:\mar\migracion\desktop\appfe\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
 D:\mar\migracion\desktop\appfe\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\mar\migracion\desktop\appfe\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\mar\migracion\desktop\appfe\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csprojResolveAssemblyReference.cache
 D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csproj.ResolveComReference.cache
 D:\mar\migracion\desktop\appfe\obj\Debug\Agregar_Item.baml
 D:\mar\migracion\desktop\appfe\obj\Debug\Atender_Pedido.baml
@@ -339,4 +340,3 @@ D:\mar\migracion\desktop\appfe\obj\Debug\RdlCompile.cache
 D:\mar\migracion\desktop\appfe\obj\Debug\RdlCompile.compiled
 D:\mar\migracion\desktop\appfe\obj\Debug\spnd004.exe
 D:\mar\migracion\desktop\appfe\obj\Debug\spnd004.pdb
-D:\mar\migracion\desktop\appfe\obj\Debug\appfe.csprojResolveAssemblyReference.cache

@@ -37,19 +37,19 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/01/2018 10:55:44</publishTime>
     </File>
     <File Include="bin/appLanzador.dll">
-      <publishTime>03/20/2019 12:31:12</publishTime>
+      <publishTime>03/27/2019 17:49:10</publishTime>
     </File>
     <File Include="bin/appLanzador.pdb">
       <publishTime>03/01/2018 11:21:02</publishTime>
     </File>
     <File Include="bin/appLogica.dll">
-      <publishTime>03/20/2019 12:31:12</publishTime>
+      <publishTime>03/27/2019 17:49:09</publishTime>
     </File>
     <File Include="bin/appLogica.pdb">
       <publishTime>03/01/2018 11:21:02</publishTime>
     </File>
     <File Include="bin/appWcfService.dll">
-      <publishTime>03/20/2019 12:31:13</publishTime>
+      <publishTime>03/27/2019 17:49:10</publishTime>
     </File>
     <File Include="bin/appWcfService.pdb">
       <publishTime>03/01/2018 11:21:03</publishTime>

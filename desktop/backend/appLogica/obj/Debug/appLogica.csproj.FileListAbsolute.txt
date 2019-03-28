@@ -103,6 +103,6 @@ D:\mar\migracion\desktop\backend\appLogica\bin\Debug\appDataContracts.pdb
 D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EntityFramework.xml
 D:\mar\migracion\desktop\backend\appLogica\bin\Debug\EntityFramework.SqlServer.xml
 D:\mar\migracion\desktop\backend\appLogica\bin\Debug\IBM.Data.DB2.iSeries.xml
+D:\mar\migracion\desktop\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
 D:\mar\migracion\desktop\backend\appLogica\obj\Debug\appLogica.dll
 D:\mar\migracion\desktop\backend\appLogica\obj\Debug\appLogica.pdb
-D:\mar\migracion\desktop\backend\appLogica\obj\Debug\appLogica.csprojResolveAssemblyReference.cache
